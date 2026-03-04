@@ -30,7 +30,9 @@ public class IterableWarmups {
 
         // TODO:
         // Use a for-each loop to calculate the sum
-
+        for(int number:numbers){
+            total += number;
+        }
         return total;
     }
 
@@ -46,7 +48,9 @@ public class IterableWarmups {
         // TODO:
         // Loop through numbers
         // Increment count if number is even
-
+        for (int number:numbers){
+            count++;
+        }
         return count;
     }
 
@@ -63,6 +67,11 @@ public class IterableWarmups {
         // Loop through numbers
         // Update max if current number is larger
 
+        for(int number:numbers){
+            if(max < number){
+                max = number;
+            }
+        }
         return max;
     }
 
