@@ -5,6 +5,7 @@ import java.util.*;
 public class Hierarchy {
     public static void main(String[] args) {
 
+
         // LIST EXAMPLE
         List<String> list = new ArrayList<>();
         list.add("Apple");

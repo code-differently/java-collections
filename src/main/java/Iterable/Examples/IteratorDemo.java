@@ -27,6 +27,10 @@ public class IteratorDemo {
         // Use iterator.hasNext() and iterator.next()
         // Print each number
 
+        while (iterator.hasNext())
+        {
+            System.out.println(iterator.next());
+        }
 
         System.out.println("\nRemoving odd numbers using Iterator");
 
@@ -35,6 +39,13 @@ public class IteratorDemo {
         // TODO:
         // Use iterator to remove odd numbers
         // Remember: use iterator.remove()
+
+        while (iterator.hasNext())
+        {
+            if(! (iterator.next() % 2 == 0)){
+                iterator.remove();
+            }
+        }
 
 
         System.out.println("\nUpdated list:");
