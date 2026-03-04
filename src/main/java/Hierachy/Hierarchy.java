@@ -56,5 +56,91 @@ public class Hierarchy {
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
+
+
+        //challenge
+
+        // LIST EXAMPLE
+        List<String> listStudents = new ArrayList<>();
+        listStudents.add("Alex");
+        listStudents.add("Jonathan");
+        listStudents.add("William");
+
+        System.out.println("List Example:");
+        for (String item : listStudents) {
+            System.out.println(item);
+        }
+
+        System.out.println();
+
+        // SET EXAMPLE
+        Set<String> setCourses = new HashSet<>();
+        setCourses.add("Math");
+        setCourses.add("Reading");
+        setCourses.add("Computer Science");
+
+
+        System.out.println("Set Example:");
+        for (String course : setCourses) {
+            System.out.println(course);
+        }
+
+        System.out.println();
+
+        // QUEUE EXAMPLE
+        Queue<String> queueTask = new LinkedList<>();
+        queueTask.offer("Finish Homework");
+        queueTask.offer("Wash Dishes");
+        queueTask.offer("Clean Bathroom");
+
+        System.out.println("Queue Example:");
+        while (!queueTask.isEmpty()) {
+            System.out.println(queueTask.poll());
+        }
+
+        System.out.println();
+
+        // MAP EXAMPLE
+        Map<String, Integer> grade = new HashMap<>();
+        grade.put("Alex", 90);
+        grade.put("Jonathan", 85);
+        grade.put("William", 95);
+
+        System.out.println("Map Example:");
+
+        for (Map.Entry<String, Integer> entry : grade.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+
+        listStudents.add("Jeff");
+        setCourses.add("Economics");
+        queueTask.offer("Make Money");
+        grade.put("Jeff", 25);
+
+        System.out.println("List Example:");
+        for (String item : listStudents) {
+            System.out.println(item);
+        }
+
+        System.out.println("Set Example:");
+        for (String course : setCourses) {
+            System.out.println(course);
+        }
+
+        System.out.println("Queue Example:");
+        while (!queueTask.isEmpty()) {
+            System.out.println(queueTask.poll());
+        }
+
+        System.out.println("Map Example:");
+
+        for (Map.Entry<String, Integer> entry : grade.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
     }
 }
+
+
+
