@@ -1,23 +1,27 @@
 ````markdown
-# Vector
+# List (Condensed Guide)
 
-## What Is Vector?
+## What Is a List?
 
-`Vector` is a **resizable array implementation** of the `List` interface.
+A `List` is an **ordered collection** that allows **duplicate elements**.
 
-It:
-- Maintains insertion order
-- Allows duplicate elements
-- Supports index-based access
-- Is **synchronized (thread-safe)**
+Key characteristics:
+- Maintains **insertion order**
+- Allows **duplicate values**
+- Supports **index-based access**
+- Elements can be added, removed, or updated by position
 
-⚠ `Vector` is considered a **legacy class**. Modern Java code usually uses `ArrayList` instead.
+Common implementations:
+- `ArrayList`
+- `LinkedList`
+- `Vector`
+- `Stack`
 
 ```java
-import java.util.Vector;
 import java.util.List;
+import java.util.ArrayList;
 
-List<String> items = new Vector<>();
+List<String> names = new ArrayList<>();
 ````
 
 ---
@@ -26,123 +30,172 @@ List<String> items = new Vector<>();
 
 ```
 Iterable
-   ↓
+ ↓
 Collection
-   ↓
+ ↓
 List
-   ↓
-Vector
 ```
 
-⚠ `Stack` extends `Vector`.
+Implementations include:
+
+```
+List
+ ↓
+ArrayList
+LinkedList
+Vector
+Stack
+```
 
 ---
 
 ## How It Works
 
-* Backed by a **dynamic array**
-* Automatically resizes when capacity is exceeded
-* Methods are **synchronized**, meaning thread-safe
-* Slightly slower than `ArrayList` due to synchronization overhead
+A `List` stores elements **in a specific order**.
+
+Example:
+
+```
+add("Apple")
+add("Banana")
+add("Cherry")
+```
+
+Result:
+
+```
+[Apple, Banana, Cherry]
+```
+
+Each element has an **index position** starting from `0`.
 
 ---
 
-## ⏱ Time Complexity
+## Time Complexity (Typical)
 
-| Operation             | Complexity     |
-| --------------------- | -------------- |
-| `get(index)`          | O(1)           |
-| `set(index)`          | O(1)           |
-| `add(element)`        | O(1) amortized |
-| `add(index, element)` | O(n)           |
-| `remove(index)`       | O(n)           |
-| `contains()`          | O(n)           |
+Depends on the implementation.
 
-Performance is similar to `ArrayList`, but slower due to synchronization.
+### ArrayList
+
+| Operation       | Complexity     |
+| --------------- | -------------- |
+| `get(index)`    | O(1)           |
+| `add(element)`  | O(1) amortized |
+| `remove(index)` | O(n)           |
+
+### LinkedList
+
+| Operation       | Complexity |
+| --------------- | ---------- |
+| `get(index)`    | O(n)       |
+| `addFirst()`    | O(1)       |
+| `removeFirst()` | O(1)       |
 
 ---
 
 ## Core Methods
 
 ```java
-vector.add("Apple");          // add to end
-vector.add(0, "Banana");      // insert at index
+list.add("Apple");        // add element
+list.add(0, "Banana");    // insert at index
 
-vector.get(0);                // access element
-vector.set(1, "Orange");      // update element
+list.get(0);              // access element
+list.set(0, "Orange");    // update element
 
-vector.remove(0);             // remove by index
-vector.remove("Apple");       // remove by value
+list.remove(0);           // remove element
 
-vector.size();
-vector.isEmpty();
-vector.contains("Apple");
+list.size();              // number of elements
+list.isEmpty();           // check if empty
 ```
 
 ---
 
-## What Does “Synchronized” Mean?
+## Looping Through a List
 
-All major methods are **thread-safe**.
+Enhanced for-loop:
 
-This means:
+```java
+for (String item : list) {
+    System.out.println(item);
+}
+```
 
-* Multiple threads can safely modify the vector
-* Internal locking prevents data corruption
+Index-based loop:
 
-However, this makes operations slightly slower.
-
----
-
-## Common Mistakes
-
-* Using `Vector` in single-threaded applications (unnecessary overhead)
-* Confusing `Vector` with `ArrayList`
-* Forgetting it is a legacy class
-
----
-
-## Vector vs ArrayList
-
-| Feature      | Vector | ArrayList |
-| ------------ | ------ | --------- |
-| Thread-safe  | Yes    | No        |
-| Performance  | Slower | Faster    |
-| Modern usage | Rare   | Preferred |
-| Legacy       | Yes    | No        |
+```java
+for (int i = 0; i < list.size(); i++) {
+    System.out.println(list.get(i));
+}
+```
 
 ---
 
-## When To Use Vector
+## List vs Set
 
-Use it when:
+| Feature      | List            | Set                       |
+| ------------ | --------------- | ------------------------- |
+| Duplicates   | Allowed         | Not allowed               |
+| Ordering     | Maintains order | Depends on implementation |
+| Index access | Yes             | No                        |
 
-* You need built-in thread safety
-* Maintaining legacy systems
+---
 
-Avoid it when:
+## When To Use List
 
-* Writing modern applications
-* Thread safety is not required
+Use a List when you need:
+
+* Ordered data
+* Duplicate elements
+* Index-based access
+* Sequential processing
+
+Examples:
+
+* Storing names
+* Managing playlists
+* Processing ordered data
+* Maintaining history logs
+
+---
+
+## Example
+
+```java
+List<String> fruits = new ArrayList<>();
+
+fruits.add("Apple");
+fruits.add("Banana");
+fruits.add("Cherry");
+
+System.out.println(fruits.get(1));
+```
+
+Output:
+
+```
+Banana
+```
 
 ---
 
 ## Practice Ideas
 
-* Compare performance of `Vector` vs `ArrayList`
-* Convert legacy `Vector` code to `ArrayList`
-* Simulate multi-threaded access (advanced)
+* Reverse a list
+* Find the second largest number
+* Remove duplicates from a list
+* Merge two lists
 
 ---
 
 ## Summary
 
-Vector = **thread-safe dynamic array (legacy)**.
+List is an **ordered collection that allows duplicates and supports index-based access**.
 
-Modern best practice:
+Key characteristics:
 
-* Use `ArrayList` for most applications
-* Use concurrency utilities instead of relying on `Vector`.
+* Maintains insertion order
+* Allows duplicate elements
+* Provides indexing operations
 
 ```
 ```
