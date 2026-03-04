@@ -28,10 +28,11 @@ public class ArrayDequeProblems {
     Input: value = 5
     Output: [5]
     */
+
     public static void addToFront(ArrayDeque<Integer> deque, int value) {
 
         // TODO: Implement this method
-
+        deque.addFirst(value);
     }
 
     /*
@@ -42,10 +43,11 @@ public class ArrayDequeProblems {
     Input: value = 10
     Output: [5,10]
     */
+
     public static void addToBack(ArrayDeque<Integer> deque, int value) {
 
         // TODO: Implement this method
-
+        deque.addLast(value);
     }
 
     /*
@@ -59,6 +61,9 @@ public class ArrayDequeProblems {
     public static void removeFront(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
+        if (!deque.isEmpty()) {
+            deque.removeFirst();
+        }
 
     }
 
@@ -73,6 +78,9 @@ public class ArrayDequeProblems {
     public static void removeBack(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
+        if (!deque.isEmpty()) {
+            deque.removeLast();
+        }
 
     }
 
@@ -88,7 +96,8 @@ public class ArrayDequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+
+        return deque.peekFirst();
     }
 
     /*
@@ -103,6 +112,6 @@ public class ArrayDequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekLast();
     }
 }
