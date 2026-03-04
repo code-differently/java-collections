@@ -3,6 +3,7 @@ package Lists.ArrayLists;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ArrayListProblems {
     public static void main(String[] args) {
@@ -32,10 +33,13 @@ public class ArrayListProblems {
     Output: 6
     */
     public static int sum(List<Integer> nums) {
-
         // TODO: Implement this method
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
 
-        return 0;
+        return sum;
     }
 
     /*
@@ -49,8 +53,14 @@ public class ArrayListProblems {
     public static int countEvens(List<Integer> nums) {
 
         // TODO: Implement this method
+        int evens = 0;
+        for (int num : nums) {
+            if (num % 2 == 0) {
+                evens++;
+            }
+        }
 
-        return 0;
+        return evens;
     }
 
     /*
@@ -67,7 +77,9 @@ public class ArrayListProblems {
     public static boolean hasDuplicate(List<Integer> nums) {
 
         // TODO: Implement this method
-
+        if (nums.size() != Set.copyOf(nums).size()) {
+            return true;
+        }
         return false;
     }
 
@@ -82,8 +94,13 @@ public class ArrayListProblems {
     public static int findMax(List<Integer> nums) {
 
         // TODO: Implement this method
-
-        return 0;
+        int max = Integer.MIN_VALUE;
+        for (int num : nums) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
     }
 
     /*
@@ -99,7 +116,6 @@ public class ArrayListProblems {
     public static List<Integer> reverse(List<Integer> nums) {
 
         // TODO: Implement this method
-
-        return null;
+        return nums.reversed();
     }
 }
