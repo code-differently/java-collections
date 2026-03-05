@@ -21,16 +21,17 @@ Classes implement those behaviors.
 
 ```
 
-Iterable
-↓
-Collection
-↓
-List      Set       Queue
-↓        ↓         ↓
-ArrayList HashSet   PriorityQueue
-LinkedList LinkedHashSet
-Vector    TreeSet
-Stack
+
+    Iterable
+    ↓
+    Collection
+    ↓
+    List      Set       Queue
+    ↓        ↓         ↓
+    ArrayList HashSet   PriorityQueue
+    LinkedList LinkedHashSet
+    Vector    TreeSet
+    Stack
 
 ```
 
@@ -38,8 +39,8 @@ Important note:
 
 ```
 
-Map
-↓
+    Map
+    ↓
 HashMap
 LinkedHashMap
 TreeMap
