@@ -103,7 +103,6 @@ public class CollectionBasics {
         return false;
     }
 
-
     /*
      PROBLEM 5
      Count how many times a target value appears
@@ -116,7 +115,9 @@ public class CollectionBasics {
         // Loop through numbers
         // If number equals target, increase count
         for (Integer number: numbers){
-            count += 1;
+            if(number == target){
+                count++;
+            }
         }
         return count;
     }
