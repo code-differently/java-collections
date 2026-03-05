@@ -73,10 +73,8 @@ public class IterableWarmups {
         // Loop through numbers
         // Update max if current number is larger
         for(Integer number : numbers){
-            if (number > max){
-                number = max;
+            max = Math.max(max,number);
             }
-        }
 
         return max;
     }

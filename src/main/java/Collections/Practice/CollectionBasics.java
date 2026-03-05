@@ -33,6 +33,9 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // Add each number to total
+        for(Integer number : numbers){
+            total+= number;
+        }
 
         return total;
     }
@@ -49,6 +52,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // If the number is even, increase count
+        for(Integer number : numbers){
+            if(number % 2 == 0){
+                count ++;
+            }
+        }
 
         return count;
     }
@@ -65,6 +73,9 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
+        for (Integer number : numbers){
+            max = Math.max(max,number);
+        }
 
         return max;
     }
@@ -80,10 +91,22 @@ public class CollectionBasics {
         // TODO:
         // Hint:
         // Compare the size of a collection with the size of a Set
+        for (Integer a : numbers) {
+            int count = 0;
+
+            for (Integer b : numbers) {
+                if (a.equals(b)) {
+                    count++;
+                }
+
+                if (count > 1) {
+                    return true;
+                }
+            }
+        }
 
         return false;
     }
-
 
     /*
      PROBLEM 5
@@ -92,12 +115,18 @@ public class CollectionBasics {
     public static int countOccurrences(Collection<Integer> numbers, int target) {
 
         int count = 0;
-
+        for (Integer a : numbers) {
+                if (a.equals(target)) {
+                    count++;
+            }
+            return count;
+        }
         // TODO:
         // Loop through numbers
         // If number equals target, increase count
 
         return count;
+
     }
 
 
