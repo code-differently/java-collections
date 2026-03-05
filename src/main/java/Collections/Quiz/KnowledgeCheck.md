@@ -14,7 +14,7 @@ Which of the following is **true** about the `Collection` interface?
 
 A. `Collection` is a class  
 B. `Collection` extends `List`  
-C. `Collection` is the root interface for most collection types  
+**C. `Collection` is the root interface for most collection types**  
 D. `Collection` only stores key-value pairs  
 
 ---
@@ -34,7 +34,7 @@ System.out.println(numbers.size());
 
 A. 0
 B. 1
-C. 3
+**C. 3**
 D. 30
 
 ---
@@ -45,7 +45,7 @@ Which method is used to **check if an element exists** inside a collection?
 
 A. `search()`
 B. `exists()`
-C. `contains()`
+**C. `contains()`**
 D. `check()`
 
 ---
@@ -66,7 +66,7 @@ System.out.println(names);
 ```
 
 A. `[Alex, Jordan]`
-B. `[Jordan]`
+**B. `[Jordan]`**
 C. `[Alex]`
 D. `[]`
 
@@ -77,7 +77,7 @@ D. `[]`
 Which method adds **all elements from another collection** into an existing collection?
 
 A. `add()`
-B. `addAll()`
+**B. `addAll()`**
 C. `insertAll()`
 D. `merge()`
 
@@ -93,7 +93,7 @@ Collection<Integer> numbers = new ArrayList<>();
 System.out.println(numbers.isEmpty());
 ```
 
-A. `true`
+**A. `true`**
 B. `false`
 C. `0`
 D. Compilation error
@@ -104,7 +104,7 @@ D. Compilation error
 
 Which method removes **all elements** from a collection?
 
-A. `removeAll()`
+**A. `removeAll()`**
 B. `deleteAll()`
 C. `clear()`
 D. `reset()`
@@ -127,7 +127,7 @@ for(Integer n : nums) {
 }
 ```
 
-A. `5 10 15`
+**A. `5 10 15`**
 B. `15 10 5`
 C. `0 1 2`
 D. Compilation error
@@ -140,7 +140,7 @@ Which of the following **cannot be guaranteed** when using the `Collection` inte
 
 A. Elements can be added
 B. Elements can be removed
-C. Indexed access using `.get(index)`
+**C. Indexed access using `.get(index)`**
 D. Elements can be iterated using a loop
 
 ---
@@ -155,7 +155,7 @@ Collection<String> fruits = new ArrayList<>();
 
 A. It automatically sorts the collection
 B. It prevents duplicates
-C. It allows flexibility to change implementations later
+**C. It allows flexibility to change implementations later**
 D. It forces the collection to be synchronized
 
 ```

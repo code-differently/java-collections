@@ -38,6 +38,8 @@ public class IteratorDemo {
         iterator = numbers.iterator();
 
         // TODO:
+        // Use iterator to remove odd numbers
+        // Remember: use iterator.remove()
 
         while (iterator.hasNext()) {
             int num = iterator.next();
@@ -48,8 +50,7 @@ public class IteratorDemo {
             }
         }
 
-        // Use iterator to remove odd numbers
-        // Remember: use iterator.remove()
+
 
 
         System.out.println("\nUpdated list:");

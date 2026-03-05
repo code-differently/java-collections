@@ -132,31 +132,45 @@ public class CommonMethodsDemo {
          10, 20, 30, 40, 50
         */
 
+        Collection<Integer> numbers = new ArrayList<>();
+
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
+
 
         /*
          TODO 2:
          Print the size of the numbers collection
         */
-
+        System.out.println(numbers.size());
 
         /*
          TODO 3:
          Check if the collection contains 30
         */
-
+        if(numbers.contains(30)){
+            System.out.println("True");
+        }else{
+            System.out.println("false");
+        }
 
         /*
          TODO 4:
          Remove the number 20
         */
-
+        numbers.remove(20);
 
         /*
          TODO 5:
          Loop through the numbers collection
          and print each value
         */
-
+        for (Integer number : numbers) {
+            System.out.println(number);
+        }
 
         /*
          REFLECTION QUESTIONS:
@@ -165,6 +179,10 @@ public class CommonMethodsDemo {
          2. What methods are available because of the Collection interface?
          3. What methods are NOT available when using Collection instead of List?
          */
+
+        //1. because it is a parent of list, set and queue so we can use it for all objects that are a collection
+        //2 .add(), .remove(), .size(), .contains(), .isEmpty(), .clear(), .addAll(), .removeAll(), .retainAll()
+        //3. indexing, i.e. .get()
     }
 
 }
