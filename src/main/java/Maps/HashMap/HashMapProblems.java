@@ -22,6 +22,8 @@ public class HashMapProblems {
 
         removeItem(inventory, "Oranges");
         System.out.println("After Removal: " + inventory);
+
+
     }
 
     /*
@@ -30,11 +32,12 @@ public class HashMapProblems {
 
     Example
     Input: ("Apples", 10)
-    Output: {"Apples"=10}
+    Output: {"Apples" = 10}
     */
     public static void addItem(Map<String, Integer> map, String item, int quantity) {
 
         // TODO: Implement this method
+        map.put(item, quantity);
 
     }
 
@@ -50,7 +53,8 @@ public class HashMapProblems {
 
         // TODO: Implement this method
 
-        return 0;
+
+        return map.get(item);
     }
 
     /*
@@ -64,6 +68,7 @@ public class HashMapProblems {
     public static void updateQuantity(Map<String, Integer> map, String item, int newQuantity) {
 
         // TODO: Implement this method
+        map.put(item, newQuantity);
 
     }
 
@@ -78,6 +83,7 @@ public class HashMapProblems {
     public static void removeItem(Map<String, Integer> map, String item) {
 
         // TODO: Implement this method
+        map.remove(item);
 
     }
 
@@ -92,7 +98,19 @@ public class HashMapProblems {
     public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
         // TODO: Implement this method
+        Map<Integer, Integer> frequent = new HashMap<>();
 
-        return null;
+
+
+        for(Integer num : numbers){
+            frequent.put(num,frequent.getOrDefault(num, 0)+1);
+        }
+
+
+
+
+
+
+        return frequent;
     }
 }

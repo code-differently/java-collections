@@ -2,6 +2,8 @@ package Collections.Practice;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -30,13 +32,12 @@ public class CollectionBasics {
 
         int total = 0;
 
-        // TODO:
-        // Loop through the collection
-        // Add each number to total
+        for (Integer num : numbers) {
+            total += num;
+        }
 
         return total;
     }
-
 
     /*
      PROBLEM 2
@@ -49,6 +50,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // If the number is even, increase count
+        for (Integer num : numbers){
+            if(num % 2==0){
+                count++;
+            }
+        }
 
         return count;
     }
@@ -66,6 +72,10 @@ public class CollectionBasics {
         // Loop through numbers
         // Update max if current number is larger
 
+        for (Integer num : numbers){
+            max = Math.max(max, num);
+        }
+
         return max;
     }
 
@@ -81,7 +91,11 @@ public class CollectionBasics {
         // Hint:
         // Compare the size of a collection with the size of a Set
 
-        return false;
+        Set<Integer> set = new HashSet<>(numbers);
+
+
+
+        return set.size() == numbers.size();
     }
 
 
@@ -96,6 +110,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // If number equals target, increase count
+        for(int i=0; i < numbers.size(); i++){
+            if(numbers.contains(target)){
+                count++;
+            }
+        }
 
         return count;
     }

@@ -1,5 +1,7 @@
 package Maps.TreeMap;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class TreeMapProblems {
@@ -31,6 +33,7 @@ public class TreeMapProblems {
     public static void addPlayer(TreeMap<Integer, String> map, int rank, String name) {
 
         // TODO: Implement this method
+        map.put(rank, name);
 
     }
 
@@ -46,7 +49,8 @@ public class TreeMapProblems {
 
         // TODO: Implement this method
 
-        return null;
+
+        return map.get(1);
     }
 
     /*
@@ -61,7 +65,7 @@ public class TreeMapProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return map.get(map.size());
     }
 
     /*
@@ -75,6 +79,7 @@ public class TreeMapProblems {
     public static void removePlayer(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
+        map.remove(rank);
 
     }
 
@@ -86,10 +91,12 @@ public class TreeMapProblems {
     Input: rank=2, map={1="A",2="B",3="C"}
     Output: 3
     */
+
     public static Integer getNextRank(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
 
-        return null;
+
+        return map.higherKey(rank);
     }
 }
