@@ -1,5 +1,7 @@
 package Maps.TreeMap;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class TreeMapProblems {
@@ -89,10 +91,12 @@ public class TreeMapProblems {
     Input: rank=2, map={1="A",2="B",3="C"}
     Output: 3
     */
+
     public static Integer getNextRank(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
 
-        return null;
+
+        return map.higherKey(rank);
     }
 }

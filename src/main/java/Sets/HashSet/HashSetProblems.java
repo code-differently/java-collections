@@ -1,5 +1,6 @@
 package Sets.HashSet;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -21,6 +22,7 @@ public class HashSetProblems {
     public static void addElement(Set<String> set, String value) {
 
         // TODO: Implement this method
+        set.add(value);
 
     }
 
@@ -36,7 +38,7 @@ public class HashSetProblems {
 
         // TODO: Implement this method
 
-        return false;
+        return set.contains(value);
     }
 
     /*
@@ -50,6 +52,7 @@ public class HashSetProblems {
     public static void removeValue(Set<String> set, String value) {
 
         // TODO: Implement this method
+        set.remove(value);
 
     }
 
@@ -65,7 +68,8 @@ public class HashSetProblems {
 
         // TODO: Implement this method
 
-        return 0;
+
+        return set.size();
     }
 
     /*
@@ -80,6 +84,6 @@ public class HashSetProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return new HashSet<>(numbers);
     }
 }
