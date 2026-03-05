@@ -35,11 +35,9 @@ public class ArrayListProblems {
     public static int sum(List<Integer> nums) {
 
         // TODO: Implement this method
-
         int sum = 0;
         for(int num : nums) {
             sum += num;
-
         }
         return sum;
     }
@@ -55,7 +53,6 @@ public class ArrayListProblems {
     public static int countEvens(List<Integer> nums) {
 
         // TODO: Implement this method
-
         int count = 0;
         for(int num : nums) {
             if(num % 2 == 0) {
@@ -79,7 +76,6 @@ public class ArrayListProblems {
     public static boolean hasDuplicate(List<Integer> nums) {
 
         // TODO: Implement this method
-
         HashSet numSet = new HashSet();
         for(int num : nums) {
             if(!numSet.add(num)) {
@@ -100,7 +96,6 @@ public class ArrayListProblems {
     public static int findMax(List<Integer> nums) {
 
         // TODO: Implement this method
-
         int max = Integer.MIN_VALUE;
 
         for(int num : nums) {
