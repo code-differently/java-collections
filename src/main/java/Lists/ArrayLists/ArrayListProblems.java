@@ -34,8 +34,12 @@ public class ArrayListProblems {
     public static int sum(List<Integer> nums) {
 
         // TODO: Implement this method
+        int sum = 0;
+        for (int n : nums) {
+            sum += n;
+        }
+        return sum;
 
-        return 0;
     }
 
     /*
@@ -49,8 +53,13 @@ public class ArrayListProblems {
     public static int countEvens(List<Integer> nums) {
 
         // TODO: Implement this method
+        int count = 0;
+        for (int n : nums) {
+            if (n % 2 ==0) count++;
 
-        return 0;
+        }
+
+        return count;
     }
 
     /*
@@ -67,6 +76,11 @@ public class ArrayListProblems {
     public static boolean hasDuplicate(List<Integer> nums) {
 
         // TODO: Implement this method
+        List<Integer> Dupes = new ArrayList<>();
+        for (int n : nums){
+            if (Dupes.contains(n)) return true;
+            Dupes.add(n);
+        }
 
         return false;
     }
@@ -82,8 +96,13 @@ public class ArrayListProblems {
     public static int findMax(List<Integer> nums) {
 
         // TODO: Implement this method
-
-        return 0;
+        List<Integer> Largest = new ArrayList<>();
+        if (nums.isEmpty()) throw new IllegalArgumentException("List is Empty");
+        int max = nums.get(0);
+        for (int n : nums){
+            if (n > max) max = n;
+        }
+        return max;
     }
 
     /*
@@ -99,7 +118,11 @@ public class ArrayListProblems {
     public static List<Integer> reverse(List<Integer> nums) {
 
         // TODO: Implement this method
+        List<Integer> Reversed = new ArrayList<>();
+        for (int i = nums.size() - 1; i >= 0; i--){
+            Reversed.add(nums.get(i));
+        }
 
-        return null;
+        return Reversed;
     }
 }
