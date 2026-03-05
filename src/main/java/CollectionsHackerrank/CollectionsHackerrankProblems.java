@@ -1,8 +1,6 @@
 package CollectionsHackerrank;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class CollectionsHackerrankProblems {
     public class CollectionsHackerrankPractice {
@@ -11,6 +9,17 @@ public class CollectionsHackerrankProblems {
 
             // You can test your methods here
 
+            List<Integer> numbers = new ArrayList<>();
+
+            numbers.add(4);
+            numbers.add(8);
+            numbers.add(15);
+            numbers.add(16);
+            numbers.add(23);
+            numbers.add(42);
+            numbers.add(4);
+
+            System.out.println("Remove Duplicates: " + removeDuplicates(numbers));
         }
 
         /*
@@ -24,8 +33,7 @@ public class CollectionsHackerrankProblems {
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
             // TODO: Implement this method
-
-            return null;
+            return (List<Integer>) new HashSet<>(numbers);
         }
 
         /*
@@ -39,6 +47,7 @@ public class CollectionsHackerrankProblems {
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
             // TODO: Implement this method
+
 
             return null;
         }
@@ -54,6 +63,18 @@ public class CollectionsHackerrankProblems {
         public static Integer firstUnique(List<Integer> numbers) {
 
             // TODO: Implement this method
+
+            int onlyOnceNum = numbers.get(0);
+            boolean firstTime = false;
+
+            HashSet<Integer> numSet = new HashSet<Integer>();
+            List<Integer> resultList = new ArrayList<>();
+
+            for(int i = 0; i < numbers.size(); i++) {
+                numSet.add(numbers.get(i));
+            }
+
+
 
             return null;
         }
@@ -71,6 +92,8 @@ public class CollectionsHackerrankProblems {
         public static boolean twoSum(List<Integer> numbers, int target) {
 
             // TODO: Implement this method
+
+
 
             return false;
         }
@@ -134,6 +157,7 @@ public class CollectionsHackerrankProblems {
         public static Integer mostFrequent(List<Integer> numbers) {
 
             // TODO: Implement this method
+
 
             return null;
         }

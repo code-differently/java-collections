@@ -1,7 +1,6 @@
 package Collections.Practice;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -33,7 +32,9 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // Add each number to total
-
+        for(int num: numbers) {
+            total += num;
+        }
         return total;
     }
 
@@ -50,6 +51,11 @@ public class CollectionBasics {
         // Loop through the collection
         // If the number is even, increase count
 
+        for(int num: numbers) {
+            if(num % 2 == 0) {
+                count++;
+            }
+        }
         return count;
     }
 
@@ -66,6 +72,11 @@ public class CollectionBasics {
         // Loop through numbers
         // Update max if current number is larger
 
+        for(int num: numbers) {
+            if(num > max) {
+                max = num;
+            }
+        }
         return max;
     }
 
@@ -80,6 +91,14 @@ public class CollectionBasics {
         // TODO:
         // Hint:
         // Compare the size of a collection with the size of a Set
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int num: numbers) {
+            //if false, then return true
+            if(!set.add(num)) {
+               return true;
+            }
+        }
 
         return false;
     }
@@ -97,6 +116,9 @@ public class CollectionBasics {
         // Loop through numbers
         // If number equals target, increase count
 
+        for(int num : numbers) {
+            if(num == target) count++;
+        }
         return count;
     }
 
@@ -114,6 +136,14 @@ public class CollectionBasics {
         // Loop through numbers
         // Add numbers greater than 20 to result
 
+        Iterator<Integer> iterator = numbers.iterator();
+
+        while (iterator.hasNext()) {
+            int element = iterator.next();
+            if (element > 20) {
+                result.add(element);
+            }
+        }
         return result;
     }
 }
