@@ -2,6 +2,8 @@ package Lists.ArrayLists;
 
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 public class ArrayListProblems {
@@ -34,6 +36,10 @@ public class ArrayListProblems {
     public static int sum(List<Integer> nums) {
 
         // TODO: Implement this method
+        int sum = 0;
+        for (int num : nums){
+            sum += num;
+        }
 
         return 0;
     }
@@ -49,6 +55,14 @@ public class ArrayListProblems {
     public static int countEvens(List<Integer> nums) {
 
         // TODO: Implement this method
+
+        int evenCount = 0;
+
+        for (int num : nums){
+            if (num % 2 == 0){
+                evenCount++;
+            }
+        }
 
         return 0;
     }
@@ -68,7 +82,13 @@ public class ArrayListProblems {
 
         // TODO: Implement this method
 
-        return false;
+        Collection<Integer> collection2 = new HashSet<Integer> (nums);
+
+        if (collection2.size() == nums.size()){
+            return false;
+        }
+
+        return true;
     }
 
     /*
@@ -82,8 +102,15 @@ public class ArrayListProblems {
     public static int findMax(List<Integer> nums) {
 
         // TODO: Implement this method
+        int max = Integer.MIN_VALUE;
 
-        return 0;
+        for (int num : nums){
+            if (num > max){
+                max = num;
+            }
+        }
+
+        return max;
     }
 
     /*
@@ -99,7 +126,11 @@ public class ArrayListProblems {
     public static List<Integer> reverse(List<Integer> nums) {
 
         // TODO: Implement this method
+        List<Integer> list = new ArrayList<>();
+        for (int i = nums.size() - 1; i >= 0; i--){
+            list.add(nums.get(i));
+        }
 
-        return null;
+        return list;
     }
 }
