@@ -24,6 +24,12 @@ public class IteratorDemo {
         System.out.println("\nIterating using Iterator:");
 
         // TODO:
+        //hasNext() → Is there another item?
+        //next()    → Move to it and give it to me
+        while (iterator.hasNext()) {
+            Integer num = iterator.next();
+            System.out.println(num);
+        }
         // Use iterator.hasNext() and iterator.next()
         // Print each number
 
@@ -33,6 +39,12 @@ public class IteratorDemo {
         iterator = numbers.iterator();
 
         // TODO:
+        while (iterator.hasNext()) {
+            Integer num = iterator.next();//Stored the next int in list in "num"
+            if (num % 2 !=0){ //If numbers divided by 2 not equal to 0
+                iterator.remove();//Then remove it
+            }
+        }
         // Use iterator to remove odd numbers
         // Remember: use iterator.remove()
 
