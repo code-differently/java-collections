@@ -29,6 +29,9 @@ public class IterableWarmups {
         int total = 0;
 
         // TODO:
+        for (Integer sum : numbers) {
+            total += sum;
+        }
         // Use a for-each loop to calculate the sum
 
         return total;
@@ -44,6 +47,11 @@ public class IterableWarmups {
         int count = 0;
 
         // TODO:
+        for (Integer num : numbers) {
+            if (num %2 == 0) {
+                count++;
+            }
+        }
         // Loop through numbers
         // Increment count if number is even
 
@@ -60,6 +68,10 @@ public class IterableWarmups {
         int max = Integer.MIN_VALUE;
 
         // TODO:
+        for (Integer num : numbers){
+            if(num > max)
+                max = num;
+        }
         // Loop through numbers
         // Update max if current number is larger
 
@@ -76,6 +88,12 @@ public class IterableWarmups {
         int count = 0;
 
         // TODO:
+        for (String word : words){
+            if (words.equals(target)) {
+                count++;
+            }
+
+        }
         // Loop through words
         // Compare each word to target
 
