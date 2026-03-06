@@ -9,10 +9,21 @@ public class DequeProblems {
         // You can test your methods here
         Deque<Integer> deque = new ArrayDeque<>();
         addFront(deque, 5);
+        System.out.println(deque);
         addBack(deque, 10);
+        System.out.println(deque);
         removeFront(deque);
+        System.out.println(deque);
         removeBack(deque);
-        peekFront(deque);
+        System.out.println(deque);
+        addFront(deque, 5);
+        addFront(deque, 19);
+        addFront(deque, 52);
+
+        System.out.println(peekFront(deque));
+        System.out.println(peekBack(deque));
+
+
 
 
     }

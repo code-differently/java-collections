@@ -18,6 +18,8 @@ public class TreeMapProblems {
 
         removePlayer(rankings, 2);
         System.out.println("After removal: " + rankings);
+
+        System.out.println("Get next rank" + getNextRank(rankings, 1));
     }
 
     /*

@@ -1,5 +1,6 @@
 package Maps.LinkedHashMap;
 
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,11 @@ public class LinkedHashMapProblems {
 
         removeStudent(studentGrades, "Morgan");
         System.out.println("After Removal: " + studentGrades);
+
+        System.out.println("First inserted: " + getFirstInserted(studentGrades));
+
+        System.out.println("Word frequency: " + wordFrequency(Arrays.asList("Taylor", "Morgan", "Taylor", "Taylor", "Jeef", "bob")));
+
     }
 
     /*

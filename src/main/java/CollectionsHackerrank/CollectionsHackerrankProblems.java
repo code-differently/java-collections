@@ -8,8 +8,8 @@ public class CollectionsHackerrankProblems {
         public static void main(String[] args) {
 
             // You can test your methods here
-            removeDuplicates(Arrays.asList(1,2,2,3,4,4,5));
-            countFrequency(Arrays.asList(1,2,2,3,4,4,5));
+            System.out.println(removeDuplicates(Arrays.asList(1,2,2,3,4,4,5)));
+            System.out.println(countFrequency(Arrays.asList(1,2,2,3,4,4,5)));
 
         }
 
@@ -24,10 +24,8 @@ public class CollectionsHackerrankProblems {
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
             // TODO: Implement this method
-            Set<Integer> set = new HashSet<>(numbers);
-            List<Integer> result = new ArrayList<>(set);
+            return new ArrayList<>(new LinkedHashSet<>(numbers));
 
-            return result;
         }
 
         /*
@@ -64,24 +62,17 @@ public class CollectionsHackerrankProblems {
         */
         public static Integer firstUnique(List<Integer> numbers) {
 
-            // TODO: Implement this method
             Map<Integer, Integer> map = new HashMap<>();
 
             for (Integer number : numbers) {
-                if (map.containsKey(number)) {
-                    map.put(number, map.get(number) + 1);
-                }else{
-                    map.put(number, 1);
-                }
+                map.put(number, map.getOrDefault(number, 0) + 1);
             }
 
-            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-                if (entry.getValue() == 1) {
-                    return entry.getKey();
+            for (Integer number : numbers) {
+                if (map.get(number) == 1) {
+                    return number;
                 }
             }
-
-
 
             return null;
         }
@@ -100,7 +91,7 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
             for (int i = 0; i < numbers.size(); i++) {
-                for (int j = i+1; j < numbers.size()-1; j++) {
+                for (int j = i+1; j < numbers.size(); j++) {
                     if(numbers.get(i) + numbers.get(j) == target){
                         return true;
                     }
@@ -140,11 +131,17 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            Queue<Integer> result = new ArrayDeque<>();
+            Stack<Integer> stack = new Stack<>();
 
-            for(int i = 0; i < queue.size(); i++){
-                result.add(queue.poll());
+            while (!queue.isEmpty()) {
+                stack.push(queue.poll());
             }
+
+            Queue<Integer> result = new ArrayDeque<>();
+            while (!stack.isEmpty()) {
+                result.add(stack.pop());
+            }
+
             return result;
         }
 
@@ -163,22 +160,23 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            Map<Character, Integer> map = new HashMap<>();
+            int balance = 0;
 
-            for(int i = 0; i < expression.length(); i++){
-                if(map.containsKey(expression.charAt(i))){
-                    map.put(expression.charAt(i), map.get(expression.charAt(i)) + 1);
-                }else{
-                    map.put(expression.charAt(i), 1);
+            for (int i = 0; i < expression.length(); i++) {
+                char c = expression.charAt(i);
+
+                if (c == '(') {
+                    balance++;
+                } else if (c == ')') {
+                    balance--;
+                }
+
+                if (balance < 0) {
+                    return false;
                 }
             }
 
-            if (map.get('(') == map.get(')')) {
-                return true;
-            }
-
-
-            return false;
+            return balance == 0;
         }
 
         /*
@@ -192,26 +190,22 @@ public class CollectionsHackerrankProblems {
         public static Integer mostFrequent(List<Integer> numbers) {
 
             // TODO: Implement this method
-            int max = numbers.getFirst();
-            int maxKey  = numbers.getFirst();
             Map<Integer, Integer> map = new HashMap<>();
 
             for (Integer number : numbers) {
-                if (map.containsKey(number)) {
-                    map.put(number, map.get(number) + 1);
-                }else{
-                    map.put(number, 1);
-                }
+                map.put(number, map.getOrDefault(number, 0) + 1);
             }
+
+            int maxFreq = 0;
+            Integer maxKey = null;
 
             for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-                if (entry.getValue() > max) {
-                    max = entry.getValue();
+                if (entry.getValue() > maxFreq) {
+                    maxFreq = entry.getValue();
                     maxKey = entry.getKey();
                 }
-
-
             }
+
             return maxKey;
 
 
@@ -262,8 +256,8 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            if (numbers.size() < k){
-                return numbers.getFirst();
+            if (numbers == null || numbers.isEmpty() || k <= 0 || k > numbers.size()) {
+                throw new IllegalArgumentException("Invalid input");
             }
             int max = Integer.MIN_VALUE;
             for (int i = 0; i < numbers.size()-k+1; i++) {

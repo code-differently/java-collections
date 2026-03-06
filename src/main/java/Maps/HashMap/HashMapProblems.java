@@ -1,5 +1,6 @@
 package Maps.HashMap;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,8 @@ public class HashMapProblems {
 
         removeItem(inventory, "Oranges");
         System.out.println("After Removal: " + inventory);
+        System.out.println("Frequency: " + countFrequency(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 9)));
+
     }
 
     /*

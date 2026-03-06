@@ -17,11 +17,13 @@ public class HashSetProblems {
 
         addElement(set, "apple");
 
-        containsValue(set, "apple");
-        containsValue(set, "banana");
+        System.out.println(set);
+        System.out.println(containsValue(set, "apple"));
+        System.out.println(containsValue(set, "banana"));
         removeValue(set, "apple");
-        getUniqueCount(set);
-        getUniqueValues(nums);
+        System.out.println(set);
+        System.out.println(getUniqueCount(set));
+        System.out.println(getUniqueValues(nums));
 
 
 

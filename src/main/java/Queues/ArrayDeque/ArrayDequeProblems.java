@@ -18,6 +18,10 @@ public class ArrayDequeProblems {
 
         removeBack(numbers);
         System.out.println("After removing back: " + numbers);
+
+        System.out.println("Deque front: " + peekFront(numbers));
+        System.out.println("Deque back: " + peekBack(numbers));
+
     }
 
     /*
@@ -31,6 +35,7 @@ public class ArrayDequeProblems {
     public static void addToFront(ArrayDeque<Integer> deque, int value) {
 
         // TODO: Implement this method
+        deque.addFirst(value);
 
     }
 
@@ -45,7 +50,7 @@ public class ArrayDequeProblems {
     public static void addToBack(ArrayDeque<Integer> deque, int value) {
 
         // TODO: Implement this method
-
+        deque.addLast(value);
     }
 
     /*
@@ -59,7 +64,7 @@ public class ArrayDequeProblems {
     public static void removeFront(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
-
+        deque.removeFirst();
     }
 
     /*
@@ -73,7 +78,7 @@ public class ArrayDequeProblems {
     public static void removeBack(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
-
+        deque.removeLast();
     }
 
     /*
@@ -88,7 +93,7 @@ public class ArrayDequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekFirst();
     }
 
     /*
@@ -103,6 +108,6 @@ public class ArrayDequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekLast();
     }
 }
