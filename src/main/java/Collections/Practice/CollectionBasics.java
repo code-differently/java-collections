@@ -33,6 +33,9 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // Add each number to total
+        for (Integer num : numbers) {
+            total += num;
+        }
 
         return total;
     }
