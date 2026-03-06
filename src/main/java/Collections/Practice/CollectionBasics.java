@@ -51,7 +51,12 @@ public class CollectionBasics {
 
         // TODO:
         // Loop through the collection
+        for (Integer num : numbers) {
         // If the number is even, increase count
+        if (num % 2 == 0) {
+            count++;
+        }
+    }
 
         return count;
     }
