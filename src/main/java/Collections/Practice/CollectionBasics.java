@@ -2,6 +2,7 @@ package Collections.Practice;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -21,7 +22,6 @@ public class CollectionBasics {
         System.out.println("Contains duplicates? " + hasDuplicates(numbers));
     }
 
-
     /*
      PROBLEM 1
      Return the sum of all numbers in the collection
@@ -30,13 +30,12 @@ public class CollectionBasics {
 
         int total = 0;
 
-        // TODO:
-        // Loop through the collection
-        // Add each number to total
+        for (Integer num : numbers) {
+            total += num;
+        }
 
         return total;
     }
-
 
     /*
      PROBLEM 2
@@ -46,13 +45,14 @@ public class CollectionBasics {
 
         int count = 0;
 
-        // TODO:
-        // Loop through the collection
-        // If the number is even, increase count
+        for (Integer num : numbers) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }
 
         return count;
     }
-
 
     /*
      PROBLEM 3
@@ -62,13 +62,14 @@ public class CollectionBasics {
 
         int max = Integer.MIN_VALUE;
 
-        // TODO:
-        // Loop through numbers
-        // Update max if current number is larger
+        for (Integer num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
 
         return max;
     }
-
 
     /*
      PROBLEM 4
@@ -77,13 +78,9 @@ public class CollectionBasics {
     */
     public static boolean hasDuplicates(Collection<Integer> numbers) {
 
-        // TODO:
-        // Hint:
-        // Compare the size of a collection with the size of a Set
+        return numbers.size() != new HashSet<>(numbers).size();
 
-        return false;
     }
-
 
     /*
      PROBLEM 5
@@ -93,13 +90,14 @@ public class CollectionBasics {
 
         int count = 0;
 
-        // TODO:
-        // Loop through numbers
-        // If number equals target, increase count
+        for (Integer num : numbers) {
+            if (num == target) {
+                count++;
+            }
+        }
 
         return count;
     }
-
 
     /*
      BONUS PROBLEM
@@ -110,9 +108,11 @@ public class CollectionBasics {
 
         Collection<Integer> result = new ArrayList<>();
 
-        // TODO:
-        // Loop through numbers
-        // Add numbers greater than 20 to result
+        for (Integer num : numbers) {
+            if (num > 20) {
+                result.add(num);
+            }
+        }
 
         return result;
     }
