@@ -1,8 +1,6 @@
 package CollectionsHackerrank;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class CollectionsHackerrankProblems {
     public class CollectionsHackerrankPractice {
@@ -23,9 +21,15 @@ public class CollectionsHackerrankProblems {
         */
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
+            if (numbers == null || numbers.isEmpty()) {
+                return new ArrayList<>();
+            }
+
+            LinkedHashSet<Integer> uniqueNumbers = new LinkedHashSet<>(numbers);
+
             // TODO: Implement this method
 
-            return null;
+            return new ArrayList<>(uniqueNumbers);
         }
 
         /*
@@ -37,10 +41,18 @@ public class CollectionsHackerrankProblems {
         Output: {1=1, 2=2, 3=3}
         */
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
+            if (numbers == null || numbers.isEmpty()) {
+                return new HashMap<>();
+            }
 
             // TODO: Implement this method
 
-            return null;
+            Map<Integer, Integer> frequencyMap = new HashMap<>();
+            for (int number : numbers) {
+                frequencyMap.put(number, frequencyMap.getOrDefault(number, 0) + 1);
+            }
+
+            return frequencyMap;
         }
 
         /*
@@ -52,6 +64,19 @@ public class CollectionsHackerrankProblems {
         Output: 5
         */
         public static Integer firstUnique(List<Integer> numbers) {
+
+            if (numbers == null || numbers.isEmpty()) {
+                return null;
+            }
+            Map<Integer, Integer> frequencyMap = new HashMap<>();
+            for (int number : numbers) {
+                frequencyMap.put(number, frequencyMap.getOrDefault(number, 0) + 1);
+            }
+            for (int number : numbers) {
+                if (frequencyMap.get(number) == 1) {
+                    return number;
+                }
+            }
 
             // TODO: Implement this method
 
@@ -69,11 +94,26 @@ public class CollectionsHackerrankProblems {
         Output: true
         */
         public static boolean twoSum(List<Integer> numbers, int target) {
+            if (numbers == null || numbers.isEmpty()) {
 
-            // TODO: Implement this method
+                // TODO: Implement this method
 
+                return false;
+            }
+            HashSet<Integer> seenNumbers = new HashSet<>();
+            for (int number : numbers) {
+                int complement = target - number;
+
+                if (seenNumbers.contains(complement)) {
+                    return true;
+                }
+
+                seenNumbers.add(number);
+            }
             return false;
         }
+    }
+
 
         /*
         Problem 5
@@ -84,10 +124,14 @@ public class CollectionsHackerrankProblems {
         Output: 3
         */
         public static int countUniqueWords(List<String> words) {
+            if (words == null || words.isEmpty()) {
+                return 0;
+            }
+            HashSet<String> uniqueWords = new HashSet<>(words);
 
             // TODO: Implement this method
 
-            return 0;
+            return uniqueWords.size();
         }
 
         /*
@@ -99,10 +143,22 @@ public class CollectionsHackerrankProblems {
         Output: [4,3,2,1]
         */
         public static Queue<Integer> reverseQueue(Queue<Integer> queue) {
+            if (queue == null || queue.isEmpty()) {
+                return queue;
+            }
+            Stack<Integer> stack = new Stack<>();
+            while (!queue.isEmpty()) {
+
+                stack.push(queue.poll());
+            }
+
+            while (!stack.isEmpty()) {
+                queue.offer(stack.pop());
+            }
 
             // TODO: Implement this method
 
-            return null;
+            return queue;
         }
 
         /*
@@ -117,10 +173,30 @@ public class CollectionsHackerrankProblems {
         Output: false
         */
         public static boolean isBalanced(String expression) {
+            if (expression == null || expression.isEmpty()) {
+                return true;
+            }
+
+            Stack<Character> stack = new Stack<>();
+            for (char c : expression.toCharArray()) {
+                if (c == '(' || c == '{' || c == ']') {
+                        stack.push(c);
+                    } else if (c == ')' || c == '}' || c == ']') {
+                        if (stack.isEmpty()) {
+                            return false;
+
+                    }
+                        char top = stack.pop();
+                        if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' &&
+                                top != ']')) {
+                            return false;
+                        }
+                }
+            }
 
             // TODO: Implement this method
 
-            return false;
+            return stack.isEmpty();
         }
 
         /*
@@ -133,9 +209,32 @@ public class CollectionsHackerrankProblems {
         */
         public static Integer mostFrequent(List<Integer> numbers) {
 
+            Map<Integer, Integer> frequecyMap = new HashMap<>();
+            for (Integer number : numbers) {
+
+                frequecyMap.put(number, frequecyMap.getOrDefault(number, 0) + 1);
+
+            }
+
+            int mostFrequentNumber = 0;
+            int maxFrequency = 0;
+            boolean first = true;
+            for (Map.Entry<Integer, Integer> entry : frequecyMap.entrySet()) {
+                if (first) {
+                    mostFrequentNumber = entry.getKey();
+                    maxFrequency = entry.getValue();
+                    first = false;
+                } else if (entry.getValue() > maxFrequency) {
+                    mostFrequentNumber = entry.getKey();
+                    maxFrequency = entry.getValue();
+
+                }
+            }
+
+
             // TODO: Implement this method
 
-            return null;
+            return mostFrequentNumber;
         }
 
         /*
@@ -152,10 +251,20 @@ public class CollectionsHackerrankProblems {
         }
         */
         public static Map<Integer, List<String>> groupByLength(List<String> words) {
+            Map<Integer, List<String>> lengthMap = new HashMap<>();
+
+            for (String word : words) {
+                int length = word.length();
+                if (!lengthMap.containsKey(length)) {
+                    lengthMap.put(length, new ArrayList<>());
+                }
+
+                lengthMap.get(length).add(word);
+            }
 
             // TODO: Implement this method
 
-            return null;
+            return lengthMap;
         }
 
         /*
@@ -170,9 +279,24 @@ public class CollectionsHackerrankProblems {
         */
         public static int maxSlidingWindowSum(List<Integer> numbers, int k) {
 
+            int max_sum = Integer.MIN_VALUE;
+            int current_window_sum = 0;
+
+            for (int i = 0; i < k; i++) {
+                current_window_sum += numbers.get(i);
+            }
+                max_sum = current_window_sum;
+
+                for (int i = k; i < numbers.size(); i++) {
+                    current_window_sum += numbers.get(i) - numbers.get(i - k);
+
+                    max_sum = Math.max(max_sum, current_window_sum);
+                }
+
+
             // TODO: Implement this method
 
-            return 0;
+            return max_sum;
         }
     }
-}
+
