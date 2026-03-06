@@ -6,7 +6,6 @@ import java.util.Deque;
 public class DequeProblems {
     public static void main(String[] args) {
         // You can test your methods here
-
         ArrayDeque<Integer> numbers = new ArrayDeque<>();
 
         addFront(numbers, 10);
@@ -34,7 +33,6 @@ public class DequeProblems {
     Output: [5]
     */
     public static void addFront(Deque<Integer> deque, int value) {
-        // TODO: Implement this method
         deque.addFirst(value);
     }
 
@@ -47,7 +45,6 @@ public class DequeProblems {
     Output: [5,10]
     */
     public static void addBack(Deque<Integer> deque, int value) {
-        // TODO: Implement this method
         deque.addLast(value);
     }
 
@@ -60,7 +57,6 @@ public class DequeProblems {
     Output: 5
     */
     public static Integer removeFront(Deque<Integer> deque) {
-        // TODO: Implement this method
         return deque.removeFirst();
     }
 
@@ -73,7 +69,6 @@ public class DequeProblems {
     Output: 15
     */
     public static Integer removeBack(Deque<Integer> deque) {
-        // TODO: Implement this method
         return deque.removeLast();
     }
 
@@ -98,7 +93,6 @@ public class DequeProblems {
     Output: 15
     */
     public static Integer peekBack(Deque<Integer> deque) {
-        // TODO: Implement this method
         return deque.peekLast();
     }
 

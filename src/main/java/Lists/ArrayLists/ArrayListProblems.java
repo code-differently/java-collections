@@ -7,7 +7,6 @@ import java.util.Set;
 
 public class ArrayListProblems {
     public static void main(String[] args) {
-
         List<Integer> numbers = new ArrayList<>();
 
         numbers.add(4);
@@ -33,12 +32,10 @@ public class ArrayListProblems {
     Output: 6
     */
     public static int sum(List<Integer> nums) {
-        // TODO: Implement this method
         int sum = 0;
         for (int num : nums) {
             sum += num;
         }
-
         return sum;
     }
 
@@ -51,15 +48,12 @@ public class ArrayListProblems {
     Output: 2
     */
     public static int countEvens(List<Integer> nums) {
-
-        // TODO: Implement this method
         int evens = 0;
         for (int num : nums) {
             if (num % 2 == 0) {
                 evens++;
             }
         }
-
         return evens;
     }
 
@@ -75,8 +69,6 @@ public class ArrayListProblems {
     Output: false
     */
     public static boolean hasDuplicate(List<Integer> nums) {
-
-        // TODO: Implement this method
         if (nums.size() != Set.copyOf(nums).size()) {
             return true;
         }
@@ -92,8 +84,6 @@ public class ArrayListProblems {
     Output: 7
     */
     public static int findMax(List<Integer> nums) {
-
-        // TODO: Implement this method
         int max = Integer.MIN_VALUE;
         for (int num : nums) {
             if (num > max) {
@@ -114,8 +104,6 @@ public class ArrayListProblems {
     The original list should remain unchanged.
     */
     public static List<Integer> reverse(List<Integer> nums) {
-
-        // TODO: Implement this method
         return nums.reversed();
     }
 }

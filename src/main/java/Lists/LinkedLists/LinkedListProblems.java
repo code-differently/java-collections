@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 public class LinkedListProblems {
     public static void main(String[] args) {
-
         LinkedList<Integer> numbers = new LinkedList<>();
 
         numbers.add(10);
@@ -36,8 +35,6 @@ public class LinkedListProblems {
     Output: [5,10,20,30]
     */
     public static void addToFront(LinkedList<Integer> list, int value) {
-
-        // TODO: Implement this method
         list.push(value);
     }
 
@@ -50,8 +47,6 @@ public class LinkedListProblems {
     Output: [10,20,30,40]
     */
     public static void addToEnd(LinkedList<Integer> list, int value) {
-
-        // TODO: Implement this method
         list.addLast(value);
 
     }
@@ -65,8 +60,6 @@ public class LinkedListProblems {
     Output: [20,30]
     */
     public static void removeFirstElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
         list.removeFirst();
     }
 
@@ -79,10 +72,7 @@ public class LinkedListProblems {
     Output: [10,20]
     */
     public static void removeLastElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
         list.removeLast();
-
     }
 
     /*
@@ -94,8 +84,6 @@ public class LinkedListProblems {
     Output: 10
     */
     public static int getFirstElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
         return list.getFirst();
     }
 
@@ -108,8 +96,6 @@ public class LinkedListProblems {
     Output: 30
     */
     public static int getLastElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
         return list.getLast();
     }
 }

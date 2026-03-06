@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class LinkedHashMapProblems {
     public static void main(String[] args) {
-
         Map<String, Integer> studentGrades = new LinkedHashMap<>();
 
         addStudent(studentGrades, "Jordan", 90);
@@ -32,7 +31,6 @@ public class LinkedHashMapProblems {
     Output: {"Jordan"=90}
     */
     public static void addStudent(Map<String, Integer> map, String name, int grade) {
-        // TODO: Implement this method
         map.put(name, grade);
     }
 
@@ -45,7 +43,6 @@ public class LinkedHashMapProblems {
     Output: {"Taylor"=92}
     */
     public static void updateGrade(Map<String, Integer> map, String name, int newGrade) {
-        // TODO: Implement this method
         map.replace(name, newGrade);
     }
 
@@ -58,7 +55,6 @@ public class LinkedHashMapProblems {
     Output: Student removed from map
     */
     public static void removeStudent(Map<String, Integer> map, String name) {
-        // TODO: Implement this method
         map.remove(name);
     }
 
@@ -71,7 +67,6 @@ public class LinkedHashMapProblems {
     Output: "Jordan"
     */
     public static String getFirstInserted(Map<String, Integer> map) {
-        // TODO: Implement this method
         for (String key : map.keySet()) {
             return key;
         }
@@ -88,7 +83,6 @@ public class LinkedHashMapProblems {
     Output: {apple=2, banana=1, orange=1}
     */
     public static Map<String, Integer> wordFrequency(List<String> words) {
-        // TODO: Implement this method
         Map<String, Integer> answer = new LinkedHashMap<>();
         for (String word : words) {
             if (answer.containsKey(word)) {
