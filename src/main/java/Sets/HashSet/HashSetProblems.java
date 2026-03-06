@@ -1,5 +1,6 @@
 package Sets.HashSet;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -20,6 +21,8 @@ public class HashSetProblems {
     */
     public static void addElement(Set<String> set, String value) {
 
+        set.add(value);
+
         // TODO: Implement this method
 
     }
@@ -36,7 +39,7 @@ public class HashSetProblems {
 
         // TODO: Implement this method
 
-        return false;
+        return set.contains(value);
     }
 
     /*
@@ -48,6 +51,7 @@ public class HashSetProblems {
     Output: value removed
     */
     public static void removeValue(Set<String> set, String value) {
+        set.remove(value);
 
         // TODO: Implement this method
 
@@ -65,7 +69,7 @@ public class HashSetProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return set.size();
     }
 
     /*
@@ -77,9 +81,14 @@ public class HashSetProblems {
     Output: {1,2,3}
     */
     public static Set<Integer> getUniqueValues(List<Integer> numbers) {
+        Set<Integer> uniqueValues = new HashSet<>();
+
+        for (Integer number : numbers) {
+            uniqueValues.add(number);
+        }
 
         // TODO: Implement this method
 
-        return null;
+        return uniqueValues;
     }
 }

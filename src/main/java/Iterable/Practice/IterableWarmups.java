@@ -1,6 +1,7 @@
 package Iterable.Practice;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class IterableWarmups {
@@ -27,6 +28,10 @@ public class IterableWarmups {
     public static int sum(Iterable<Integer> numbers) {
 
         int total = 0;
+        Iterator<Integer> iterator = numbers.iterator();
+        while (iterator.hasNext()) {
+            total += iterator.next();
+        }
 
         // TODO:
         // Use a for-each loop to calculate the sum
@@ -43,6 +48,14 @@ public class IterableWarmups {
 
         int count = 0;
 
+        Iterator<Integer> iterator = numbers.iterator();
+        while (iterator.hasNext()) {
+            int number = iterator.next();
+            if (number % 2 == 0) {
+                count++;
+            }
+        }
+
         // TODO:
         // Loop through numbers
         // Increment count if number is even
@@ -58,6 +71,13 @@ public class IterableWarmups {
     public static int findMax(Iterable<Integer> numbers) {
 
         int max = Integer.MIN_VALUE;
+        Iterator<Integer> iterator = numbers.iterator();
+        while (iterator.hasNext()) {
+            int number = iterator.next();
+            if (number > max) {
+                max = number;
+            }
+        }
 
         // TODO:
         // Loop through numbers
@@ -75,10 +95,21 @@ public class IterableWarmups {
 
         int count = 0;
 
-        // TODO:
-        // Loop through words
-        // Compare each word to target
+        if (target == null) {
+            return 0;
+        }
+        Iterator<String> iterator = words.iterator();
+        while (iterator.hasNext()) {
+            String word = iterator.next();
+            if (target.equals(word)) {
+                count++;
+            }
 
-        return count;
-    }
-}
+        }
+                // TODO:
+                // Loop through words
+                // Compare each word to target
+
+                return count;
+            }
+        }

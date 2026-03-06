@@ -18,6 +18,7 @@ public class DequeProblems {
     Output: [5]
     */
     public static void addFront(Deque<Integer> deque, int value) {
+        deque.addFirst(value);
 
         // TODO: Implement this method
 
@@ -32,6 +33,7 @@ public class DequeProblems {
     Output: [5,10]
     */
     public static void addBack(Deque<Integer> deque, int value) {
+        deque.addLast(value);
 
         // TODO: Implement this method
 
@@ -49,7 +51,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.removeFirst();
     }
 
     /*
@@ -64,7 +66,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.removeLast();
     }
 
     /*
@@ -79,7 +81,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekFirst();
     }
 
     /*
@@ -94,7 +96,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekLast();
     }
 
 }

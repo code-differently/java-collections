@@ -34,6 +34,8 @@ public class HashMapProblems {
     */
     public static void addItem(Map<String, Integer> map, String item, int quantity) {
 
+        map.put(item,quantity);
+
         // TODO: Implement this method
 
     }
@@ -50,7 +52,7 @@ public class HashMapProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return map.getOrDefault(item, 0);
     }
 
     /*
@@ -62,6 +64,8 @@ public class HashMapProblems {
     Output: {"Bananas"=12}
     */
     public static void updateQuantity(Map<String, Integer> map, String item, int newQuantity) {
+
+        map.put(item, newQuantity);
 
         // TODO: Implement this method
 
@@ -77,6 +81,8 @@ public class HashMapProblems {
     */
     public static void removeItem(Map<String, Integer> map, String item) {
 
+        map.remove(item);
+
         // TODO: Implement this method
 
     }
@@ -91,8 +97,13 @@ public class HashMapProblems {
     */
     public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        for (int number : numbers) {
+            frequencyMap.put(number, frequencyMap.getOrDefault(number, 0) + 1);
+        }
+
         // TODO: Implement this method
 
-        return null;
+        return frequencyMap;
     }
 }
