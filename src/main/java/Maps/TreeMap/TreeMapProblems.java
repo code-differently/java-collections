@@ -18,78 +18,49 @@ public class TreeMapProblems {
 
         removePlayer(rankings, 2);
         System.out.println("After removal: " + rankings);
+
+        System.out.println("Next rank after 1: " + getNextRank(rankings, 1));
     }
 
     /*
     Problem 1
     Add a player to the TreeMap with their rank.
-
-    Example
-    Input: (1, "Jordan")
-    Output: {1="Jordan"}
     */
     public static void addPlayer(TreeMap<Integer, String> map, int rank, String name) {
-
-        // TODO: Implement this method
-
+        map.put(rank, name);
     }
 
     /*
     Problem 2
     Return the player with the highest ranking (smallest key).
-
-    Example
-    Input: {1="Jordan", 2="Taylor"}
-    Output: "Jordan"
     */
     public static String getTopPlayer(TreeMap<Integer, String> map) {
-
-        // TODO: Implement this method
-
-        return null;
+        if (map.isEmpty()) return null;
+        return map.firstEntry().getValue();
     }
 
     /*
     Problem 3
     Return the player with the lowest ranking (largest key).
-
-    Example
-    Input: {1="Jordan", 2="Taylor"}
-    Output: "Taylor"
     */
     public static String getLowestPlayer(TreeMap<Integer, String> map) {
-
-        // TODO: Implement this method
-
-        return null;
+        if (map.isEmpty()) return null;
+        return map.lastEntry().getValue();
     }
 
     /*
     Problem 4
     Remove a player based on their rank.
-
-    Example
-    Input: remove rank 2
-    Output: player removed
     */
     public static void removePlayer(TreeMap<Integer, String> map, int rank) {
-
-        // TODO: Implement this method
-
+        map.remove(rank);
     }
 
     /*
     Problem 5
     Return the next higher rank after the given rank.
-
-    Example
-    Input: rank=2, map={1="A",2="B",3="C"}
-    Output: 3
     */
     public static Integer getNextRank(TreeMap<Integer, String> map, int rank) {
-
-        // TODO: Implement this method
-
-        return null;
+        return map.higherKey(rank); // returns null if no higher key exists
     }
 }

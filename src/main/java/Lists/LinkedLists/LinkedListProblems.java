@@ -30,86 +30,58 @@ public class LinkedListProblems {
     /*
     Problem 1
     Add a value to the FRONT of the LinkedList.
-
-    Example
-    Input: [10,20,30], value=5
-    Output: [5,10,20,30]
     */
     public static void addToFront(LinkedList<Integer> list, int value) {
-
-        // TODO: Implement this method
-
+        list.addFirst(value);
     }
 
     /*
     Problem 2
     Add a value to the END of the LinkedList.
-
-    Example
-    Input: [10,20,30], value=40
-    Output: [10,20,30,40]
     */
     public static void addToEnd(LinkedList<Integer> list, int value) {
-
-        // TODO: Implement this method
-
+        list.addLast(value);
     }
 
     /*
     Problem 3
     Remove the FIRST element from the LinkedList.
-
-    Example
-    Input: [10,20,30]
-    Output: [20,30]
     */
     public static void removeFirstElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
-
+        if(!list.isEmpty()) {
+            list.removeFirst();
+        }
     }
 
     /*
     Problem 4
     Remove the LAST element from the LinkedList.
-
-    Example
-    Input: [10,20,30]
-    Output: [10,20]
     */
     public static void removeLastElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
-
+        if(!list.isEmpty()) {
+            list.removeLast();
+        }
     }
 
     /*
     Problem 5
     Return the FIRST element in the LinkedList.
-
-    Example
-    Input: [10,20,30]
-    Output: 10
     */
     public static int getFirstElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
-
-        return 0;
+        if(!list.isEmpty()) {
+            return list.getFirst();
+        }
+        throw new RuntimeException("List is empty");
     }
 
     /*
     Problem 6
     Return the LAST element in the LinkedList.
-
-    Example
-    Input: [10,20,30]
-    Output: 30
     */
     public static int getLastElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
-
-        return 0;
+        if(!list.isEmpty()) {
+            return list.getLast();
+        }
+        throw new RuntimeException("List is empty");
     }
 }
