@@ -91,9 +91,14 @@ public class CollectionBasics {
     */
     public static boolean hasDuplicates(Collection<Integer> numbers) {
 
+
+
+
         // TODO:
         // Hint:
         // Compare the size of a collection with the size of a Set
+
+
 
         return false;
     }
@@ -110,6 +115,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // If number equals target, increase count
+        for (Integer num : numbers) {
+            if (num == target) {
+                count++;
+            }
+        }
 
         return count;
     }
@@ -126,8 +136,15 @@ public class CollectionBasics {
 
         // TODO:
         // Loop through numbers
-        // Add numbers greater than 20 to result
+        for (Integer num : numbers) {
+            // Add numbers greater than 20 to result
+            if (num > 20) {
+                result.add(num);
+
+            }
+        }
+
 
         return result;
     }
-}
+    }
