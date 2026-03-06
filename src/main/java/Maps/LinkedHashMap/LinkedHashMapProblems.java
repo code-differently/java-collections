@@ -1,5 +1,6 @@
 package Maps.LinkedHashMap;
 
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,11 @@ public class LinkedHashMapProblems {
 
         removeStudent(studentGrades, "Morgan");
         System.out.println("After Removal: " + studentGrades);
+
+        System.out.println("First inserted: " + getFirstInserted(studentGrades));
+
+        System.out.println("Word frequency: " + wordFrequency(Arrays.asList("Taylor", "Morgan", "Taylor", "Taylor", "Jeef", "bob")));
+
     }
 
     /*
@@ -33,6 +39,7 @@ public class LinkedHashMapProblems {
     public static void addStudent(Map<String, Integer> map, String name, int grade) {
 
         // TODO: Implement this method
+        map.put(name, grade);
 
     }
 
@@ -47,6 +54,7 @@ public class LinkedHashMapProblems {
     public static void updateGrade(Map<String, Integer> map, String name, int newGrade) {
 
         // TODO: Implement this method
+        map.put(name, newGrade);
 
     }
 
@@ -61,6 +69,7 @@ public class LinkedHashMapProblems {
     public static void removeStudent(Map<String, Integer> map, String name) {
 
         // TODO: Implement this method
+        map.remove(name);
 
     }
 
@@ -76,7 +85,7 @@ public class LinkedHashMapProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return map.keySet().iterator().next();
     }
 
     /*
@@ -92,6 +101,16 @@ public class LinkedHashMapProblems {
 
         // TODO: Implement this method
 
-        return null;
+        LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
+
+        for (String word : words) {
+            if(map.containsKey(word)) {
+                map.put(word, map.get(word) + 1);
+            }else{
+                map.put(word, 1);
+            }
+        }
+
+        return map;
     }
 }

@@ -2,6 +2,8 @@ package Collections.Practice;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -34,6 +36,10 @@ public class CollectionBasics {
         // Loop through the collection
         // Add each number to total
 
+        for (Integer number : numbers) {
+            total += number;
+        }
+
         return total;
     }
 
@@ -50,6 +56,12 @@ public class CollectionBasics {
         // Loop through the collection
         // If the number is even, increase count
 
+        for (Integer number : numbers) {
+            if (number % 2 == 0) {
+                count++;
+            }
+        }
+
         return count;
     }
 
@@ -65,6 +77,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
+        for (Integer number : numbers) {
+            if (number > max) {
+                max = number;
+            }
+        }
 
         return max;
     }
@@ -80,6 +97,11 @@ public class CollectionBasics {
         // TODO:
         // Hint:
         // Compare the size of a collection with the size of a Set
+        Set<Integer> set = new HashSet<>(numbers);
+        if (set.size() < numbers.size()) {
+            return true;
+        }
+
 
         return false;
     }
@@ -97,6 +119,12 @@ public class CollectionBasics {
         // Loop through numbers
         // If number equals target, increase count
 
+        for (Integer number : numbers) {
+            if (number.equals(target)) {
+                count++;
+            }
+        }
+
         return count;
     }
 
@@ -113,6 +141,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Add numbers greater than 20 to result
+        for (Integer number : numbers) {
+            if (number > 20) {
+                result.add(number);
+            }
+        }
 
         return result;
     }

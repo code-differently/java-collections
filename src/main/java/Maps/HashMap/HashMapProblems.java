@@ -1,5 +1,6 @@
 package Maps.HashMap;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,8 @@ public class HashMapProblems {
 
         removeItem(inventory, "Oranges");
         System.out.println("After Removal: " + inventory);
+        System.out.println("Frequency: " + countFrequency(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 9)));
+
     }
 
     /*
@@ -35,6 +38,7 @@ public class HashMapProblems {
     public static void addItem(Map<String, Integer> map, String item, int quantity) {
 
         // TODO: Implement this method
+        map.put(item, quantity);
 
     }
 
@@ -50,7 +54,7 @@ public class HashMapProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return map.get(item);
     }
 
     /*
@@ -64,6 +68,7 @@ public class HashMapProblems {
     public static void updateQuantity(Map<String, Integer> map, String item, int newQuantity) {
 
         // TODO: Implement this method
+        map.put(item, newQuantity);
 
     }
 
@@ -78,6 +83,7 @@ public class HashMapProblems {
     public static void removeItem(Map<String, Integer> map, String item) {
 
         // TODO: Implement this method
+        map.remove(item);
 
     }
 
@@ -91,8 +97,16 @@ public class HashMapProblems {
     */
     public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
+        HashMap<Integer, Integer> map = new HashMap<>();
         // TODO: Implement this method
+        for (int number : numbers) {
+            if(map.containsKey(number)) {
+                map.put(number, map.get(number) + 1);
+            }else{
+                map.put(number, 1);
+            }
+        }
 
-        return null;
+        return map;
     }
 }

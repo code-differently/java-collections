@@ -12,7 +12,7 @@ These exercises help reinforce understanding of the **Java Collections Framework
 Which interface allows an object to be used in an enhanced for-loop?
 
 A. Collection  
-B. Iterable  
+**B. Iterable B**  
 C. List  
 D. Queue
 
@@ -23,7 +23,7 @@ D. Queue
 Which interface is the parent of `List`, `Set`, and `Queue`?
 
 A. Iterable  
-B. Collection  
+**B. Collection**  
 C. Map  
 D. Deque
 
@@ -36,7 +36,7 @@ Which of the following is **NOT part of the Collection hierarchy**?
 A. List  
 B. Set  
 C. Queue  
-D. Map
+**D. Map**
 
 ---
 
@@ -45,7 +45,7 @@ D. Map
 Which collection type allows **duplicate elements and maintains order**?
 
 A. Set  
-B. List  
+**B. List**  
 C. Queue  
 D. TreeSet
 
@@ -58,7 +58,7 @@ Which structure stores **key-value pairs**?
 A. List  
 B. Set  
 C. Queue  
-D. Map
+**D. Map**
 
 ---
 
@@ -66,11 +66,11 @@ D. Map
 
 Write **True** or **False**.
 
-1. `ArrayList` implements the `List` interface.  
-2. `Set` allows duplicate elements.  
-3. `Map` stores elements using keys and values.  
-4. `Queue` typically follows FIFO behavior.  
-5. `Iterable` allows collections to be used in enhanced for-loops.
+1. `ArrayList` implements the `List` interface.   **True**
+2. `Set` allows duplicate elements.  **False**
+3. `Map` stores elements using keys and values.  **True**
+4. `Queue` typically follows FIFO behavior.  **True**
+5. `Iterable` allows collections to be used in enhanced for-loops. **True**
 
 ---
 
@@ -80,11 +80,15 @@ Write **True** or **False**.
 
 What is the difference between an **interface** and a **class** in the Java Collections Framework?
 
+Interface defines behaviors, class implement those behaviors 
+
 ---
 
 ## Question 2
 
 Why is it recommended to declare variables using interfaces like `List` instead of concrete classes like `ArrayList`?
+
+More flexibility and repurposability in the future
 
 Example:
 
@@ -98,7 +102,9 @@ List<String> list = new ArrayList<>();
 
 Name three interfaces that extend `Collection`.
 
----
+List, Set, Queue
+
+--- 
 
 # Code Reading Exercise
 
@@ -117,9 +123,9 @@ for (String fruit : fruits) {
 
 Questions:
 
-1. Which interface type is used for the variable?
-2. Which class is used as the implementation?
-3. Why can the enhanced for-loop be used here?
+1. Which interface type is used for the variable? List
+2. Which class is used as the implementation? ArrayList
+3. Why can the enhanced for-loop be used here? Because ArrayLists are iterable
 
 ---
 

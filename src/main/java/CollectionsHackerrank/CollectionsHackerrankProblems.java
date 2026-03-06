@@ -1,8 +1,6 @@
 package CollectionsHackerrank;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class CollectionsHackerrankProblems {
     public class CollectionsHackerrankPractice {
@@ -10,6 +8,8 @@ public class CollectionsHackerrankProblems {
         public static void main(String[] args) {
 
             // You can test your methods here
+            System.out.println(removeDuplicates(Arrays.asList(1,2,2,3,4,4,5)));
+            System.out.println(countFrequency(Arrays.asList(1,2,2,3,4,4,5)));
 
         }
 
@@ -24,8 +24,8 @@ public class CollectionsHackerrankProblems {
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
             // TODO: Implement this method
+            return new ArrayList<>(new LinkedHashSet<>(numbers));
 
-            return null;
         }
 
         /*
@@ -39,8 +39,17 @@ public class CollectionsHackerrankProblems {
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> map = new HashMap<>();
 
-            return null;
+            for (Integer number : numbers) {
+                if (map.containsKey(number)) {
+                    map.put(number, map.get(number) + 1);
+                }else{
+                    map.put(number, 1);
+                }
+            }
+
+            return map;
         }
 
         /*
@@ -53,7 +62,17 @@ public class CollectionsHackerrankProblems {
         */
         public static Integer firstUnique(List<Integer> numbers) {
 
-            // TODO: Implement this method
+            Map<Integer, Integer> map = new HashMap<>();
+
+            for (Integer number : numbers) {
+                map.put(number, map.getOrDefault(number, 0) + 1);
+            }
+
+            for (Integer number : numbers) {
+                if (map.get(number) == 1) {
+                    return number;
+                }
+            }
 
             return null;
         }
@@ -71,6 +90,13 @@ public class CollectionsHackerrankProblems {
         public static boolean twoSum(List<Integer> numbers, int target) {
 
             // TODO: Implement this method
+            for (int i = 0; i < numbers.size(); i++) {
+                for (int j = i+1; j < numbers.size(); j++) {
+                    if(numbers.get(i) + numbers.get(j) == target){
+                        return true;
+                    }
+                }
+            }
 
             return false;
         }
@@ -86,8 +112,11 @@ public class CollectionsHackerrankProblems {
         public static int countUniqueWords(List<String> words) {
 
             // TODO: Implement this method
+            Set<String> wordSet = new HashSet<>(words);
 
-            return 0;
+            return wordSet.size();
+
+
         }
 
         /*
@@ -102,7 +131,18 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return null;
+            Stack<Integer> stack = new Stack<>();
+
+            while (!queue.isEmpty()) {
+                stack.push(queue.poll());
+            }
+
+            Queue<Integer> result = new ArrayDeque<>();
+            while (!stack.isEmpty()) {
+                result.add(stack.pop());
+            }
+
+            return result;
         }
 
         /*
@@ -120,7 +160,23 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return false;
+            int balance = 0;
+
+            for (int i = 0; i < expression.length(); i++) {
+                char c = expression.charAt(i);
+
+                if (c == '(') {
+                    balance++;
+                } else if (c == ')') {
+                    balance--;
+                }
+
+                if (balance < 0) {
+                    return false;
+                }
+            }
+
+            return balance == 0;
         }
 
         /*
@@ -134,8 +190,26 @@ public class CollectionsHackerrankProblems {
         public static Integer mostFrequent(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> map = new HashMap<>();
 
-            return null;
+            for (Integer number : numbers) {
+                map.put(number, map.getOrDefault(number, 0) + 1);
+            }
+
+            int maxFreq = 0;
+            Integer maxKey = null;
+
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if (entry.getValue() > maxFreq) {
+                    maxFreq = entry.getValue();
+                    maxKey = entry.getKey();
+                }
+            }
+
+            return maxKey;
+
+
+
         }
 
         /*
@@ -153,9 +227,19 @@ public class CollectionsHackerrankProblems {
         */
         public static Map<Integer, List<String>> groupByLength(List<String> words) {
 
-            // TODO: Implement this method
+            Map<Integer, List<String>> result = new HashMap<>();
 
-            return null;
+            for (String word : words) {
+                int length = word.length();
+
+                if (!result.containsKey(length)) {
+                    result.put(length, new ArrayList<>());
+                }
+
+                result.get(length).add(word);
+            }
+
+            return result;
         }
 
         /*
@@ -172,7 +256,24 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return 0;
+            if (numbers == null || numbers.isEmpty() || k <= 0 || k > numbers.size()) {
+                throw new IllegalArgumentException("Invalid input");
+            }
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < numbers.size()-k+1; i++) {
+                   int maxTest = 0;
+                   for(int j = i; j < i+k; j++){
+                       maxTest = numbers.get(j) + maxTest;
+                   }
+                   if (maxTest > max) {
+                       max = maxTest;
+                   }
+
+
+
+               }
+                return max;
+            }
+
         }
     }
-}
