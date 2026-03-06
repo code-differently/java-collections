@@ -131,31 +131,41 @@ public class CommonMethodsDemo {
          Add the following values:
          10, 20, 30, 40, 50
         */
-
+Collection<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
 
         /*
          TODO 2:
          Print the size of the numbers collection
         */
-
+        System.out.println(numbers.size());
 
         /*
          TODO 3:
          Check if the collection contains 30
         */
-
-
+if (numbers.contains(30)){
+    System.out.println("thirty is here");
+}else {
+    System.out.println("no thirty here");
+}
         /*
          TODO 4:
          Remove the number 20
         */
-
+numbers.remove(20);
 
         /*
          TODO 5:
          Loop through the numbers collection
          and print each value
-        */
+        */for (int num: numbers){
+            System.out.println(num);
+        }
 
 
         /*
