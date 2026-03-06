@@ -2,6 +2,7 @@ package Collections.Practice;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -19,6 +20,8 @@ public class CollectionBasics {
         System.out.println("Count of even numbers: " + countEven(numbers));
         System.out.println("Largest number: " + findMax(numbers));
         System.out.println("Contains duplicates? " + hasDuplicates(numbers));
+        System.out.println("Count occurrences of 20 " + countOccurrences(numbers,20));
+        System.out.println("Numbers greater than 20: " + filterGreaterThanTwenty(numbers));
     }
 
 
@@ -31,8 +34,9 @@ public class CollectionBasics {
         int total = 0;
 
         // TODO:
-        // Loop through the collection
-        // Add each number to total
+        for(int num : numbers){
+            total+= num;
+        }
 
         return total;
     }
@@ -47,8 +51,11 @@ public class CollectionBasics {
         int count = 0;
 
         // TODO:
-        // Loop through the collection
-        // If the number is even, increase count
+        for(int num : numbers){
+           if (num % 2 ==0){
+               count++;
+           }
+        }
 
         return count;
     }
@@ -63,8 +70,11 @@ public class CollectionBasics {
         int max = Integer.MIN_VALUE;
 
         // TODO:
-        // Loop through numbers
-        // Update max if current number is larger
+        for (int num : numbers){
+            if(num > max) {
+                max = num;
+            }
+        }
 
         return max;
     }
@@ -78,10 +88,9 @@ public class CollectionBasics {
     public static boolean hasDuplicates(Collection<Integer> numbers) {
 
         // TODO:
-        // Hint:
-        // Compare the size of a collection with the size of a Set
+        HashSet<Integer> set = new HashSet<>(numbers);
 
-        return false;
+        return set.size() != numbers.size();
     }
 
 
@@ -94,8 +103,12 @@ public class CollectionBasics {
         int count = 0;
 
         // TODO:
-        // Loop through numbers
-        // If number equals target, increase count
+        for (int num : numbers){
+
+            if (num == target ){
+                count++;
+            }
+        }
 
         return count;
     }
@@ -111,8 +124,11 @@ public class CollectionBasics {
         Collection<Integer> result = new ArrayList<>();
 
         // TODO:
-        // Loop through numbers
-        // Add numbers greater than 20 to result
+        for (int num : numbers){
+            if (num >20){
+                result.add(num);
+            }
+        }
 
         return result;
     }
