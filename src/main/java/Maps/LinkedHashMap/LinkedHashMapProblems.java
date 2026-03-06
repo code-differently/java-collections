@@ -33,6 +33,7 @@ public class LinkedHashMapProblems {
     public static void addStudent(Map<String, Integer> map, String name, int grade) {
 
         // TODO: Implement this method
+        map.put(name, grade);
 
     }
 
@@ -47,6 +48,8 @@ public class LinkedHashMapProblems {
     public static void updateGrade(Map<String, Integer> map, String name, int newGrade) {
 
         // TODO: Implement this method
+        map.put(name, newGrade);
+
 
     }
 
@@ -61,6 +64,7 @@ public class LinkedHashMapProblems {
     public static void removeStudent(Map<String, Integer> map, String name) {
 
         // TODO: Implement this method
+        map.remove(name);
 
     }
 
@@ -75,6 +79,9 @@ public class LinkedHashMapProblems {
     public static String getFirstInserted(Map<String, Integer> map) {
 
         // TODO: Implement this method
+        for (String key : map.keySet()){
+            return key;
+        }
 
         return null;
     }
@@ -91,7 +98,21 @@ public class LinkedHashMapProblems {
     public static Map<String, Integer> wordFrequency(List<String> words) {
 
         // TODO: Implement this method
+        Map<String, Integer> frequency = new LinkedHashMap<>();
 
-        return null;
+        for (String word : words) {
+
+            if (frequency.containsKey(word)) {
+                frequency.put(word, frequency.get(word) + 1);
+            } else {
+                frequency.put(word, 1);
+            }
+
+        }
+
+        return frequency;
     }
-}
+
+
+    }
+
