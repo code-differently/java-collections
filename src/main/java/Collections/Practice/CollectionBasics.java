@@ -2,6 +2,7 @@ package Collections.Practice;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -34,6 +35,9 @@ public class CollectionBasics {
         // Loop through the collection
         // Add each number to total
 
+        for (int num : numbers) {
+            total += num;
+        }
         return total;
     }
 
@@ -49,7 +53,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // If the number is even, increase count
-
+        for (int num : numbers) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }
         return count;
     }
 
@@ -65,7 +73,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
-
+        for (int num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
         return max;
     }
 
@@ -80,7 +92,9 @@ public class CollectionBasics {
         // TODO:
         // Hint:
         // Compare the size of a collection with the size of a Set
-
+        if (numbers.size() != Set.copyOf(numbers).size()) {
+            return true;
+        }
         return false;
     }
 
@@ -96,6 +110,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // If number equals target, increase count
+        for (int num : numbers) {
+            if (num == target) {
+                count++;
+            }
+        }
 
         return count;
     }
@@ -113,6 +132,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Add numbers greater than 20 to result
+        for (int num : numbers) {
+            if (num > 20) {
+                result.add(num);
+            }
+        }
 
         return result;
     }
