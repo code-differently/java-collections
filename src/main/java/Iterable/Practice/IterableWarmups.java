@@ -17,6 +17,7 @@ public class IterableWarmups {
         System.out.println("Sum: " + sum(numbers));
         System.out.println("Even count: " + countEven(numbers));
         System.out.println("Max value: " + findMax(numbers));
+       // System.out.println("Count matches: " + countMatches());
     }
 
 
@@ -27,10 +28,9 @@ public class IterableWarmups {
     public static int sum(Iterable<Integer> numbers) {
 
         int total = 0;
-
         // TODO:
         for (Integer sum : numbers) {
-            total += sum;
+            total += sum;// goes through each number and adds it to the next for total
         }
         // Use a for-each loop to calculate the sum
 

@@ -2,6 +2,7 @@ package Collections.Practice;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -27,9 +28,11 @@ public class CollectionBasics {
      Return the sum of all numbers in the collection
     */
     public static int sum(Collection<Integer> numbers) {
-
         int total = 0;
 
+        for (int num : numbers) {
+            total += num;
+        }
         // TODO:
         // Loop through the collection
         // Add each number to total
@@ -43,9 +46,13 @@ public class CollectionBasics {
      Count how many numbers are even
     */
     public static int countEven(Collection<Integer> numbers) {
-
         int count = 0;
 
+        for (int num : numbers) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }
         // TODO:
         // Loop through the collection
         // If the number is even, increase count
@@ -59,9 +66,13 @@ public class CollectionBasics {
      Find the largest number in the collection
     */
     public static int findMax(Collection<Integer> numbers) {
-
         int max = Integer.MIN_VALUE;
 
+        for (int num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
@@ -90,8 +101,13 @@ public class CollectionBasics {
      Count how many times a target value appears
     */
     public static int countOccurrences(Collection<Integer> numbers, int target) {
-
         int count = 0;
+
+        for (int num : numbers) {
+            if (num == target) {
+                count++;
+            }
+        }
 
         // TODO:
         // Loop through numbers
@@ -107,8 +123,13 @@ public class CollectionBasics {
      that only contains numbers greater than 20
     */
     public static Collection<Integer> filterGreaterThanTwenty(Collection<Integer> numbers) {
-
         Collection<Integer> result = new ArrayList<>();
+
+        for (int num : numbers) {
+            if (num > 20) {
+                result.add(num);
+            }
+        }
 
         // TODO:
         // Loop through numbers
