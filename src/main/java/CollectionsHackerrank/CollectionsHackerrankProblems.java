@@ -1,15 +1,26 @@
 package CollectionsHackerrank;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+
 
 public class CollectionsHackerrankProblems {
-    public class CollectionsHackerrankPractice {
+    public static class CollectionsHackerrankPractice {
 
         public static void main(String[] args) {
 
             // You can test your methods here
+            List<Integer> numbers = Arrays.asList(1,2,2,3,4,4,5);
+            System.out.println(removeDuplicates(numbers));
+        }
+
+
 
         }
 
@@ -24,8 +35,14 @@ public class CollectionsHackerrankProblems {
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Set<Integer> uniqueNumbers = new LinkedHashSet<>(numbers); // removes duplicates
+            List<Integer> result = new ArrayList<>(uniqueNumbers);
 
-            return null;
+
+
+
+            return result;
+
         }
 
         /*
@@ -175,4 +192,4 @@ public class CollectionsHackerrankProblems {
             return 0;
         }
     }
-}
+
