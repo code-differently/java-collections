@@ -1,6 +1,6 @@
 package Maps.TreeMap;
 
-import java.util.TreeMap;
+import java.util.*;
 
 public class TreeMapProblems {
     public static void main(String[] args) {
@@ -31,6 +31,7 @@ public class TreeMapProblems {
     public static void addPlayer(TreeMap<Integer, String> map, int rank, String name) {
 
         // TODO: Implement this method
+        map.put(rank, name);
 
     }
 
@@ -46,7 +47,8 @@ public class TreeMapProblems {
 
         // TODO: Implement this method
 
-        return null;
+        List<Integer> keyList = new ArrayList<>(map.keySet());
+        return map.get(keyList.getFirst());
     }
 
     /*
@@ -60,8 +62,8 @@ public class TreeMapProblems {
     public static String getLowestPlayer(TreeMap<Integer, String> map) {
 
         // TODO: Implement this method
-
-        return null;
+        List<Integer> keyList = new ArrayList<>(map.keySet());
+        return map.get(keyList.getLast());
     }
 
     /*
@@ -75,7 +77,7 @@ public class TreeMapProblems {
     public static void removePlayer(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
-
+        map.remove(rank);
     }
 
     /*
@@ -89,7 +91,21 @@ public class TreeMapProblems {
     public static Integer getNextRank(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
+        Iterator<Map.Entry<Integer,String>> iterator = map.entrySet().iterator();
 
-        return null;
+        boolean rankFound = false;
+
+        while(iterator.hasNext()) {
+            Map.Entry<Integer, String> entry = iterator.next();
+            if(rankFound) {
+                return entry.getKey();
+            }
+
+            if(iterator.next().getKey().equals(rank)) {
+                rankFound = true;
+            }
+        }
+
+        return -1;
     }
 }

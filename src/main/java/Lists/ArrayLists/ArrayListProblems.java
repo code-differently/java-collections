@@ -2,6 +2,7 @@ package Lists.ArrayLists;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class ArrayListProblems {
@@ -34,8 +35,11 @@ public class ArrayListProblems {
     public static int sum(List<Integer> nums) {
 
         // TODO: Implement this method
-
-        return 0;
+        int sum = 0;
+        for(int num : nums) {
+            sum += num;
+        }
+        return sum;
     }
 
     /*
@@ -49,8 +53,13 @@ public class ArrayListProblems {
     public static int countEvens(List<Integer> nums) {
 
         // TODO: Implement this method
-
-        return 0;
+        int count = 0;
+        for(int num : nums) {
+            if(num % 2 == 0) {
+                count += num;
+            }
+        }
+        return count;
     }
 
     /*
@@ -67,7 +76,12 @@ public class ArrayListProblems {
     public static boolean hasDuplicate(List<Integer> nums) {
 
         // TODO: Implement this method
-
+        HashSet numSet = new HashSet();
+        for(int num : nums) {
+            if(!numSet.add(num)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -82,8 +96,15 @@ public class ArrayListProblems {
     public static int findMax(List<Integer> nums) {
 
         // TODO: Implement this method
+        int max = Integer.MIN_VALUE;
 
-        return 0;
+        for(int num : nums) {
+            if(num > max) {
+                num = max;
+            }
+        }
+
+        return max;
     }
 
     /*
@@ -99,7 +120,6 @@ public class ArrayListProblems {
     public static List<Integer> reverse(List<Integer> nums) {
 
         // TODO: Implement this method
-
-        return null;
+        return new ArrayList<Integer>(nums.reversed());
     }
 }
