@@ -1,8 +1,6 @@
 package CollectionsHackerrank;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class CollectionsHackerrankProblems {
     public class CollectionsHackerrankPractice {
@@ -10,6 +8,9 @@ public class CollectionsHackerrankProblems {
         public static void main(String[] args) {
 
             // You can test your methods here
+            removeDuplicates(Arrays.asList(1,2,2,3,4,4,5));
+            countFrequency(Arrays.asList(1,2,2,3,4,4,5));
+
 
         }
 
@@ -24,8 +25,10 @@ public class CollectionsHackerrankProblems {
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Set<Integer> set = new HashSet<>(numbers);
+            List<Integer> result = new ArrayList<>(set);
 
-            return null;
+            return result;
         }
 
         /*
@@ -39,8 +42,17 @@ public class CollectionsHackerrankProblems {
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> map = new HashMap<>();
 
-            return null;
+            for (Integer number : numbers) {
+                if (map.containsKey(number)) {
+                    map.put(number, map.get(number) + 1);
+                }else{
+                    map.put(number, 1);
+                }
+            }
+
+            return map;
         }
 
         /*
@@ -54,6 +66,17 @@ public class CollectionsHackerrankProblems {
         public static Integer firstUnique(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> map = new HashMap<>();
+
+            for (Integer number : numbers) {
+                if (map.containsKey(number)) {
+                    map.put(number, map.get(number) + 1);
+                }else{
+                    map.put(number, 1);
+                }
+            }
+
+            map.
 
             return null;
         }
@@ -71,6 +94,13 @@ public class CollectionsHackerrankProblems {
         public static boolean twoSum(List<Integer> numbers, int target) {
 
             // TODO: Implement this method
+            for (int i = 0; i < numbers.size(); i++) {
+                for (int j = i+1; j < numbers.size()-1; j++) {
+                    if(numbers.get(i) + numbers.get(j) == target){
+                        return true;
+                    }
+                }
+            }
 
             return false;
         }
@@ -86,8 +116,11 @@ public class CollectionsHackerrankProblems {
         public static int countUniqueWords(List<String> words) {
 
             // TODO: Implement this method
+            Set<String> wordSet = new HashSet<>(words);
 
-            return 0;
+            return wordSet.size();
+
+
         }
 
         /*
@@ -102,7 +135,12 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return null;
+            Queue<Integer> result = new ArrayDeque<>();
+
+            for(int i = 0; i < queue.size(); i++){
+                result.add(queue.poll());
+            }
+            return result;
         }
 
         /*
@@ -119,6 +157,21 @@ public class CollectionsHackerrankProblems {
         public static boolean isBalanced(String expression) {
 
             // TODO: Implement this method
+
+            Map<Character, Integer> map = new HashMap<>();
+
+            for(int i = 0; i < expression.length(); i++){
+                if(map.containsKey(expression.charAt(i))){
+                    map.put(expression.charAt(i), map.get(expression.charAt(i)) + 1);
+                }else{
+                    map.put(expression.charAt(i), 1);
+                }
+            }
+
+            if (map.get('(') == map.get(')')) {
+                return true;
+            }
+
 
             return false;
         }
@@ -171,6 +224,10 @@ public class CollectionsHackerrankProblems {
         public static int maxSlidingWindowSum(List<Integer> numbers, int k) {
 
             // TODO: Implement this method
+
+            for (int i = 0; i < numbers.size(); i = i + k) {
+
+            }
 
             return 0;
         }
