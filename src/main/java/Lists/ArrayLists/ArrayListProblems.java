@@ -39,7 +39,7 @@ public class ArrayListProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return sum;
     }
 
     /*
@@ -61,7 +61,7 @@ public class ArrayListProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return count;
     }
 
     /*
@@ -113,7 +113,7 @@ public class ArrayListProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return max;
     }
 
     /*
@@ -136,6 +136,6 @@ public class ArrayListProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return reversedList;
     }
 }
