@@ -1,12 +1,38 @@
 package Sets.HashSet;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class HashSetProblems {
     public static void main(String[] args) {
 
-        // You can test your methods here
+        //
+        Set<String> fruits = new HashSet<>();
+        addElement(fruits, "apple");
+        addElement(fruits,"orange");
+        addElement(fruits,"grapes");
+        addElement(fruits,"pear");
+
+
+        System.out.println(fruits);
+
+        System.out.println(containsValue(fruits, "orange"));
+        System.out.println(containsValue(fruits, "melon"));
+        System.out.println(getUniqueCount(fruits));
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(2);
+        numbers.add(1);
+        numbers.add(3);
+
+        System.out.println(getUniqueValues(numbers));
+
+
 
     }
 
@@ -21,8 +47,9 @@ public class HashSetProblems {
     public static void addElement(Set<String> set, String value) {
 
         // TODO: Implement this method
-
+        set.add(value);
     }
+
 
     /*
     Problem 2
@@ -33,8 +60,10 @@ public class HashSetProblems {
     Output: true or false
     */
     public static boolean containsValue(Set<String> set, String value) {
-
         // TODO: Implement this method
+        if(set.contains(value)){
+            return true;
+        }
 
         return false;
     }
@@ -50,6 +79,7 @@ public class HashSetProblems {
     public static void removeValue(Set<String> set, String value) {
 
         // TODO: Implement this method
+        set.remove(value);
 
     }
 
@@ -64,8 +94,7 @@ public class HashSetProblems {
     public static int getUniqueCount(Set<String> set) {
 
         // TODO: Implement this method
-
-        return 0;
+        return set.size();
     }
 
     /*
@@ -79,7 +108,7 @@ public class HashSetProblems {
     public static Set<Integer> getUniqueValues(List<Integer> numbers) {
 
         // TODO: Implement this method
+        return new HashSet<>(numbers);
 
-        return null;
     }
 }
