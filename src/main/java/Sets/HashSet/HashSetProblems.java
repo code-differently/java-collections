@@ -1,14 +1,28 @@
 package Sets.HashSet;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class HashSetProblems {
     public static void main(String[] args) {
 
         // You can test your methods here
+        Set<String> set = new HashSet<>();
+        List<Integer> nums = new ArrayList<>();
+        nums.add(1);
+        nums.add(2);
+        nums.add(2);
+        nums.add(3);
+        nums.add(3);
+        nums.add(3);
+
+        addElement(set, "apple");
+
+        containsValue(set, "apple");
+        containsValue(set, "banana");
+        removeValue(set, "apple");
+        getUniqueCount(set);
+        getUniqueValues(nums);
+
 
 
     }

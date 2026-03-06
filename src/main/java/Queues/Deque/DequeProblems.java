@@ -1,11 +1,19 @@
 package Queues.Deque;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class DequeProblems {
     public static void main(String[] args) {
 
         // You can test your methods here
+        Deque<Integer> deque = new ArrayDeque<>();
+        addFront(deque, 5);
+        addBack(deque, 10);
+        removeFront(deque);
+        removeBack(deque);
+        peekFront(deque);
+
 
     }
 

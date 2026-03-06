@@ -11,7 +11,6 @@ public class CollectionsHackerrankProblems {
             removeDuplicates(Arrays.asList(1,2,2,3,4,4,5));
             countFrequency(Arrays.asList(1,2,2,3,4,4,5));
 
-
         }
 
         /*
@@ -76,7 +75,13 @@ public class CollectionsHackerrankProblems {
                 }
             }
 
-            map.
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if (entry.getValue() == 1) {
+                    return entry.getKey();
+                }
+            }
+
+
 
             return null;
         }
@@ -187,8 +192,30 @@ public class CollectionsHackerrankProblems {
         public static Integer mostFrequent(List<Integer> numbers) {
 
             // TODO: Implement this method
+            int max = numbers.getFirst();
+            int maxKey  = numbers.getFirst();
+            Map<Integer, Integer> map = new HashMap<>();
 
-            return null;
+            for (Integer number : numbers) {
+                if (map.containsKey(number)) {
+                    map.put(number, map.get(number) + 1);
+                }else{
+                    map.put(number, 1);
+                }
+            }
+
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if (entry.getValue() > max) {
+                    max = entry.getValue();
+                    maxKey = entry.getKey();
+                }
+
+
+            }
+            return maxKey;
+
+
+
         }
 
         /*
@@ -206,9 +233,19 @@ public class CollectionsHackerrankProblems {
         */
         public static Map<Integer, List<String>> groupByLength(List<String> words) {
 
-            // TODO: Implement this method
+            Map<Integer, List<String>> result = new HashMap<>();
 
-            return null;
+            for (String word : words) {
+                int length = word.length();
+
+                if (!result.containsKey(length)) {
+                    result.put(length, new ArrayList<>());
+                }
+
+                result.get(length).add(word);
+            }
+
+            return result;
         }
 
         /*
@@ -225,11 +262,24 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            for (int i = 0; i < numbers.size(); i = i + k) {
+            if (numbers.size() < k){
+                return numbers.getFirst();
+            }
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < numbers.size()-k+1; i++) {
+                   int maxTest = 0;
+                   for(int j = i; j < i+k; j++){
+                       maxTest = numbers.get(j) + maxTest;
+                   }
+                   if (maxTest > max) {
+                       max = maxTest;
+                   }
 
+
+
+               }
+                return max;
             }
 
-            return 0;
         }
     }
-}
