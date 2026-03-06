@@ -72,7 +72,13 @@ public class CollectionBasics {
 
         // TODO:
         // Loop through numbers
+        for (Integer num : numbers) {
         // Update max if current number is larger
+            if (num > max) {
+                max = num;
+            }
+        }
+
 
         return max;
     }
