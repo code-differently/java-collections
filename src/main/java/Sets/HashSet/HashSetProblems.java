@@ -21,7 +21,7 @@ public class HashSetProblems {
     public static void addElement(Set<String> set, String value) {
 
         // TODO: Implement this method
-
+        set.add(value);
     }
 
     /*
@@ -35,8 +35,8 @@ public class HashSetProblems {
     public static boolean containsValue(Set<String> set, String value) {
 
         // TODO: Implement this method
+        return set.contains(value);
 
-        return false;
     }
 
     /*
@@ -50,7 +50,7 @@ public class HashSetProblems {
     public static void removeValue(Set<String> set, String value) {
 
         // TODO: Implement this method
-
+        set.remove(value);
     }
 
     /*
@@ -65,7 +65,7 @@ public class HashSetProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return set.size();
     }
 
     /*
@@ -80,6 +80,7 @@ public class HashSetProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return new HashSet<>(numbers);
+
     }
 }

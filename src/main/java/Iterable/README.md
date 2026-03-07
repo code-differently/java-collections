@@ -156,10 +156,86 @@ for (int n : box) {
 ## Practice Ideas
 
 * Write a method that accepts `Iterable<Integer>` and returns the sum
+
+public static int sumIterable(Iterable<Integer> numbers) {
+int sum = 0;
+for (Integer num : numbers) {
+sum += num;
+}
+return sum;
+}
+
+// Example usage:
+List<Integer> nums = Arrays.asList(1, 2, 3, 4);
+System.out.println("Sum: " + sumIterable(nums)); // Output: 10
+
 * Remove all odd numbers using `Iterator`
+
+import java.util.*;
+
+List<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+Iterator<Integer> iter = numbers.iterator();
+
+while (iter.hasNext()) {
+if (iter.next() % 2 != 0) {
+iter.remove(); // remove odd numbers safely
+}
+}
+
+System.out.println(numbers); // Output: [2, 4]
+
 * Count elements greater than a value
+
+public static int countGreaterThan(Iterable<Integer> numbers, int threshold) {
+int count = 0;
+for (Integer num : numbers) {
+if (num > threshold) {
+count++;
+}
+}
+return count;
+}
+
+// Example usage:
+List<Integer> nums = Arrays.asList(1, 5, 3, 7, 2);
+System.out.println("Count > 3: " + countGreaterThan(nums, 3)); // Output: 2
+
 * Create a simple custom class that implements `Iterable`
 
+import java.util.Iterator;
+
+class EvenNumbers implements Iterable<Integer> {
+private int limit;
+
+    public EvenNumbers(int limit) {
+        this.limit = limit;
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return new Iterator<>() {
+            private int current = 0;
+
+            @Override
+            public boolean hasNext() {
+                return current <= limit;
+            }
+
+            @Override
+            public Integer next() {
+                int value = current;
+                current += 2;
+                return value;
+            }
+        };
+    }
+}
+
+// Example usage:
+EvenNumbers evens = new EvenNumbers(10);
+for (int n : evens) {
+System.out.print(n + " "); // Output: 0 2 4 6 8 10
+}
 ---
 
 ## Summary

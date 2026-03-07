@@ -216,10 +216,60 @@ Keys are automatically sorted.
 ## Practice Ideas
 
 * Store numbers and return them in sorted order
+
+//use a TreeSet to automatically store unique numbers in sorted order.
+import java.util.*;
+
+TreeSet<Integer> numbers = new TreeSet<>();
+numbers.add(50);
+numbers.add(20);
+numbers.add(40);
+numbers.add(20); // duplicate, ignored
+
+System.out.println(numbers); // Output: [20, 40, 50]
+
 * Build a leaderboard sorted by score
+
+//Use a TreeMap where key = score (sorted automatically), value = player name.
+TreeMap<Integer, String> leaderboard = new TreeMap<>();
+leaderboard.put(90, "Alice");
+leaderboard.put(95, "Bob");
+leaderboard.put(85, "Charlie");
+
+System.out.println(leaderboard);
+// Output: {85=Charlie, 90=Alice, 95=Bob}
+//Use descendingMap() if we want highest score first:
+System.out.println(leaderboard.descendingMap());
+// Output: {95=Bob, 90=Alice, 85=Charlie}
+
 * Find the closest value to a target number
+
+TreeSet<Integer> numbers = new TreeSet<>(Arrays.asList(10, 20, 30, 40));
+int target = 25;
+
+Integer ceil = numbers.ceiling(target); // smallest >= target → 30
+Integer floor = numbers.floor(target); // largest <= target → 20
+
+// Find closest
+int closest = (ceil != null && floor != null)
+? (Math.abs(ceil - target) < Math.abs(floor - target) ? ceil : floor)
+: (ceil != null ? ceil : floor);
+
+System.out.println("Closest to " + target + " is " + closest); // Output: 20 or 30
+
 * Return elements in a range using `subMap()`
 
+TreeMap<Integer, String> players = new TreeMap<>();
+players.put(1, "A");
+players.put(2, "B");
+players.put(3, "C");
+players.put(4, "D");
+
+Map<Integer, String> sub = players.subMap(2, 4); // keys 2 and 3
+System.out.println(sub); // Output: {2=B, 3=C}
+
+// subMap(fromKey, toKey) is inclusive-exclusive by default.
+//Use subMap(fromKey, boolean fromInclusive, toKey, boolean toInclusive) to customize inclusivity.
 ---
 
 ## Summary

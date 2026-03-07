@@ -117,10 +117,41 @@ You can switch to `HashSet` or `LinkedList` later without changing much code.
 ## Practice Ideas
 
 * Write a method that accepts `Collection<Integer>` and returns the sum
+  import java.util.Collection;
+
+public static int sumCollection (Collection<Integer> numbers) {
+int sum = 0;
+
+    for (int num : numbers) {
+        sum += num;
+    }
+
+    return sum;
+}
+
 * Find intersection of two collections
+
+Collection<Integer> intersection(Collection<Integer> a, Collection<Integer>b){
+Collection<Integer> result = new ArrayList<>>();
+for(Integer i:a){
+if(b.contains(i)){
+result.add(i);
+}
+}
+return(result);
+}
+
+
 * Remove duplicates using a Set
+
+public static Collection<Integer> removeDuplicate (Collection<Integer> numbers){
+return new HasSet<>(numbers);
+}
+
 * Determine if one collection is a subset of another
 
+public static boolean isSubset(Collection<Integer> a, Collection<Integer> b ){
+return b.containsAll(a);
 ---
 
 ## Summary

@@ -187,10 +187,93 @@ Use it when tasks must be processed by priority, such as:
 ## Practice Ideas
 
 * Find the K smallest numbers
+
+//Use a min-heap (PriorityQueue) to efficiently get smallest numbers:
+import java.util.*;
+
+List<Integer> numbers = Arrays.asList(7, 2, 5, 3, 9);
+int k = 3;
+
+PriorityQueue<Integer> minHeap = new PriorityQueue<>(numbers);
+List<Integer> kSmallest = new ArrayList<>();
+
+for (int i = 0; i < k && !minHeap.isEmpty(); i++) {
+kSmallest.add(minHeap.poll());
+}
+
+System.out.println(kSmallest); // Output: [2, 3, 5]
+// PriorityQueue automatically keeps elements sorted in natural order (min at top).
+
 * Implement a task scheduler
+
+//Use a priority queue where tasks have priority (smaller number = higher priority):
+  class Task implements Comparable<Task> {
+  String name;
+  int priority;
+
+  Task(String name, int priority) {
+  this.name = name;
+  this.priority = priority;
+  }
+
+  @Override
+  public int compareTo(Task other) {
+  return Integer.compare(this.priority, other.priority);
+  }
+  }
+
+PriorityQueue<Task> tasks = new PriorityQueue<>();
+tasks.offer(new Task("Write report", 2));
+tasks.offer(new Task("Email client", 1));
+tasks.offer(new Task("Update code", 3));
+
+while (!tasks.isEmpty()) {
+Task t = tasks.poll();
+System.out.println("Processing: " + t.name + " (priority " + t.priority + ")");
+}
+// Output processes tasks in priority order: Email client, Write report, Update code
+
 * Build a leaderboard system
+
+//Use a max-heap (PriorityQueue with comparator) to get top scores:
+PriorityQueue<Integer> leaderboard = new PriorityQueue<>(Collections.reverseOrder());
+leaderboard.add(90);
+leaderboard.add(75);
+leaderboard.add(95);
+
+System.out.println(leaderboard.poll()); // 95
+System.out.println(leaderboard.poll()); // 90
+// Collections.reverseOrder() makes it a max-heap instead of min-heap.
+
 * Merge multiple sorted lists
 
+//Use a priority queue to efficiently merge k sorted lists:
+List<List<Integer>> lists = List.of(
+List.of(1, 4, 7),
+List.of(2, 5, 8),
+List.of(3, 6, 9)
+);
+
+PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
+// Store {value, listIndex, elementIndex} in heap
+for (int i = 0; i < lists.size(); i++) {
+if (!lists.get(i).isEmpty()) {
+pq.offer(new int[]{lists.get(i).get(0), i, 0});
+}
+}
+
+List<Integer> merged = new ArrayList<>();
+while (!pq.isEmpty()) {
+int[] top = pq.poll();
+merged.add(top[0]);
+int listIndex = top[1], elemIndex = top[2];
+if (elemIndex + 1 < lists.get(listIndex).size()) {
+pq.offer(new int[]{lists.get(listIndex).get(elemIndex + 1), listIndex, elemIndex + 1});
+}
+}
+
+System.out.println(merged); // Output: [1,2,3,4,5,6,7,8,9]
+//This is the classic k-way merge using a heap.
 ---
 
 ## Summary

@@ -198,10 +198,81 @@ The elements are stored in sorted order.
 ## Practice Ideas
 
 * Store numbers and automatically sort them
+
+import java.util.*;
+
+public class SortedNumbersExample {
+public static void main(String[] args) {
+TreeSet<Integer> numbers = new TreeSet<>();
+
+        numbers.add(42);
+        numbers.add(7);
+        numbers.add(19);
+        numbers.add(7); // duplicate ignored
+
+        System.out.println(numbers); // Output: [7, 19, 42]
+    }
+}
 * Find the smallest and largest elements
+
+import java.util.*;
+
+public class MinMaxExample {
+public static void main(String[] args) {
+TreeSet<Integer> numbers = new TreeSet<>(Arrays.asList(10, 5, 20, 15));
+
+        int smallest = numbers.first();
+        int largest = numbers.last();
+
+        System.out.println("Smallest: " + smallest); // 5
+        System.out.println("Largest: " + largest);   // 20
+    }
+}
 * Retrieve values within a range
+
+import java.util.*;
+
+public class RangeExample {
+public static void main(String[] args) {
+TreeSet<Integer> numbers = new TreeSet<>(Arrays.asList(10, 5, 20, 15, 25));
+
+        // Retrieve numbers between 10 (inclusive) and 20 (inclusive)
+        SortedSet<Integer> range = numbers.subSet(10, true, 20, true);
+
+        System.out.println(range); // Output: [10, 15, 20]
+    }
+}import java.util.*;
+
+public class UniqueScores {
+public static void main(String[] args) {
+TreeSet<Integer> scores = new TreeSet<>();
+
+        scores.add(85);
+        scores.add(92);
+        scores.add(76);
+        scores.add(85); // duplicate ignored
+
+        System.out.println("Sorted unique scores: " + scores);
+        // Output: [76, 85, 92]
+    }
+}
 * Track unique sorted scores
 
+import java.util.*;
+
+public class UniqueScores {
+public static void main(String[] args) {
+TreeSet<Integer> scores = new TreeSet<>();
+
+        scores.add(85);
+        scores.add(92);
+        scores.add(76);
+        scores.add(85); // duplicate ignored
+
+        System.out.println("Sorted unique scores: " + scores);
+        // Output: [76, 85, 92]
+    }
+}
 ---
 
 ## Summary
@@ -211,6 +282,8 @@ TreeSet is a **sorted Set implementation backed by a balanced tree**.
 Key characteristics:
 
 * Unique elements only
+
+
 * Automatically sorted
 * O(log n) operations
 * Supports range and navigation operations

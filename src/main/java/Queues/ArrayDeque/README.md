@@ -189,10 +189,74 @@ Task1
 ## Practice Ideas
 
 * Implement a stack using ArrayDeque
+
+import java.util.ArrayDeque;
+
+ArrayDeque<Integer> stack = new ArrayDeque<>();
+
+// Push elements
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+// Pop elements
+System.out.println(stack.pop()); // 30
+System.out.println(stack.pop()); // 20
+System.out.println(stack);       // [10]
+//push() → add to top, pop() → remove from top, peek() → view top element.
+
 * Reverse a string using a stack
+
+String str = "hello";
+ArrayDeque<Character> stack = new ArrayDeque<>();
+
+for (char c : str.toCharArray()) {
+stack.push(c);
+}
+
+StringBuilder reversed = new StringBuilder();
+while (!stack.isEmpty()) {
+reversed.append(stack.pop());
+}
+
+System.out.println(reversed); // Output: "olleh"
+
 * Simulate a queue of tasks
+
+//ArrayDeque also works as a FIFO queue:
+//offer() → add to end, poll() → remove from front, peek() → view front
+
+ArrayDeque<String> queue = new ArrayDeque<>();
+
+// Enqueue tasks
+queue.offer("Task1");
+queue.offer("Task2");
+queue.offer("Task3");
+
+// Dequeue tasks
+System.out.println(queue.poll()); // Task1
+System.out.println(queue.poll()); // Task2
+System.out.println(queue);        // [Task3]
+
 * Check balanced parentheses
 
+  public static boolean isBalanced(String expr) {
+  ArrayDeque<Character> stack = new ArrayDeque<>();
+
+  for (char c : expr.toCharArray()) {
+  if (c == '(') {
+  stack.push(c);
+  } else if (c == ')') {
+  if (stack.isEmpty()) return false;
+  stack.pop();
+  }
+  }
+  return stack.isEmpty();
+  }
+
+// Example
+System.out.println(isBalanced("(())")); // true
+System.out.println(isBalanced("(()"));  // false
 ---
 
 ## Summary

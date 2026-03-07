@@ -198,10 +198,75 @@ Task1
 ## Practice Ideas
 
 * Implement a stack using Deque
-* Implement a queue using Deque
-* Reverse elements using Deque
-* Build a browser history system
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+Deque<Integer> stack = new ArrayDeque<>();
+
+// Push elements
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+// Peek top
+System.out.println(stack.peek()); // 30
+
+// Pop elements
+System.out.println(stack.pop()); // 30
+System.out.println(stack);       // [20, 10]
+// Deque is preferred over Stack because it’s faster and modern.
+
+* Implement a queue using Deque
+  Deque<String> queue = new ArrayDeque<>();
+
+// Enqueue tasks
+queue.offer("Task1");
+queue.offer("Task2");
+queue.offer("Task3");
+
+// Peek front
+System.out.println(queue.peek()); // Task1
+
+// Dequeue tasks
+System.out.println(queue.poll()); // Task1
+System.out.println(queue);        // [Task2, Task3]
+// offer() adds to the back, poll() removes from the front
+
+* Reverse elements using Deque
+
+//reverse elements using stack behavior (push/pop) or addFirst/addLast:
+Deque<Integer> deque = new ArrayDeque<>();
+deque.add(1);
+deque.add(2);
+deque.add(3);
+
+// Reverse using stack operations
+Deque<Integer> reversed = new ArrayDeque<>();
+while (!deque.isEmpty()) {
+reversed.push(deque.poll());
+}
+
+System.out.println(reversed); // Output: [3, 2, 1]
+
+* Build a browser history system
+  //Use a stack for back/forward history:
+  Deque<String> backStack = new ArrayDeque<>();
+  Deque<String> forwardStack = new ArrayDeque<>();
+
+// User visits pages
+backStack.push("google.com");
+backStack.push("openai.com");
+backStack.push("stackoverflow.com");
+
+// Go back
+forwardStack.push(backStack.pop()); // visit previous page
+System.out.println("Current page: " + backStack.peek()); // openai.com
+
+// Go forward
+backStack.push(forwardStack.pop());
+System.out.println("Current page: " + backStack.peek()); // stackoverflow.com
+// This simulates back/forward navigation in browsers.
 ---
 
 ## Summary

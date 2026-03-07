@@ -174,10 +174,66 @@ Actual performance depends on the implementation (`HashMap`, `TreeMap`, etc.).
 ## Practice Ideas
 
 * Count word frequencies in a sentence
-* Store student names and grades
-* Build a phone directory
-* Find the most frequent number in a list
 
+import java.util.*;
+
+public class WordFrequencyDemo {
+public static void main(String[] args) {
+String sentence = "apple banana apple orange banana apple";
+String[] words = sentence.split(" ");
+
+        Map<String, Integer> freq = new HashMap<>();
+        for (String word : words) {
+            freq.put(word, freq.getOrDefault(word, 0) + 1);
+        }//Use getOrDefault(key, defaultValue) to simplify counting
+
+        System.out.println(freq); 
+        // Output: {orange=1, banana=2, apple=3}
+    }
+}
+* Store student names and grades
+
+Map<String, Integer> studentGrades = new HashMap<>();
+studentGrades.put("Alice", 90);
+studentGrades.put("Bob", 85);
+studentGrades.put("Charlie", 95);
+
+System.out.println(studentGrades);
+// Output: {Alice=90, Bob=85, Charlie=95}
+💡// Use LinkedHashMap  to preserve insertion order.
+
+
+* Build a phone directory
+
+Map<String, String> phoneDirectory = new HashMap<>();
+phoneDirectory.put("Alice", "123-456-7890");
+phoneDirectory.put("Bob", "987-654-3210");
+
+System.out.println(phoneDirectory);
+// Output: {Alice=123-456-7890, Bob=987-654-3210}
+//Use Map<String, List<String>> if a person has multiple numbers.
+
+* Find the most frequent number in a list
+//Use a Map to count occurrences and then find the max.
+
+List<Integer> numbers = Arrays.asList(1,3,2,3,4,3);
+
+Map<Integer, Integer> freq = new HashMap<>();
+for (Integer num : numbers) {
+freq.put(num, freq.getOrDefault(num, 0) + 1);
+}
+
+int mostFrequent = numbers.get(0);
+int maxCount = 0;
+
+for (Map.Entry<Integer, Integer> entry : freq.entrySet()) {
+if (entry.getValue() > maxCount) {
+maxCount = entry.getValue();
+mostFrequent = entry.getKey();
+}
+}
+
+System.out.println("Most frequent: " + mostFrequent); // Output: 3
 ---
 
 ## Summary

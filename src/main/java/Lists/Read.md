@@ -181,9 +181,43 @@ Banana
 ## Practice Ideas
 
 * Reverse a list
+
+public static List<Integer> reverseList(List<integer> list){
+Collections.reserse(list);
+return list;
+
+-------or:
+public static List<Integer> reverseList<List<Integer> list){
+
+Collection<Integer> result = new ArrayList<>();
+for( int x = list.size()-1; x>=0; x--){
+return result.list.get(x);
+}
+
+
 * Find the second largest number
+
+public static int findSecondLargestNum(List<Integer>() numbers){
+Set<Integer> unique = new HasSet<>(numbers);
+List<Integer> list= new ArrayList<>(unique);
+Collections.sort(list);
+resul.get(list.size()-2);
+}
+
+
+
 * Remove duplicates from a list
+
+public static List<integer> removeDuplicate(List<>() numbers){
+return new ArrayList<>(new HasSet<>(numbers));
+)
 * Merge two lists
+* 
+public static List<Integer>  mergeTwoLists(List<Integer> a, List<Integer> b){
+List<Integer> result = new ArrayList<>(a);
+result.AddAll(b);
+return result;
+}
 
 ---
 

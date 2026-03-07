@@ -184,10 +184,61 @@ Output:
 ## Practice Ideas
 
 * Count word frequencies in a sentence
+
+Map<String, Integer> wordCount = new HashMap<>();
+String sentence = "hello world hello java";
+
+for (String word : sentence.split("\\s+")) {
+wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+}
+
+System.out.println(wordCount); // {hello=2, world=1, java=1}
+
 * Implement a phone directory
+
+Map<String, String> phoneDirectory = new HashMap<>();
+
+// Add contact
+phoneDirectory.put("Alice", "123-456");
+
+// Update
+phoneDirectory.put("Alice", "987-654");
+
+// Retrieve
+System.out.println(phoneDirectory.get("Alice")); // 987-654
+
+// Remove
+phoneDirectory.remove("Alice");
+
 * Find the first non-repeating character
+
+String str = "swiss";
+Map<Character, Integer> freq = new LinkedHashMap<>();
+
+for (char c : str.toCharArray()) {
+freq.put(c, freq.getOrDefault(c, 0) + 1);
+}
+
+for (Map.Entry<Character, Integer> entry : freq.entrySet()) {
+if (entry.getValue() == 1) {
+System.out.println(entry.getKey()); // 'w'
+break;
+}
+}
+
 * Solve the Two-Sum problem
 
+int[] nums = {2, 7, 11, 15};
+int target = 9;
+Map<Integer, Integer> map = new HashMap<>();
+
+for (int i = 0; i < nums.length; i++) {
+int complement = target - nums[i];
+if (map.containsKey(complement)) {
+System.out.println("Indices: " + map.get(complement) + ", " + i);
+}
+map.put(nums[i], i);
+}
 ---
 
 ## Summary

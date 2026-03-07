@@ -157,13 +157,68 @@ The duplicate `"Apple"` is not stored.
 ## Practice Ideas
 
 * Remove duplicates from a list
-* Count unique numbers in an array
-* Track visited nodes in graph traversal
-* Compare HashSet with TreeSet ordering
 
+//Use a HashSet to remove duplicates (order not preserved) or a LinkedHashSet (order preserved):
+import java.util.*;
+
+List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
+Set<Integer> uniqueNumbers = new LinkedHashSet<>(numbers); // preserves order
+
+System.out.println(uniqueNumbers); // Output: [1, 2, 3, 4, 5]
+
+* Count unique numbers in an array
+
+//Just add all elements to a Set and check the size:
+int[] arr = {1, 2, 2, 3, 4, 4, 5};
+Set<Integer> unique = new HashSet<>();
+for (int num : arr) {
+unique.add(num);
+}
+
+System.out.println("Unique count: " + unique.size()); // Output: 5
+
+* Track visited nodes in graph traversal
+
+import java.util.*;
+
+Map<Integer, List<Integer>> graph = Map.of(
+1, Arrays.asList(2, 3),
+2, Arrays.asList(4),
+3, Arrays.asList(4),
+4, Arrays.asList()
+);
+
+Set<Integer> visited = new HashSet<>();
+Stack<Integer> stack = new Stack<>();
+stack.push(1);
+
+while (!stack.isEmpty()) {
+int node = stack.pop();
+if (!visited.contains(node)) {
+visited.add(node);
+for (int neighbor : graph.get(node)) {
+stack.push(neighbor);
+}
+}
+}
+
+System.out.println("Visited nodes: " + visited); // Output: [1,2,3,4]
+
+* Compare HashSet with TreeSet ordering
+  //HashSet → unordered, fast O(1) lookup.
+  //TreeSet → sorted, O(log n) lookup.
+* 
+  Set<Integer> hashSet = new HashSet<>(Arrays.asList(5, 1, 3, 2));
+  Set<Integer> treeSet = new TreeSet<>(Arrays.asList(5, 1, 3, 2));
+
+System.out.println("HashSet: " + hashSet); // Output order may vary: [1, 2, 3, 5] or different
+System.out.println("TreeSet: " + treeSet); // Output sorted: [1, 2, 3, 5]
 ---
 
 ## Summary
+Use HashSet for fast lookup & uniqueness.
+Use LinkedHashSet if you want insertion order preserved.
+Use TreeSet if you want sorted order automatically.
 
 HashSet is a **fast implementation of the Set interface that stores unique elements using hashing**.
 
