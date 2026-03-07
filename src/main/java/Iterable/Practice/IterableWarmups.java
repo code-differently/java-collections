@@ -14,9 +14,17 @@ public class IterableWarmups {
         numbers.add(4);
         numbers.add(8);
 
+        List<String> words = new ArrayList<>();
+        words.add("fun");
+        words.add("funny");
+        words.add("funny money");
+
         System.out.println("Sum: " + sum(numbers));
         System.out.println("Even count: " + countEven(numbers));
         System.out.println("Max value: " + findMax(numbers));
+        System.out.println("Count Matches: " + countMatches(words,"fun"));
+
+
     }
 
 
@@ -27,10 +35,11 @@ public class IterableWarmups {
     public static int sum(Iterable<Integer> numbers) {
 
         int total = 0;
-
+        for (int x: numbers){
+            total+=x;
+        }
         // TODO:
         // Use a for-each loop to calculate the sum
-
         return total;
     }
 
@@ -43,10 +52,14 @@ public class IterableWarmups {
 
         int count = 0;
 
+        for (int c: numbers){
+            if (c%2==0){
+                count++;
+            }
+        }
         // TODO:
         // Loop through numbers
         // Increment count if number is even
-
         return count;
     }
 
@@ -58,7 +71,11 @@ public class IterableWarmups {
     public static int findMax(Iterable<Integer> numbers) {
 
         int max = Integer.MIN_VALUE;
-
+for (int x: numbers){
+    if (x>max){
+        max=x;
+    }
+}
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
@@ -74,11 +91,14 @@ public class IterableWarmups {
     public static int countMatches(Iterable<String> words, String target) {
 
         int count = 0;
-
+        for (String x: words){
+            if (x.equals(target)){
+                count++;
+            }
+        }
         // TODO:
         // Loop through words
         // Compare each word to target
-
         return count;
     }
 }

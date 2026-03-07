@@ -36,7 +36,7 @@ public class LinkedListProblems {
     Output: [5,10,20,30]
     */
     public static void addToFront(LinkedList<Integer> list, int value) {
-
+        list.addFirst(value);
         // TODO: Implement this method
 
     }
@@ -50,7 +50,7 @@ public class LinkedListProblems {
     Output: [10,20,30,40]
     */
     public static void addToEnd(LinkedList<Integer> list, int value) {
-
+        list.add(list.getLast(),value);
         // TODO: Implement this method
 
     }
@@ -64,7 +64,7 @@ public class LinkedListProblems {
     Output: [20,30]
     */
     public static void removeFirstElement(LinkedList<Integer> list) {
-
+        list.removeFirst();
         // TODO: Implement this method
 
     }
@@ -78,7 +78,7 @@ public class LinkedListProblems {
     Output: [10,20]
     */
     public static void removeLastElement(LinkedList<Integer> list) {
-
+        list.remove(list.getLast());
         // TODO: Implement this method
 
     }
@@ -92,10 +92,8 @@ public class LinkedListProblems {
     Output: 10
     */
     public static int getFirstElement(LinkedList<Integer> list) {
-
+return list.getFirst();
         // TODO: Implement this method
-
-        return 0;
     }
 
     /*
@@ -107,9 +105,8 @@ public class LinkedListProblems {
     Output: 30
     */
     public static int getLastElement(LinkedList<Integer> list) {
-
+        return list.getLast();
         // TODO: Implement this method
 
-        return 0;
     }
 }
