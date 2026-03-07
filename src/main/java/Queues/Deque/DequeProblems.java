@@ -61,9 +61,12 @@ public class DequeProblems {
     public static Integer removeFront(Deque<Integer> deque) {
 
         // TODO: Implement this method
+        deque.removeFirst();
+        return deque.removeFirst();
 
-        return null;
     }
+
+
 
     /*
     Problem 4
