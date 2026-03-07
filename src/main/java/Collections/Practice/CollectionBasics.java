@@ -2,6 +2,7 @@ package Collections.Practice;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -34,6 +35,15 @@ public class CollectionBasics {
         // Loop through the collection
         // Add each number to total
 
+
+        //loop through each item in numbers
+        for(int item :numbers){
+
+            //add each item in loop to the total
+            total = total + item;
+        }
+
+        //return final total value
         return total;
     }
 
@@ -50,6 +60,15 @@ public class CollectionBasics {
         // Loop through the collection
         // If the number is even, increase count
 
+        //loop through each item in numbers
+        for(int item : numbers){
+
+            //if item is divisible by 2 (remainder of item / 2 is equal to 0)
+            //then increment count by 1.
+            if(item % 2 ==0){
+                count++;
+            }
+        }
         return count;
     }
 
@@ -65,8 +84,16 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
+        for(int item : numbers){
+            //if item is greater than max
+            if(item > max){
+                //set max to item
+                max = item;
+            }
+        }
 
-        return max;
+
+            return max;
     }
 
 
@@ -81,7 +108,20 @@ public class CollectionBasics {
         // Hint:
         // Compare the size of a collection with the size of a Set
 
-        return false;
+        //make new set, populate set with values in numbers.
+        //so this set will be a numbers list but without duplicates.
+        
+        HashSet<Integer> set = new HashSet<>();
+
+        //add to set for each item in numbers
+        //but there is something that a
+        // set returns when you add something to a set, and its already in the set.
+        for(int item : numbers){
+
+
+        }
+
+            return false;
     }
 
 

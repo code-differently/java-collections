@@ -3,113 +3,73 @@ package Lists.LinkedLists;
 import java.util.LinkedList;
 
 public class LinkedListProblems {
-    public static void main(String[] args) {
 
-        LinkedList<Integer> numbers = new LinkedList<>();
+    public class LinkedListPractice {
 
-        numbers.add(10);
-        numbers.add(20);
-        numbers.add(30);
-        numbers.add(40);
-        numbers.add(50);
+        public static void main(String[] args) {
 
-        addToFront(numbers, 5);
-        addToEnd(numbers, 60);
+            LinkedList<Integer> numbers = new LinkedList<>();
 
-        System.out.println("List after additions: " + numbers);
+            numbers.add(10);
+            numbers.add(20);
+            numbers.add(30);
+            numbers.add(40);
+            numbers.add(50);
 
-        removeFirstElement(numbers);
-        removeLastElement(numbers);
+            addToFront(numbers, 5);
+            addToEnd(numbers, 60);
 
-        System.out.println("List after removals: " + numbers);
+            System.out.println("List after additions: " + numbers);
 
-        System.out.println("First Element: " + getFirstElement(numbers));
-        System.out.println("Last Element: " + getLastElement(numbers));
-    }
+            removeFirstElement(numbers);
+            removeLastElement(numbers);
 
-    /*
-    Problem 1
-    Add a value to the FRONT of the LinkedList.
+            System.out.println("List after removals: " + numbers);
 
-    Example
-    Input: [10,20,30], value=5
-    Output: [5,10,20,30]
-    */
-    public static void addToFront(LinkedList<Integer> list, int value) {
+            System.out.println("First Element: " + getFirstElement(numbers));
+            System.out.println("Last Element: " + getLastElement(numbers));
+        }
 
-        // TODO: Implement this method
+        // Problem 1
+        public static void addToFront(LinkedList<Integer> list, int value) {
 
-    }
+            list.addFirst(value);
 
-    /*
-    Problem 2
-    Add a value to the END of the LinkedList.
+        }
 
-    Example
-    Input: [10,20,30], value=40
-    Output: [10,20,30,40]
-    */
-    public static void addToEnd(LinkedList<Integer> list, int value) {
+        // Problem 2
+        public static void addToEnd(LinkedList<Integer> list, int value) {
 
-        // TODO: Implement this method
+            list.addLast(value);
 
-    }
+        }
 
-    /*
-    Problem 3
-    Remove the FIRST element from the LinkedList.
+        // Problem 3
+        public static void removeFirstElement(LinkedList<Integer> list) {
 
-    Example
-    Input: [10,20,30]
-    Output: [20,30]
-    */
-    public static void removeFirstElement(LinkedList<Integer> list) {
+            list.removeFirst();
 
-        // TODO: Implement this method
+        }
 
-    }
+        // Problem 4
+        public static void removeLastElement(LinkedList<Integer> list) {
 
-    /*
-    Problem 4
-    Remove the LAST element from the LinkedList.
+            list.removeLast();
 
-    Example
-    Input: [10,20,30]
-    Output: [10,20]
-    */
-    public static void removeLastElement(LinkedList<Integer> list) {
+        }
 
-        // TODO: Implement this method
+        // Problem 5
+        public static int getFirstElement(LinkedList<Integer> list) {
 
-    }
+            return list.getFirst();
 
-    /*
-    Problem 5
-    Return the FIRST element in the LinkedList.
+        }
 
-    Example
-    Input: [10,20,30]
-    Output: 10
-    */
-    public static int getFirstElement(LinkedList<Integer> list) {
+        // Problem 6
+        public static int getLastElement(LinkedList<Integer> list) {
 
-        // TODO: Implement this method
+            return list.getLast();
 
-        return 0;
-    }
-
-    /*
-    Problem 6
-    Return the LAST element in the LinkedList.
-
-    Example
-    Input: [10,20,30]
-    Output: 30
-    */
-    public static int getLastElement(LinkedList<Integer> list) {
-
-        // TODO: Implement this method
-
-        return 0;
+        }
     }
 }
