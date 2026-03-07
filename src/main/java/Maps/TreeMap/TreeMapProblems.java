@@ -31,8 +31,10 @@ public class TreeMapProblems {
     public static void addPlayer(TreeMap<Integer, String> map, int rank, String name) {
 
         // TODO: Implement this method
-
+        map.put(rank, name);
     }
+
+
 
     /*
     Problem 2
