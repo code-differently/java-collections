@@ -111,7 +111,8 @@ public class ArrayDequeProblems {
     public static Integer peekBack(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
-
-        return null;
+        return deque.peekLast();
     }
+
+
 }
