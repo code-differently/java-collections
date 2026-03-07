@@ -83,7 +83,7 @@ public class LinkedListProblems {
     public static void removeLastElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
-
+        list.removeLast();
     }
 
     /*
@@ -97,6 +97,9 @@ public class LinkedListProblems {
     public static int getFirstElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
+        if (!list.isEmpty()) {
+            list.removeLast();
+        }
 
         return 0;
     }
@@ -112,7 +115,9 @@ public class LinkedListProblems {
     public static int getLastElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
-
-        return 0;
+        return list.getLast();
     }
+
+
+
 }
