@@ -1,7 +1,6 @@
 package Collections.Practice;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -10,6 +9,7 @@ public class CollectionBasics {
 
         numbers.add(4);
         numbers.add(8);
+       //numbers.add(8);
         numbers.add(15);
         numbers.add(16);
         numbers.add(23);
@@ -33,7 +33,9 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // Add each number to total
-
+for(Integer sum: numbers){
+    total += sum;
+}
         return total;
     }
 
@@ -49,7 +51,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // If the number is even, increase count
-
+for(Integer even: numbers){
+    if(even % 2 == 0){
+        count++;
+    }
+}
         return count;
     }
 
@@ -65,7 +71,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
-
+for(Integer newMax: numbers){
+if(newMax > max){
+    max = newMax;
+}
+}
         return max;
     }
 
@@ -80,8 +90,9 @@ public class CollectionBasics {
         // TODO:
         // Hint:
         // Compare the size of a collection with the size of a Set
+Set<Integer> diffNumbers = new HashSet<>(numbers);
 
-        return false;
+        return diffNumbers.size() !=numbers.size();
     }
 
 
@@ -96,7 +107,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // If number equals target, increase count
-
+for(Integer nextNum: numbers){
+    if(nextNum == target){
+        count++;
+    }
+}
         return count;
     }
 
@@ -113,7 +128,12 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Add numbers greater than 20 to result
-
+for(Integer overTwenty: numbers){
+    if(overTwenty > 20){
+        result.add(overTwenty);
+    }
+}
         return result;
+
     }
 }

@@ -33,9 +33,8 @@ public class HashMapProblems {
     Output: {"Apples"=10}
     */
     public static void addItem(Map<String, Integer> map, String item, int quantity) {
-
         // TODO: Implement this method
-
+map.put(item,quantity);
     }
 
     /*
@@ -47,10 +46,9 @@ public class HashMapProblems {
     Output: 10
     */
     public static int getQuantity(Map<String, Integer> map, String item) {
-
         // TODO: Implement this method
 
-        return 0;
+        return map.get(item);
     }
 
     /*
@@ -64,7 +62,7 @@ public class HashMapProblems {
     public static void updateQuantity(Map<String, Integer> map, String item, int newQuantity) {
 
         // TODO: Implement this method
-
+map.replace(item,newQuantity);
     }
 
     /*
@@ -78,7 +76,7 @@ public class HashMapProblems {
     public static void removeItem(Map<String, Integer> map, String item) {
 
         // TODO: Implement this method
-
+map.remove(item);
     }
 
     /*
@@ -90,9 +88,16 @@ public class HashMapProblems {
     Output: {1=1, 2=2, 3=3}
     */
     public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
-
+Map<Integer, Integer> howManyTimes = new HashMap<>();
         // TODO: Implement this method
-
-        return null;
+for(Integer nums: numbers){
+if(howManyTimes.containsKey(nums)) {
+howManyTimes.put(nums, howManyTimes.get(nums)+1);
+}
+    else{
+howManyTimes.put(nums,1);
+    }
+}
+return howManyTimes;
     }
 }
