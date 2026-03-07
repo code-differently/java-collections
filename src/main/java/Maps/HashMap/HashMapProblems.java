@@ -99,7 +99,18 @@ public class HashMapProblems {
     public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
         // TODO: Implement this method
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
 
-        return null;
+        for (Integer num : numbers) {
+            if (frequencyMap.containsKey(num)) {
+                frequencyMap.put(num, frequencyMap.get(num) + 1);
+            } else {
+                frequencyMap.put(num, 1);
+            }
+        }
+
+        return frequencyMap;
     }
+
+
 }
