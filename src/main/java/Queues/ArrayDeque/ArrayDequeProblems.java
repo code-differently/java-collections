@@ -95,9 +95,10 @@ public class ArrayDequeProblems {
     public static Integer peekFront(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
-
-        return null;
+        return deque.peekFirst();
     }
+
+
 
     /*
     Problem 6
