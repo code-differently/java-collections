@@ -63,9 +63,9 @@ public class TreeMapProblems {
     public static String getLowestPlayer(TreeMap<Integer, String> map) {
 
         // TODO: Implement this method
-
-        return null;
+        return map.get(map.lastKey());
     }
+
 
     /*
     Problem 4
