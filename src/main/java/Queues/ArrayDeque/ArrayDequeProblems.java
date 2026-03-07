@@ -47,8 +47,10 @@ public class ArrayDequeProblems {
     public static void addToBack(ArrayDeque<Integer> deque, int value) {
 
         // TODO: Implement this method
-
+        deque.addLast(value);
     }
+
+
 
     /*
     Problem 3
