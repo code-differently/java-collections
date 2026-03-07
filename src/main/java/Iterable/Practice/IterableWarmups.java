@@ -30,6 +30,9 @@ public class IterableWarmups {
 
         // TODO:
         // Use a for-each loop to calculate the sum
+        for (Integer num : numbers) {
+            total += num;
+        }
 
         return total;
     }
