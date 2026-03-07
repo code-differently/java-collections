@@ -2,13 +2,21 @@ package Sets.HashSet;
 
 import java.util.List;
 import java.util.Set;
+import java.util.HashSet;
 
 public class HashSetProblems {
     public static void main(String[] args) {
 
         // You can test your methods here
+        Set<String> set = new HashSet<>();
+
+        addElement(set, "apple");
+
+        System.out.println(set); // Output: [apple]
 
     }
+
+
 
     /*
     Problem 1
@@ -21,8 +29,10 @@ public class HashSetProblems {
     public static void addElement(Set<String> set, String value) {
 
         // TODO: Implement this method
-
+        set.add(value);
     }
+
+
 
     /*
     Problem 2
