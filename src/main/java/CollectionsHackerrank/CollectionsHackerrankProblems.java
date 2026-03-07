@@ -3,15 +3,33 @@ package CollectionsHackerrank;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.*;
 
 public class CollectionsHackerrankProblems {
-    public class CollectionsHackerrankPractice {
+    public static void main(String[] args) {
+    // You can test your methods here
+        testMethods();
+}
 
-        public static void main(String[] args) {
 
-            // You can test your methods here
+    public static void testMethods() {
+                List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
 
-        }
+                System.out.println("Remove duplicates:");
+                System.out.println(removeDuplicates(numbers));
+
+                System.out.println("\nCount frequency:");
+                System.out.println(countFrequency(Arrays.asList(1, 2, 2, 3, 3, 3)));
+
+                System.out.println("\nFirst unique:");
+                System.out.println(firstUnique(Arrays.asList(4, 5, 1, 2, 0, 4)));
+
+                System.out.println("\nTwo Sum:");
+                System.out.println(twoSum(Arrays.asList(2, 7, 11, 15), 9));
+
+                System.out.println("\nUnique words:");
+                System.out.println(countUniqueWords(Arrays.asList("apple", "banana", "apple", "orange")));
+            }
 
         /*
         Problem 1
@@ -24,8 +42,8 @@ public class CollectionsHackerrankProblems {
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
             // TODO: Implement this method
-
-            return null;
+            Set<Integer> set = new LinkedHashSet<>(numbers);
+            return new ArrayList<>(set);
         }
 
         /*
@@ -39,8 +57,12 @@ public class CollectionsHackerrankProblems {
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> map = new HashMap<>();
+            for (Integer num : numbers) {
+                map.put(num, map.getOrDefault(num, 0) + 1);
+            }
 
-            return null;
+            return map;
         }
 
         /*
@@ -54,6 +76,13 @@ public class CollectionsHackerrankProblems {
         public static Integer firstUnique(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> freqMap = countFrequency(numbers);
+
+            for (Integer num : numbers) {
+                if (freqMap.get(num) == 1) {
+                    return num;
+                }
+            }
 
             return null;
         }
@@ -71,7 +100,16 @@ public class CollectionsHackerrankProblems {
         public static boolean twoSum(List<Integer> numbers, int target) {
 
             // TODO: Implement this method
+            Set<Integer> seen = new HashSet<>();
 
+            for (Integer num : numbers) {
+                int complement = target - num;
+
+                if (seen.contains(complement)) {
+                    return true;
+                }
+                seen.add(num);
+            }
             return false;
         }
 
@@ -86,8 +124,9 @@ public class CollectionsHackerrankProblems {
         public static int countUniqueWords(List<String> words) {
 
             // TODO: Implement this method
+            Set<String> set = new HashSet<>(words);
 
-            return 0;
+            return set.size();
         }
 
         /*
@@ -101,8 +140,17 @@ public class CollectionsHackerrankProblems {
         public static Queue<Integer> reverseQueue(Queue<Integer> queue) {
 
             // TODO: Implement this method
+            Stack<Integer> stack = new Stack<>();
 
-            return null;
+            while (!queue.isEmpty()) {
+                stack.push(queue.poll());
+            }
+
+            while (!stack.isEmpty()) {
+                queue.offer(stack.pop());
+            }
+
+            return queue;
         }
 
         /*
@@ -120,7 +168,20 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return false;
+            Stack<Character> stack = new Stack<>();
+
+            for (char ch : expression.toCharArray()) {
+                if (ch == '(') {
+                    stack.push(ch);
+                } else if (ch == ')') {
+                    if (stack.isEmpty()) {
+                        return false;
+                    }
+                    stack.pop();
+                }
+            }
+
+            return stack.isEmpty();
         }
 
         /*
@@ -134,8 +195,19 @@ public class CollectionsHackerrankProblems {
         public static Integer mostFrequent(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> freqMap = countFrequency(numbers);
 
-            return null;
+            int maxCount = 0;
+            Integer mostFrequentNum = null;
+
+            for (Map.Entry<Integer, Integer> entry : freqMap.entrySet()) {
+                if (entry.getValue() > maxCount) {
+                    maxCount = entry.getValue();
+                    mostFrequentNum = entry.getKey();
+                }
+            }
+
+            return mostFrequentNum;
         }
 
         /*
@@ -154,8 +226,20 @@ public class CollectionsHackerrankProblems {
         public static Map<Integer, List<String>> groupByLength(List<String> words) {
 
             // TODO: Implement this method
+            Map<Integer, List<String>> map = new HashMap<>();
 
-            return null;
+            for (String word : words) {
+                int length = word.length();
+
+                if (!map.containsKey(length)) {
+                    map.put(length, new ArrayList<>());
+                }
+
+                map.get(length).add(word);
+            }
+
+            return map;
+
         }
 
         /*
@@ -172,7 +256,22 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return 0;
+            int windowSum = 0;
+
+            for (int i = 0; i < k; i++) {
+                windowSum += numbers.get(i);
+            }
+
+            int maxSum = windowSum;
+
+            for (int i = k; i < numbers.size(); i++) {
+                windowSum += numbers.get(i);
+                windowSum -= numbers.get(i - k);
+                maxSum = Math.max(maxSum, windowSum);
+            }
+
+            return maxSum;
         }
+
     }
-}
+

@@ -6,6 +6,29 @@ public class DequeProblems {
     public static void main(String[] args) {
 
         // You can test your methods here
+        Deque<Integer> deque = new java.util.ArrayDeque<>();
+
+        // Test adding
+        addFront(deque, 10);
+        addFront(deque, 5);
+        addBack(deque, 20);
+
+        System.out.println("After adding: " + deque);
+
+        // Test peeking
+        System.out.println("Peek Front: " + peekFront(deque));
+
+        System.out.println("Peek Back: " + peekBack(deque));
+
+        // Test removing
+        System.out.println("Removed Front: " + removeFront(deque));
+
+        System.out.println("After removing front: " + deque);
+
+        System.out.println("Removed Back: " + removeBack(deque));
+
+        System.out.println("Final deque: " + deque);
+
 
     }
 
@@ -20,6 +43,7 @@ public class DequeProblems {
     public static void addFront(Deque<Integer> deque, int value) {
 
         // TODO: Implement this method
+        deque.addFirst(value);
 
     }
 
@@ -34,6 +58,7 @@ public class DequeProblems {
     public static void addBack(Deque<Integer> deque, int value) {
 
         // TODO: Implement this method
+        deque.addLast(value);
 
     }
 
@@ -49,7 +74,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.removeFirst();
     }
 
     /*
@@ -64,7 +89,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.removeLast();
     }
 
     /*
@@ -79,7 +104,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekFirst();
     }
 
     /*
@@ -94,7 +119,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekLast();
     }
 
 }

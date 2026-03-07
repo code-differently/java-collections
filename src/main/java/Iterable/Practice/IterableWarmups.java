@@ -30,6 +30,9 @@ public class IterableWarmups {
 
         // TODO:
         // Use a for-each loop to calculate the sum
+        for (Integer num : numbers) {
+            total += num;
+        }
 
         return total;
     }
@@ -46,39 +49,56 @@ public class IterableWarmups {
         // TODO:
         // Loop through numbers
         // Increment count if number is even
+        for (Integer num : numbers) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }
+            return count;
+        }
 
-        return count;
-    }
 
 
     /*
     PROBLEM 3
     Return the maximum value
      */
-    public static int findMax(Iterable<Integer> numbers) {
+        public static int findMax (Iterable < Integer > numbers) {
 
-        int max = Integer.MIN_VALUE;
+            int max = Integer.MIN_VALUE;
 
-        // TODO:
-        // Loop through numbers
-        // Update max if current number is larger
+            // TODO:
+            // Loop through numbers
+            // Update max if current number is larger
+            for (Integer num : numbers) {
+                if (num > max) {
+                    max = num;
+                }
+            }
 
-        return max;
-    }
+            return max;
+        }
 
 
     /*
     PROBLEM 4 (BONUS)
     Count how many times a word appears
      */
-    public static int countMatches(Iterable<String> words, String target) {
+        public static int countMatches (Iterable < String > words, String target){
 
-        int count = 0;
+            int count = 0;
 
-        // TODO:
-        // Loop through words
-        // Compare each word to target
+            // TODO:
+            // Loop through words
+            // Compare each word to target
+            for (String word : words) {
+                if (word.equals(target)) {
+                    count++;
+                }
+            }
 
-        return count;
+            return count;
+        }
     }
-}
+
+

@@ -34,8 +34,13 @@ public class ArrayListProblems {
     public static int sum(List<Integer> nums) {
 
         // TODO: Implement this method
+        int total = 0;
 
-        return 0;
+        for (Integer num : nums) {
+            total += num;
+        }
+
+        return total;
     }
 
     /*
@@ -49,8 +54,15 @@ public class ArrayListProblems {
     public static int countEvens(List<Integer> nums) {
 
         // TODO: Implement this method
+        int count = 0;
 
-        return 0;
+        for (Integer num : nums){
+            if(num % 2 == 0){
+                count++;
+            }
+        }
+
+        return count;
     }
 
     /*
@@ -67,6 +79,16 @@ public class ArrayListProblems {
     public static boolean hasDuplicate(List<Integer> nums) {
 
         // TODO: Implement this method
+        for (int i = 0; i < nums.size(); i++) {
+            for (int j = i + 1; j < nums.size(); j++) {
+
+                if (nums.get(i).equals(nums.get(j))) {
+                    return true;
+                }
+
+            }
+        }
+
 
         return false;
     }
@@ -82,8 +104,15 @@ public class ArrayListProblems {
     public static int findMax(List<Integer> nums) {
 
         // TODO: Implement this method
+        int max = Integer.MIN_VALUE;
 
-        return 0;
+        for (Integer num : nums) {
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        return max;
     }
 
     /*
@@ -100,6 +129,13 @@ public class ArrayListProblems {
 
         // TODO: Implement this method
 
-        return null;
+        List<Integer> reversed = new ArrayList<>();
+
+        for (int i = nums.size() - 1; i >= 0; i--) {
+            reversed.add(nums.get(i));
+        }
+
+
+        return reversed;
     }
 }
