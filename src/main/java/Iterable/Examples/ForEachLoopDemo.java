@@ -16,13 +16,17 @@ public class ForEachLoopDemo {
         System.out.println("Printing students using a for-each loop:");
 
         // TODO:
-        // Use a for-each loop to print each student name
+        for (String student : students) {
+            System.out.println(student);
+        }
 
 
         System.out.println("\nPrinting students in uppercase:");
 
         // TODO:
-        // Use a for-each loop to print each name in uppercase
+        for (String student : students) {
+            System.out.println(student.toUpperCase());
+        }
 
 
         System.out.println("\nCount the number of students:");
@@ -30,7 +34,9 @@ public class ForEachLoopDemo {
         int count = 0;
 
         // TODO:
-        // Use a for-each loop to count how many students are in the list
+        for (String student : students) {
+            count++;
+        }
 
         System.out.println("Total students: " + count);
     }
