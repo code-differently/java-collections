@@ -98,7 +98,14 @@ public class LinkedHashMapProblems {
     public static Map<String, Integer> wordFrequency(List<String> words) {
 
         // TODO: Implement this method
+        Map<String, Integer> map = new LinkedHashMap<>();
 
-        return null;
+        for (String word : words) {
+            map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+
+        return map;
     }
+
+
 }
