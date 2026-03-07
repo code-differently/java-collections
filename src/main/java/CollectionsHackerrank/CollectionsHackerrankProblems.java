@@ -1,14 +1,19 @@
 package CollectionsHackerrank;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class CollectionsHackerrankProblems {
-    public class CollectionsHackerrankPractice {
-
+    public static class CollectionsHackerrankPractice {
         public static void main(String[] args) {
 
+            List<Integer> list = new ArrayList<>();
+            list.add(1);
+            list.add(2);
+            list.add(3);
+            list.add(3);
+
+            System.out.println(list);
+            System.out.println(removeDuplicates(list));
             // You can test your methods here
 
         }
@@ -22,10 +27,7 @@ public class CollectionsHackerrankProblems {
         Output: [1,2,3,4,5]
         */
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
-
-            // TODO: Implement this method
-
-            return null;
+            return new ArrayList<>(new HashSet<>(numbers));
         }
 
         /*
@@ -37,8 +39,12 @@ public class CollectionsHackerrankProblems {
         Output: {1=1, 2=2, 3=3}
         */
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
+            Map<Integer, Integer> map = new HashMap<>();
 
-            // TODO: Implement this method
+            for (int num: numbers){
+
+            }
+
 
             return null;
         }
