@@ -54,6 +54,7 @@ public class LinkedListProblems {
     public static void addToEnd(LinkedList<Integer> list, int value) {
 
         // TODO: Implement this method
+        list.addLast(value);
 
     }
 
@@ -68,7 +69,7 @@ public class LinkedListProblems {
     public static void removeFirstElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
-
+        list.removeFirst();
     }
 
     /*
