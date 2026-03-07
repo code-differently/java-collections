@@ -47,9 +47,10 @@ public class TreeMapProblems {
     public static String getTopPlayer(TreeMap<Integer, String> map) {
 
         // TODO: Implement this method
-
-        return null;
+        return map.get(map.firstKey());
     }
+
+
 
     /*
     Problem 3
