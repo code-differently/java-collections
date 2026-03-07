@@ -78,8 +78,10 @@ public class TreeMapProblems {
     public static void removePlayer(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
-
+        map.remove(rank);
     }
+
+
 
     /*
     Problem 5
