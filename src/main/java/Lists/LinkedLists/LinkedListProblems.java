@@ -38,6 +38,8 @@ public class LinkedListProblems {
     public static void addToFront(LinkedList<Integer> list, int value) {
 
         // TODO: Implement this method
+        list.addFirst(value);
+
 
     }
 
