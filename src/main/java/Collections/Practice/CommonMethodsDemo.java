@@ -131,6 +131,13 @@ public class CommonMethodsDemo {
          Add the following values:
          10, 20, 30, 40, 50
         */
+        Collection<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
+        System.out.println(numbers);
 
 
         /*
@@ -138,17 +145,25 @@ public class CommonMethodsDemo {
          Print the size of the numbers collection
         */
 
+        System.out.println("Size collection: "+ numbers.size());
 
         /*
          TODO 3:
          Check if the collection contains 30
         */
-
+        for (Integer number: numbers){
+            if(numbers.contains(30)){
+                System.out.println(true);
+                break;
+            }
+        }
 
         /*
          TODO 4:
          Remove the number 20
         */
+        numbers.remove(20);
+        System.out.println(numbers);
 
 
         /*
@@ -156,15 +171,30 @@ public class CommonMethodsDemo {
          Loop through the numbers collection
          and print each value
         */
+        for(Integer number: numbers){
+            System.out.println(number);
+        }
 
 
         /*
          REFLECTION QUESTIONS:
 
          1. Why can we use Collection as the reference type?
+
+         - Interface Parent class of data structures such as lists, sets,
+         and queues.
+
          2. What methods are available because of the Collection interface?
+
+         - add(), remove(), size(), isEmpty();, contains(), iterator(), clear()
+
          3. What methods are NOT available when using Collection instead of List?
+
+         - get(int index), set(int index, element), add(int index, element),
+         remove(int index)
+
          */
+
     }
 
 }

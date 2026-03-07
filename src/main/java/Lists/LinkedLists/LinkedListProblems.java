@@ -38,6 +38,8 @@ public class LinkedListProblems {
     public static void addToFront(LinkedList<Integer> list, int value) {
 
         // TODO: Implement this method
+        list.addFirst(5);
+        System.out.println(list);
 
     }
 
@@ -52,6 +54,7 @@ public class LinkedListProblems {
     public static void addToEnd(LinkedList<Integer> list, int value) {
 
         // TODO: Implement this method
+        list.addLast(40);
 
     }
 
@@ -66,6 +69,7 @@ public class LinkedListProblems {
     public static void removeFirstElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
+        list.removeFirst();
 
     }
 
@@ -80,6 +84,7 @@ public class LinkedListProblems {
     public static void removeLastElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
+        list.removeLast();
 
     }
 
@@ -92,10 +97,9 @@ public class LinkedListProblems {
     Output: 10
     */
     public static int getFirstElement(LinkedList<Integer> list) {
-
         // TODO: Implement this method
 
-        return 0;
+        return list.get(0);
     }
 
     /*
@@ -110,6 +114,6 @@ public class LinkedListProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return list.get(list.size()-1);
     }
 }

@@ -1,11 +1,34 @@
 package Queues.Deque;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class DequeProblems {
     public static void main(String[] args) {
+        Deque<Integer> deque = new ArrayDeque<>();
 
-        // You can test your methods here
+        // Test addFront
+        addFront(deque, 5);
+        System.out.println("After addFront(5): " + deque);
+
+        // Test addBack
+        addBack(deque, 10);
+        addBack(deque, 15);
+        System.out.println("After addBack(10,15): " + deque);
+
+        // Test peekFront
+        System.out.println("Peek Front: " + peekFront(deque));
+
+        // Test peekBack
+        System.out.println("Peek Back: " + peekBack(deque));
+
+        // Test removeFront
+        System.out.println("Removed Front: " + removeFront(deque));
+        System.out.println("Deque after removeFront: " + deque);
+
+        // Test removeBack
+        System.out.println("Removed Back: " + removeBack(deque));
+        System.out.println("Deque after removeBack: " + deque);
 
     }
 
@@ -20,7 +43,7 @@ public class DequeProblems {
     public static void addFront(Deque<Integer> deque, int value) {
 
         // TODO: Implement this method
-
+        deque.addFirst(value);
     }
 
     /*
@@ -34,6 +57,7 @@ public class DequeProblems {
     public static void addBack(Deque<Integer> deque, int value) {
 
         // TODO: Implement this method
+        deque.addLast(value);
 
     }
 
@@ -48,8 +72,7 @@ public class DequeProblems {
     public static Integer removeFront(Deque<Integer> deque) {
 
         // TODO: Implement this method
-
-        return null;
+        return deque.removeFirst();
     }
 
     /*
@@ -63,8 +86,7 @@ public class DequeProblems {
     public static Integer removeBack(Deque<Integer> deque) {
 
         // TODO: Implement this method
-
-        return null;
+        return deque.removeLast();
     }
 
     /*
@@ -78,8 +100,7 @@ public class DequeProblems {
     public static Integer peekFront(Deque<Integer> deque) {
 
         // TODO: Implement this method
-
-        return null;
+        return deque.getFirst();
     }
 
     /*
@@ -93,8 +114,7 @@ public class DequeProblems {
     public static Integer peekBack(Deque<Integer> deque) {
 
         // TODO: Implement this method
-
-        return null;
+        return deque.getLast();
     }
 
 }
