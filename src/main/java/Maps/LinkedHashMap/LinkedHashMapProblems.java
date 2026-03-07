@@ -33,8 +33,10 @@ public class LinkedHashMapProblems {
     public static void addStudent(Map<String, Integer> map, String name, int grade) {
 
         // TODO: Implement this method
-
+        map.put(name, grade);
     }
+
+
 
     /*
     Problem 2
@@ -47,8 +49,10 @@ public class LinkedHashMapProblems {
     public static void updateGrade(Map<String, Integer> map, String name, int newGrade) {
 
         // TODO: Implement this method
-
+        map.put(name, newGrade);
     }
+
+
 
     /*
     Problem 3
