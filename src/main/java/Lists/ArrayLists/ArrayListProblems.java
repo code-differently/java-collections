@@ -31,9 +31,10 @@ public class ArrayListProblems {
     Input: [1,2,3]
     Output: 6
     */
-    public static int sum(List<Integer> nums) {
 
+    public static int sum(List<Integer> nums) {
         // TODO: Implement this method
+
 
         return 0;
     }

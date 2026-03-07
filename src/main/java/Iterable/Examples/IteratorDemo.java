@@ -17,7 +17,7 @@ public class IteratorDemo {
 
         System.out.println("Original list:");
         System.out.println(numbers);
-
+//Can you store multiple array lists in an iterator?
         // Create iterator
         Iterator<Integer> iterator = numbers.iterator();
 
@@ -26,7 +26,10 @@ public class IteratorDemo {
         // TODO:
         // Use iterator.hasNext() and iterator.next()
         // Print each number
-
+while(iterator.hasNext()){
+  Integer num = iterator.next();
+    System.out.println(num);
+}
 
         System.out.println("\nRemoving odd numbers using Iterator");
 
@@ -35,7 +38,12 @@ public class IteratorDemo {
         // TODO:
         // Use iterator to remove odd numbers
         // Remember: use iterator.remove()
-
+while(iterator.hasNext()){
+    Integer num = iterator.next();
+if(num % 2 !=0 ){
+    iterator.remove();
+}
+}
 
         System.out.println("\nUpdated list:");
         System.out.println(numbers);
