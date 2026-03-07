@@ -1,15 +1,23 @@
 package CollectionsHackerrank;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class CollectionsHackerrankProblems {
     public class CollectionsHackerrankPractice {
 
         public static void main(String[] args) {
 
-            // You can test your methods here
+           List<Integer> numbers = new ArrayList<>();
+
+           numbers.add(1);
+            numbers.add(2);
+            numbers.add(2);
+            numbers.add(3);
+            numbers.add(4);
+            numbers.add(5);
+            numbers.add(5);
+
+            System.out.println(removeDuplicates(numbers));
 
         }
 
@@ -23,9 +31,9 @@ public class CollectionsHackerrankProblems {
         */
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
-            // TODO: Implement this method
+            Set<Integer> unique = new LinkedHashSet<>(numbers);
 
-            return null;
+            return new ArrayList<>(unique);
         }
 
         /*
@@ -40,7 +48,42 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return null;
+            //Had chat help me understand this I will try and do something over the weekend like this.
+
+            // Create a HashMap to store the results
+            // Key = the number from the list
+            // Value = how many times that number appears
+            Map<Integer, Integer> frequency = new HashMap<>();
+
+            // Loop through every number inside the list
+            for (int num : numbers) {
+
+                // Check if the number already exists in the map
+                // containsKey(num) asks: "Have we seen this number before?"
+                if (frequency.containsKey(num)) {
+
+                    // If the number is already in the map:
+                    // Get its current count and add 1 to it
+                    // Example:
+                    // If map has {2=1} and we see another 2
+                    // It becomes {2=2}
+                    frequency.put(num, frequency.get(num) + 1);
+
+                } else {
+
+                    // If the number is NOT in the map yet
+                    // This means we are seeing it for the first time
+                    // So we add it with a starting count of 1
+                    // Example: {3=1}
+                    frequency.put(num, 1);
+                }
+
+            }
+
+            // After the loop finishes, the map contains
+            // every number and how many times it appeared
+            // Example: {1=1, 2=2, 3=3}
+            return frequency;
         }
 
         /*
@@ -55,6 +98,30 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
+            // Map to store how many times each number appears
+            Map<Integer, Integer> frequency = new HashMap<>();
+
+            // First loop: count each number
+            for (int num : numbers) {
+
+                if (frequency.containsKey(num)) {
+                    frequency.put(num, frequency.get(num) + 1);
+                } else {
+                    frequency.put(num, 1);
+                }
+
+            }
+
+            // Second loop: find the first number that appears only once
+            for (int num : numbers) {
+
+                if (frequency.get(num) == 1) {
+                    return num;
+                }
+
+            }
+
+            // If no unique number exists
             return null;
         }
 
