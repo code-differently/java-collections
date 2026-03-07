@@ -1,5 +1,7 @@
 package Sets.HashSet;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -7,6 +9,30 @@ public class HashSetProblems {
     public static void main(String[] args) {
 
         // You can test your methods here
+        HashSet<String> set = new HashSet<>();
+        List<Integer> nums = new ArrayList<>();
+
+
+        addElement(set,"Fred");
+        addElement(set,"Fred");
+        addElement(set,"Fredd");
+        addElement(set,"Freddy");
+
+        System.out.println(containsValue(set,"Fred"));
+
+        System.out.println(getUniqueCount(set));
+
+        nums.add(10);
+        nums.add(20);
+        nums.add(30);
+        nums.add(30);
+        nums.add(40);
+
+        System.out.println(set);
+        System.out.println((nums));
+        System.out.println(getUniqueValues(nums));
+        removeValue(set,"Fred");
+        System.out.println(set);
 
     }
 
@@ -20,6 +46,7 @@ public class HashSetProblems {
     */
     public static void addElement(Set<String> set, String value) {
 
+        set.add(value);
         // TODO: Implement this method
 
     }
@@ -33,10 +60,9 @@ public class HashSetProblems {
     Output: true or false
     */
     public static boolean containsValue(Set<String> set, String value) {
-
+        return set.contains(value);
         // TODO: Implement this method
 
-        return false;
     }
 
     /*
@@ -49,6 +75,7 @@ public class HashSetProblems {
     */
     public static void removeValue(Set<String> set, String value) {
 
+        set.remove(value);
         // TODO: Implement this method
 
     }
@@ -63,9 +90,9 @@ public class HashSetProblems {
     */
     public static int getUniqueCount(Set<String> set) {
 
+     return set.size();
         // TODO: Implement this method
 
-        return 0;
     }
 
     /*
@@ -78,8 +105,10 @@ public class HashSetProblems {
     */
     public static Set<Integer> getUniqueValues(List<Integer> numbers) {
 
+        Set<Integer> uniqueValues = new HashSet<>(numbers);
+
+        return uniqueValues;
         // TODO: Implement this method
 
-        return null;
     }
 }
