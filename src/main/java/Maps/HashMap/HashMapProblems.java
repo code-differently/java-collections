@@ -35,8 +35,10 @@ public class HashMapProblems {
     public static void addItem(Map<String, Integer> map, String item, int quantity) {
 
         // TODO: Implement this method
-
+        map.put(item, quantity);
     }
+
+
 
     /*
     Problem 2
@@ -49,9 +51,10 @@ public class HashMapProblems {
     public static int getQuantity(Map<String, Integer> map, String item) {
 
         // TODO: Implement this method
-
-        return 0;
+        return map.get(item);
     }
+
+
 
     /*
     Problem 3
@@ -64,8 +67,10 @@ public class HashMapProblems {
     public static void updateQuantity(Map<String, Integer> map, String item, int newQuantity) {
 
         // TODO: Implement this method
-
+        map.put(item, newQuantity);
     }
+
+
 
     /*
     Problem 4
