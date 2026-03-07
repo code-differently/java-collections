@@ -1,8 +1,6 @@
 package Maps.LinkedHashMap;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class LinkedHashMapProblems {
     public static void main(String[] args) {
@@ -33,6 +31,7 @@ public class LinkedHashMapProblems {
     public static void addStudent(Map<String, Integer> map, String name, int grade) {
 
         // TODO: Implement this method
+        map.put(name,grade);
 
     }
 
@@ -47,6 +46,7 @@ public class LinkedHashMapProblems {
     public static void updateGrade(Map<String, Integer> map, String name, int newGrade) {
 
         // TODO: Implement this method
+        map.put(name,newGrade);
 
     }
 
@@ -61,6 +61,7 @@ public class LinkedHashMapProblems {
     public static void removeStudent(Map<String, Integer> map, String name) {
 
         // TODO: Implement this method
+        map.remove(name);
 
     }
 
@@ -73,10 +74,11 @@ public class LinkedHashMapProblems {
     Output: "Jordan"
     */
     public static String getFirstInserted(Map<String, Integer> map) {
-
         // TODO: Implement this method
+        Set<String> keys = map.keySet();
 
-        return null;
+        Iterator<String> iterator = keys.iterator();
+        return iterator.next();
     }
 
     /*
@@ -91,7 +93,12 @@ public class LinkedHashMapProblems {
     public static Map<String, Integer> wordFrequency(List<String> words) {
 
         // TODO: Implement this method
+        Map<String, Integer> frequent = new LinkedHashMap<>();
 
-        return null;
+        for(String items : words){
+            frequent.put(items,frequent.getOrDefault(items, 0)+1);
+        }
+
+        return frequent;
     }
 }
