@@ -34,9 +34,20 @@ public class ArrayListProblems {
     public static int sum(List<Integer> nums) {
 
         // TODO: Implement this method
+        int total = 0;
 
-        return 0;
+        for (int num : nums) {
+            total += num;
+        }
+
+        return total;
     }
+
+
+
+
+
+
 
     /*
     Problem 2

@@ -95,7 +95,14 @@ public class IterableWarmups {
         // TODO:
         // Loop through words
         // Compare each word to target
+        for (String word : words) {
+            if (word.equals(target)) {
+                count++;
+            }
+        }
 
         return count;
     }
+
+
 }
