@@ -79,9 +79,12 @@ public class DequeProblems {
     public static Integer removeBack(Deque<Integer> deque) {
 
         // TODO: Implement this method
+        deque.removeLast();
+        return deque.removeLast();
 
-        return null;
     }
+
+
 
     /*
     Problem 5
