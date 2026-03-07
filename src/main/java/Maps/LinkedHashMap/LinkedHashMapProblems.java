@@ -81,9 +81,10 @@ public class LinkedHashMapProblems {
     public static String getFirstInserted(Map<String, Integer> map) {
 
         // TODO: Implement this method
-
-        return null;
+        return map.keySet().iterator().next();
     }
+
+
 
     /*
     Problem 5
