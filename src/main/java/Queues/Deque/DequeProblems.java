@@ -1,13 +1,22 @@
 package Queues.Deque;
 
 import java.util.Deque;
+import java.util.ArrayDeque;
+
 
 public class DequeProblems {
     public static void main(String[] args) {
 
         // You can test your methods here
+        Deque<Integer> deque = new ArrayDeque<>();
+
+        addFront(deque, 5);
+        addBack(deque, 10);
+
+        System.out.println(deque);
 
     }
+
 
     /*
     Problem 1
@@ -20,8 +29,10 @@ public class DequeProblems {
     public static void addFront(Deque<Integer> deque, int value) {
 
         // TODO: Implement this method
+        deque.addFirst(value);
 
     }
+
 
     /*
     Problem 2
@@ -34,8 +45,10 @@ public class DequeProblems {
     public static void addBack(Deque<Integer> deque, int value) {
 
         // TODO: Implement this method
+        deque.addLast(value);
 
     }
+
 
     /*
     Problem 3
@@ -96,5 +109,5 @@ public class DequeProblems {
 
         return null;
     }
-
 }
+
