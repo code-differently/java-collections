@@ -83,8 +83,10 @@ public class HashMapProblems {
     public static void removeItem(Map<String, Integer> map, String item) {
 
         // TODO: Implement this method
-
+        map.remove(item);
     }
+
+
 
     /*
     Problem 5
