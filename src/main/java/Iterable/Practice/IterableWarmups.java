@@ -72,9 +72,16 @@ public class IterableWarmups {
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
+        for (Integer num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
 
         return max;
     }
+
+
 
 
     /*
