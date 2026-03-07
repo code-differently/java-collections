@@ -8,6 +8,8 @@ import java.util.Set;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Stack;
 
 
 public class CollectionsHackerrankProblems {
@@ -112,9 +114,22 @@ public class CollectionsHackerrankProblems {
         public static boolean twoSum(List<Integer> numbers, int target) {
 
             // TODO: Implement this method
+            Set<Integer> seen = new HashSet<>();
+
+            for (int num : numbers) {
+                int complement = target - num;
+
+                if (seen.contains(complement)) {
+                    return true;
+                }
+
+                seen.add(num);
+            }
 
             return false;
         }
+
+
 
         /*
         Problem 5
@@ -127,9 +142,15 @@ public class CollectionsHackerrankProblems {
         public static int countUniqueWords(List<String> words) {
 
             // TODO: Implement this method
+            Set<String> uniqueWords = new HashSet<>();
 
-            return 0;
+            for (String word : words) {
+                uniqueWords.add(word);
+            }
+
+            return uniqueWords.size();
         }
+
 
         /*
         Problem 6
@@ -142,9 +163,22 @@ public class CollectionsHackerrankProblems {
         public static Queue<Integer> reverseQueue(Queue<Integer> queue) {
 
             // TODO: Implement this method
+            Stack<Integer> stack = new Stack<>();
 
-            return null;
+            // Move elements from queue to stack
+            while (!queue.isEmpty()) {
+                stack.push(queue.poll());
+            }
+
+            // Move elements back to queue
+            while (!stack.isEmpty()) {
+                queue.add(stack.pop());
+            }
+
+            return queue;
         }
+
+
 
         /*
         Problem 7
@@ -160,9 +194,27 @@ public class CollectionsHackerrankProblems {
         public static boolean isBalanced(String expression) {
 
             // TODO: Implement this method
+            Stack<Character> stack = new Stack<>();
 
-            return false;
+            for (char c : expression.toCharArray()) {
+
+                if (c == '(') {
+                    stack.push(c);
+                }
+                else if (c == ')') {
+
+                    if (stack.isEmpty()) {
+                        return false;
+                    }
+
+                    stack.pop();
+                }
+            }
+
+            return stack.isEmpty();
         }
+
+
 
         /*
         Problem 8
@@ -175,9 +227,26 @@ public class CollectionsHackerrankProblems {
         public static Integer mostFrequent(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> frequency = new HashMap<>();
 
-            return null;
+            for (Integer num : numbers) {
+                frequency.put(num, frequency.getOrDefault(num, 0) + 1);
+            }
+
+            int maxCount = 0;
+            Integer result = null;
+
+            for (Map.Entry<Integer, Integer> entry : frequency.entrySet()) {
+                if (entry.getValue() > maxCount) {
+                    maxCount = entry.getValue();
+                    result = entry.getKey();
+                }
+            }
+
+            return result;
         }
+
+
 
         /*
         Problem 9
@@ -195,9 +264,23 @@ public class CollectionsHackerrankProblems {
         public static Map<Integer, List<String>> groupByLength(List<String> words) {
 
             // TODO: Implement this method
+            Map<Integer, List<String>> map = new HashMap<>();
 
-            return null;
+            for (String word : words) {
+
+                int length = word.length();
+
+                if (!map.containsKey(length)) {
+                    map.put(length, new ArrayList<>());
+                }
+
+                map.get(length).add(word);
+            }
+
+            return map;
         }
+
+
 
         /*
         Problem 10
@@ -212,8 +295,26 @@ public class CollectionsHackerrankProblems {
         public static int maxSlidingWindowSum(List<Integer> numbers, int k) {
 
             // TODO: Implement this method
+            int windowSum = 0;
 
-            return 0;
+            // First window
+            for (int i = 0; i < k; i++) {
+                windowSum += numbers.get(i);
+            }
+
+            int maxSum = windowSum;
+
+            // Slide the window
+            for (int i = k; i < numbers.size(); i++) {
+                windowSum += numbers.get(i);       // add next
+                windowSum -= numbers.get(i - k);   // remove previous
+                maxSum = Math.max(maxSum, windowSum);
+            }
+
+            return maxSum;
         }
+
+
+
     }
 
