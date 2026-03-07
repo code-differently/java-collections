@@ -1,5 +1,6 @@
 package Maps.LinkedHashMap;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,9 +32,8 @@ public class LinkedHashMapProblems {
     Output: {"Jordan"=90}
     */
     public static void addStudent(Map<String, Integer> map, String name, int grade) {
-
         // TODO: Implement this method
-
+map.put(name,grade);
     }
 
     /*
@@ -45,9 +45,8 @@ public class LinkedHashMapProblems {
     Output: {"Taylor"=92}
     */
     public static void updateGrade(Map<String, Integer> map, String name, int newGrade) {
-
         // TODO: Implement this method
-
+map.replace(name,newGrade);
     }
 
     /*
@@ -59,8 +58,8 @@ public class LinkedHashMapProblems {
     Output: Student removed from map
     */
     public static void removeStudent(Map<String, Integer> map, String name) {
-
         // TODO: Implement this method
+map.remove(name);
 
     }
 
@@ -73,10 +72,9 @@ public class LinkedHashMapProblems {
     Output: "Jordan"
     */
     public static String getFirstInserted(Map<String, Integer> map) {
-
         // TODO: Implement this method
 
-        return null;
+        return map.keySet().iterator().next();
     }
 
     /*
@@ -89,9 +87,11 @@ public class LinkedHashMapProblems {
     Output: {apple=2, banana=1, orange=1}
     */
     public static Map<String, Integer> wordFrequency(List<String> words) {
-
         // TODO: Implement this method
-
-        return null;
+Map<String,Integer>howMany= new HashMap<>();
+for (String word: words){
+    howMany.put(word, howMany.getOrDefault(word, 0)+1);
+}
+return howMany;
     }
 }
