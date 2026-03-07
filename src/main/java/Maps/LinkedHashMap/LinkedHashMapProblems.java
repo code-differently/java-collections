@@ -65,8 +65,10 @@ public class LinkedHashMapProblems {
     public static void removeStudent(Map<String, Integer> map, String name) {
 
         // TODO: Implement this method
-
+        map.remove(name);
     }
+
+
 
     /*
     Problem 4
