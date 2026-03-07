@@ -138,6 +138,14 @@ public class ArrayListProblems {
 
         // TODO: Implement this method
 
-        return null;
+        List<Integer> reversed = new ArrayList<>();
+
+        for (int i = nums.size() - 1; i >= 0; i--) {
+            reversed.add(nums.get(i));
+        }
+
+        return reversed;
     }
+
+
 }
