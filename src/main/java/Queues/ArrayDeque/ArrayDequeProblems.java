@@ -31,8 +31,10 @@ public class ArrayDequeProblems {
     public static void addToFront(ArrayDeque<Integer> deque, int value) {
 
         // TODO: Implement this method
-
+        deque.addFirst(value);
     }
+
+
 
     /*
     Problem 2
