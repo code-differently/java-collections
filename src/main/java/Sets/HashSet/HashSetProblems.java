@@ -45,9 +45,11 @@ public class HashSetProblems {
     public static boolean containsValue(Set<String> set, String value) {
 
         // TODO: Implement this method
+        return set.contains(value);
 
-        return false;
     }
+
+
 
     /*
     Problem 3
