@@ -97,9 +97,11 @@ public class DequeProblems {
     public static Integer peekFront(Deque<Integer> deque) {
 
         // TODO: Implement this method
+        return deque.peekFirst();
 
-        return null;
     }
+
+
 
     /*
     Problem 6
