@@ -16,6 +16,8 @@ B. Iterable
 C. List  
 D. Queue
 
+AW: B
+
 ---
 
 ## Question 2
@@ -26,6 +28,8 @@ A. Iterable
 B. Collection  
 C. Map  
 D. Deque
+
+AW: B
 
 ---
 
@@ -38,6 +42,8 @@ B. Set
 C. Queue  
 D. Map
 
+AW: D
+
 ---
 
 ## Question 4
@@ -48,6 +54,8 @@ A. Set
 B. List  
 C. Queue  
 D. TreeSet
+
+AW: B
 
 ---
 
@@ -60,17 +68,19 @@ B. Set
 C. Queue  
 D. Map
 
+AW: D
+
 ---
 
 # True or False
 
 Write **True** or **False**.
 
-1. `ArrayList` implements the `List` interface.  
-2. `Set` allows duplicate elements.  
-3. `Map` stores elements using keys and values.  
-4. `Queue` typically follows FIFO behavior.  
-5. `Iterable` allows collections to be used in enhanced for-loops.
+1. `ArrayList` implements the `List` interface.  AW: T
+2. `Set` allows duplicate elements.  AW: F
+3. `Map` stores elements using keys and values.  AW:T
+4. `Queue` typically follows FIFO behavior.  AW:T
+5. `Iterable` allows collections to be used in enhanced for-loops. AW: T
 
 ---
 
@@ -79,6 +89,8 @@ Write **True** or **False**.
 ## Question 1
 
 What is the difference between an **interface** and a **class** in the Java Collections Framework?
+
+AW: Defines behavior
 
 ---
 
@@ -90,6 +102,9 @@ Example:
 
 ```java
 List<String> list = new ArrayList<>();
+
+AW: Because it allows flexibility.
+
 ````
 
 ---
@@ -117,9 +132,11 @@ for (String fruit : fruits) {
 
 Questions:
 
-1. Which interface type is used for the variable?
-2. Which class is used as the implementation?
-3. Why can the enhanced for-loop be used here?
+1. Which interface type is used for the variable? AW: List
+2. Which class is used as the implementation? AW: ArrayList
+3. Why can the enhanced for-loop be used here? 
+
+AW: Because List implements Iterable, Iterable allows the collection to be looped through.
 
 ---
 
@@ -133,6 +150,40 @@ Create a small program that demonstrates the following:
 4. A **Map** that stores student names and grades.
 
 Print the contents of each structure.
+
+        // List example
+        List<String> names = new ArrayList<>();
+        names.add("John");
+        names.add("Sarah");
+        names.add("Mike");
+
+        System.out.println("List: " + names);
+
+        // Set example
+        Set<Integer> numbers = new HashSet<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(20);
+        numbers.add(30);
+
+        System.out.println("Set: " + numbers);
+
+        // Queue example
+        Queue<String> tasks = new LinkedList<>();
+        tasks.offer("Email client");
+        tasks.offer("Fix bug");
+        tasks.offer("Deploy code");
+
+        System.out.println("Queue: " + tasks);
+
+        // Map example
+        Map<String, Integer> grades = new HashMap<>();
+        grades.put("John", 90);
+        grades.put("Sarah", 85);
+        grades.put("Mike", 88);
+
+        System.out.println("Map: " + grades);
+
 
 ---
 
