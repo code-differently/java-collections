@@ -75,7 +75,7 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            //Had chat help me understand this I will try and do something over the weekend like this.
+            //Had chat help me understand some of these and I will try and do some mock problems over the weekend.
 
             // Create a HashMap to store the results
             // Key = the number from the list
