@@ -79,8 +79,10 @@ public class ArrayDequeProblems {
     public static void removeBack(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
-
+        deque.removeLast();
     }
+
+
 
     /*
     Problem 5
