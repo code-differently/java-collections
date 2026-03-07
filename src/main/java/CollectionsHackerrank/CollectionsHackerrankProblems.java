@@ -7,7 +7,7 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import java.util.Scanner;
+import java.util.HashMap;
 
 
 public class CollectionsHackerrankProblems {
@@ -56,9 +56,21 @@ public class CollectionsHackerrankProblems {
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> frequencyMap = new HashMap<>();
 
-            return null;
+            for (Integer num : numbers) {
+                if (frequencyMap.containsKey(num)) {
+                    frequencyMap.put(num, frequencyMap.get(num) + 1);
+                } else {
+                    frequencyMap.put(num, 1);
+                }
+            }
+
+            return frequencyMap;
         }
+
+
+
 
         /*
         Problem 3
@@ -71,6 +83,18 @@ public class CollectionsHackerrankProblems {
         public static Integer firstUnique(List<Integer> numbers) {
 
             // TODO: Implement this method
+            Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+            for (Integer num : numbers) {
+                frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+            }
+
+            for (Integer num : numbers) {
+                if (frequencyMap.get(num) == 1) {
+                    return num;
+                }
+            }
+
 
             return null;
         }
