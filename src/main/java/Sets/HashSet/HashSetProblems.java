@@ -62,8 +62,11 @@ public class HashSetProblems {
     public static void removeValue(Set<String> set, String value) {
 
         // TODO: Implement this method
+        set.remove(value);
 
     }
+
+
 
     /*
     Problem 4
