@@ -31,8 +31,10 @@ public class TreeMapProblems {
     public static void addPlayer(TreeMap<Integer, String> map, int rank, String name) {
 
         // TODO: Implement this method
-
+        map.put(rank, name);
     }
+
+
 
     /*
     Problem 2
@@ -45,9 +47,10 @@ public class TreeMapProblems {
     public static String getTopPlayer(TreeMap<Integer, String> map) {
 
         // TODO: Implement this method
-
-        return null;
+        return map.get(map.firstKey());
     }
+
+
 
     /*
     Problem 3
@@ -60,9 +63,9 @@ public class TreeMapProblems {
     public static String getLowestPlayer(TreeMap<Integer, String> map) {
 
         // TODO: Implement this method
-
-        return null;
+        return map.get(map.lastKey());
     }
+
 
     /*
     Problem 4
@@ -75,8 +78,10 @@ public class TreeMapProblems {
     public static void removePlayer(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
-
+        map.remove(rank);
     }
+
+
 
     /*
     Problem 5
@@ -89,7 +94,8 @@ public class TreeMapProblems {
     public static Integer getNextRank(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
-
-        return null;
+        return map.higherKey(rank);
     }
+
+
 }
