@@ -63,8 +63,10 @@ public class ArrayDequeProblems {
     public static void removeFront(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
-
+        deque.removeFirst();
     }
+
+
 
     /*
     Problem 4
