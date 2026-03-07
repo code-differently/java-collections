@@ -21,7 +21,7 @@ List<String> names = new ArrayList<>();
 ---
 
 ##  Where It Fits
-
+  
 ```
 Iterable → Collection → List → ArrayList
 ```
@@ -111,11 +111,139 @@ Avoid it when:
 ## Practice Ideas
 
 * Reverse a list
-* Remove duplicates
-* Rotate list by k
-* Find second largest number
-* Two-sum problem
 
+public static List<Integer> reverseList(List<Integer<>() list){
+Collectios.reserse(list);
+return list;
+}
+
+* Remove duplicates
+
+public static List<Integer> removeDuplicate(List<Integer>() numbers){
+return new ArrayList<>(new HasSet<>(numbers));
+
+
+* Rotate list by k
+
+public class RotateList {
+public static void main(String[] args) {
+List<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+int k = 2;
+
+        Collections.rotate(list, k);
+
+        System.out.println(list);
+    }
+}
+----------or:
+import java.util.*;
+
+public class RotateListManual {
+
+    public static void rotate(List<Integer> list, int k) {
+        int n = list.size();
+        k = k % n;
+
+        List<Integer> temp = new ArrayList<>();
+
+        temp.addAll(list.subList(n - k, n));
+        temp.addAll(list.subList(0, n - k));
+
+        for(int i=0;i<n;i++){
+            list.set(i, temp.get(i));
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+
+        rotate(list,2);
+
+        System.out.println(list);
+    }
+}
+* Find second largest number
+  import java.util.*;
+
+public class SecondLargest {
+
+    public static void main(String[] args) {
+
+        List<Integer> list = new ArrayList<>(Arrays.asList(10,20,4,45,99));
+
+        Collections.sort(list);
+
+        int secondLargest = list.get(list.size()-2);
+
+        System.out.println("Second Largest: " + secondLargest);
+    }
+}
+---------or:
+import java.util.*;
+
+public class SecondLargestBetter {
+
+    public static int findSecondLargest(List<Integer> list){
+
+        int largest = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+
+        for(int num : list){
+
+            if(num > largest){
+                second = largest;
+                largest = num;
+            }
+            else if(num > second && num != largest){
+                second = num;
+            }
+        }
+
+        return second;
+    }
+
+    public static void main(String[] args) {
+
+        List<Integer> list = Arrays.asList(10,20,4,45,99);
+
+        System.out.println(findSecondLargest(list));
+    }
+}
+
+* Two-sum problem
+  import java.util.*;
+
+public class TwoSum {
+
+    public static int[] twoSum(List<Integer> nums, int target){
+
+        Map<Integer,Integer> map = new HashMap<>();
+
+        for(int i=0;i<nums.size();i++){
+
+            int complement = target - nums.get(i);
+
+            if(map.containsKey(complement)){
+                return new int[]{map.get(complement), i};
+            }
+
+            map.put(nums.get(i), i);
+        }
+
+        return new int[]{-1,-1};
+    }
+
+    public static void main(String[] args){
+
+        List<Integer> nums = Arrays.asList(2,7,11,15);
+
+        int target = 9;
+
+        int[] result = twoSum(nums,target);
+
+        System.out.println(result[0] + " " + result[1]);
+    }
+}
 ---
 
 ### Summary

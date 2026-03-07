@@ -33,6 +33,9 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // Add each number to total
+        for(Integer s : numbers){
+            total  +=s;
+        }
 
         return total;
     }
@@ -49,6 +52,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // If the number is even, increase count
+        for(Integer ce : numbers) {
+            if(ce %2==0){
+                count++;
+            }
+        }
 
         return count;
     }
@@ -65,6 +73,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
+        for(Integer fm :numbers){
+            if(fm>max){
+                max=fm;
+            }
+        }
 
         return max;
     }
@@ -80,7 +93,12 @@ public class CollectionBasics {
         // TODO:
         // Hint:
         // Compare the size of a collection with the size of a Set
-
+Set<Interger> see = new HasSet<>();
+for(Integer n: see){
+   if(see.contains(n)){
+       return true;
+   }see.add(n);
+}
         return false;
     }
 
@@ -96,6 +114,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // If number equals target, increase count
+        for(Integer a : numbers){
+            if(a.equals(target)){
+                count++
+            }
+        }
 
         return count;
     }
@@ -113,6 +136,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Add numbers greater than 20 to result
+        for(Integer b : result){
+            if(b>20){
+                result.add(b);
+            }
+        }
 
         return result;
     }

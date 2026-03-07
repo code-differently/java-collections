@@ -34,9 +34,18 @@ public class ArrayListProblems {
     public static int sum(List<Integer> nums) {
 
         // TODO: Implement this method
+        public static int sum(List<Integer> nums) {
 
-        return 0;
-    }
+            int total = 0;
+
+            for (int num : nums) {
+                total += num;
+            }
+
+            return total;
+        }
+
+
 
     /*
     Problem 2
@@ -49,8 +58,13 @@ public class ArrayListProblems {
     public static int countEvens(List<Integer> nums) {
 
         // TODO: Implement this method
-
-        return 0;
+        int count =0;
+for(int n:nums){
+    if(n%2==0){
+count ++;
+    }
+}
+        return count;
     }
 
     /*
@@ -81,10 +95,18 @@ public class ArrayListProblems {
     */
     public static int findMax(List<Integer> nums) {
 
-        // TODO: Implement this method
+                Set<Integer> seen = new HashSet<>();
 
-        return 0;
-    }
+                for (int n : nums) {
+                    if (seen.contains(n)) {
+                        return true;
+                    }
+                    seen.add(n);
+                }
+
+                return false;
+            }
+
 
     /*
     Problem 5
@@ -96,10 +118,13 @@ public class ArrayListProblems {
 
     The original list should remain unchanged.
     */
-    public static List<Integer> reverse(List<Integer> nums) {
+        public static List<Integer> reverse(List<Integer> nums) {
 
-        // TODO: Implement this method
+            List<Integer> reversed = new ArrayList<>();
 
-        return null;
-    }
-}
+            for (int i = nums.size() - 1; i >= 0; i--) {
+                reversed.add(nums.get(i));
+            }
+
+            return reversed;
+        }

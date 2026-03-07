@@ -24,8 +24,11 @@ public class CollectionsHackerrankProblems {
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
 
             // TODO: Implement this method
+// Use LinkedHashSet to remove duplicates and keep order
+            Set<Integer> unique = new LinkedHashSet<>(numbers);
 
-            return null;
+            // Convert back to List
+            return new ArrayList<>(unique);
         }
 
         /*
@@ -39,8 +42,19 @@ public class CollectionsHackerrankProblems {
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
 
             // TODO: Implement this method
+//Create a HashMap to store counts.
+//Loop through the list.
+//getOrDefault(num, 0):
+//If the number is not in the map → return 0
+//If it exists → return the current count
+//Add 1 to update the count.
+            Map<Integer, Integer> frequencyMap = new HashMap<>();
 
-            return null;
+            for (Integer num : numbers) {
+                frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+            }
+
+            return frequencyMap;
         }
 
         /*
@@ -54,8 +68,26 @@ public class CollectionsHackerrankProblems {
         public static Integer firstUnique(List<Integer> numbers) {
 
             // TODO: Implement this method
+            //Use LinkedHashMap to store counts while keeping order.
+            //First loop → count occurrences.
+            //Second loop → return the first key whose value is 1.
+            Map<Integer, Integer> map = new LinkedHashMap<>();
+          //List<Integer> input = Arrays.asList(4,5,1,2,0,4);
+            //System.out.println(firstUnique(input));
+            // Count frequency
+            for (Integer num : numbers) {
+                map.put(num, map.getOrDefault(num, 0) + 1);
+            }
 
-            return null;
+            // Find first number with count = 1
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if (entry.getValue() == 1) {
+                    return entry.getKey();
+                }
+            }
+
+            return null; // if no unique number exists
+        }
         }
 
         /*
@@ -71,10 +103,23 @@ public class CollectionsHackerrankProblems {
         public static boolean twoSum(List<Integer> numbers, int target) {
 
             // TODO: Implement this method
+            //Check if the complement already appeared in the list.
+            //If yes → the two numbers add up to the target → return true.
+            //Otherwise add the current number to the set and continue.
+            Set<Integer> seen = new HashSet<>();
+
+            for (Integer num : numbers) {
+                int complement = target - num;
+
+                if (seen.contains(complement)) {
+                    return true;
+                }
+
+                seen.add(num);
+            }
 
             return false;
         }
-
         /*
         Problem 5
         Count how many unique words exist in a list.
@@ -87,7 +132,9 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return 0;
+            Set<String> uniqueWords = new HashSet<>(words);
+
+            return uniqueWords.size();
         }
 
         /*
@@ -101,10 +148,27 @@ public class CollectionsHackerrankProblems {
         public static Queue<Integer> reverseQueue(Queue<Integer> queue) {
 
             // TODO: Implement this method
+// Queue → Stack
+//poll() removes elements from the queue.
+//push() adds them to the stack.
+//Stack → Queue
+//pop() removes from stack (last-in-first-out).
+//offer() adds back to queue.
+//This reverses the order.
+            Stack<Integer> stack = new Stack<>();
 
-            return null;
+            // Move elements from queue to stack
+            while (!queue.isEmpty()) {
+                stack.push(queue.poll());
+            }
+
+            // Move elements back to queue (reversed order)
+            while (!stack.isEmpty()) {
+                queue.offer(stack.pop());
+            }
+
+            return queue;
         }
-
         /*
         Problem 7
         Determine whether parentheses are balanced.
@@ -119,11 +183,29 @@ public class CollectionsHackerrankProblems {
         public static boolean isBalanced(String expression) {
 
             // TODO: Implement this method
+//use a Stack.
+//A stack works well because we must match every opening ( with a closing ) in the correct order.
+            Stack<Character> stack = new Stack<>();
 
-            return false;
+            for (char ch : expression.toCharArray()) {
+
+                if (ch == '(') {
+                    stack.push(ch); // store opening parenthesis
+                }
+
+                else if (ch == ')') {
+                    if (stack.isEmpty()) {
+                        return false; // no matching opening
+                    }
+                    stack.pop(); // match found
+                }
+            }
+
+            // if stack is empty, parentheses are balanced
+            return stack.isEmpty();
         }
 
-        /*
+    /*
         Problem 8
         Return the number that appears most frequently in the list.
 
@@ -134,10 +216,27 @@ public class CollectionsHackerrankProblems {
         public static Integer mostFrequent(List<Integer> numbers) {
 
             // TODO: Implement this method
+//use a Map to count occurrences, then track the number with the highest count.
+            Map<Integer, Integer> map = new HashMap<>();
 
-            return null;
+            // Count frequencies
+            for (Integer num : numbers) {
+                map.put(num, map.getOrDefault(num, 0) + 1);
+            }
+
+            Integer mostFrequent = null;
+            int maxCount = 0;
+
+            // Find the number with highest frequency
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if (entry.getValue() > maxCount) {
+                    maxCount = entry.getValue();
+                    mostFrequent = entry.getKey();
+                }
+            }
+
+            return mostFrequent;
         }
-
         /*
         Problem 9
         Group words based on their length.
@@ -155,7 +254,19 @@ public class CollectionsHackerrankProblems {
 
             // TODO: Implement this method
 
-            return null;
+            Map<Integer, List<String>> map = new HashMap<>();
+
+            for (String word : words) {
+                int length = word.length();
+
+                if (!map.containsKey(length)) {
+                    map.put(length, new ArrayList<>());
+                }
+
+                map.get(length).add(word);
+            }
+
+            return map;
         }
 
         /*
@@ -169,10 +280,28 @@ public class CollectionsHackerrankProblems {
         Output: 9
         */
         public static int maxSlidingWindowSum(List<Integer> numbers, int k) {
-
+//using the Sliding Window technique so we don’t repeatedly sum the same elements.
             // TODO: Implement this method
 
-            return 0;
+            int windowSum = 0;
+            int maxSum = 0;
+
+            // First window
+            for (int i = 0; i < k; i++) {
+                windowSum += numbers.get(i);
+            }
+
+            maxSum = windowSum;
+
+            // Slide the window
+            for (int i = k; i < numbers.size(); i++) {
+                windowSum += numbers.get(i);       // add next element
+                windowSum -= numbers.get(i - k);   // remove element leaving window
+
+                maxSum = Math.max(maxSum, windowSum);
+            }
+
+            return maxSum;
         }
     }
 }

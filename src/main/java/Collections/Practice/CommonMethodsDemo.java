@@ -131,6 +131,14 @@ public class CommonMethodsDemo {
          Add the following values:
          10, 20, 30, 40, 50
         */
+Collections<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
+
+      //  num.addAll(numbers);
 
 
         /*
@@ -138,18 +146,18 @@ public class CommonMethodsDemo {
          Print the size of the numbers collection
         */
 
-
+        System.out.println(numbers.size());
         /*
          TODO 3:
          Check if the collection contains 30
         */
-
+boolean hasNum= numbers.contains(30);
 
         /*
          TODO 4:
          Remove the number 20
         */
-
+int newNum = numbers.remove(20);
 
         /*
          TODO 5:
@@ -157,13 +165,33 @@ public class CommonMethodsDemo {
          and print each value
         */
 
-
+for(int n:numbers){
+    System.out.println(n);
+}
         /*
          REFLECTION QUESTIONS:
 
          1. Why can we use Collection as the reference type?
+         Because ArrayList implements the Collection interface.
+         ArrayList is a class that implements List, and List extends Collection.
+So an ArrayList is a type of Collection, which allows us to store it in a Collection reference.
+
          2. What methods are available because of the Collection interface?
+         add()
+         remove()
+         contains()
+         size()
+         isEmpty()
+         clear()
+         iterator()
          3. What methods are NOT available when using Collection instead of List?
+         Methods that belong only to List are not available when the reference type is Collection.
+Examples of List-only methods:
+get(index)
+set(index, element)
+add(index, element)
+remove(index)
+indexOf()
          */
     }
 

@@ -130,9 +130,81 @@ Avoid it when:
 ## Practice Ideas
 
 * Compare performance of `Vector` vs `ArrayList`
-* Convert legacy `Vector` code to `ArrayList`
-* Simulate multi-threaded access (advanced)
+//Vector is synchronized, so every operation has thread-safety overhead.
+ // ArrayList is unsynchronized, so it’s faster in single-threaded
 
+import java.util.*;
+
+public class VectorVsArrayList {
+public static void main(String[] args) {
+int n = 1_000_000;
+
+        Vector<Integer> vector = new Vector<>();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        // Measure Vector
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < n; i++) vector.add(i);
+        long end = System.currentTimeMillis();
+        System.out.println("Vector time: " + (end - start) + " ms");
+
+        // Measure ArrayList
+        start = System.currentTimeMillis();
+        for (int i = 0; i < n; i++) arrayList.add(i);
+        end = System.currentTimeMillis();
+        System.out.println("ArrayList time: " + (end - start) + " ms");
+    }
+}
+* Convert legacy `Vector` code to `ArrayList`
+
+Legacy code may use Vector for storing elements:
+Vector<String> vec = new Vector<>();
+vec.add("Alice");
+vec.add("Bob");
+Convert to modern ArrayList:
+List<String> list = new ArrayList<>();
+list.add("Alice");
+list.add("Bob");
+
+* Simulate multi-threaded access (advanced)
+//Vector is synchronized automatically.
+//  ArrayList is not thread-safe, so concurrent access can cause issues.
+
+import java.util.*;
+import java.util.concurrent.*;
+
+public class MultiThreadDemo {
+public static void main(String[] args) throws InterruptedException {
+List<Integer> vector = new Vector<>();
+List<Integer> arrayList = new ArrayList<>();
+int n = 1000;
+
+        Runnable taskVector = () -> {
+            for (int i = 0; i < n; i++) vector.add(i);
+        };
+
+        Runnable taskArrayList = () -> {
+            for (int i = 0; i < n; i++) arrayList.add(i);
+        };
+
+        // Vector threads
+        Thread t1 = new Thread(taskVector);
+        Thread t2 = new Thread(taskVector);
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+        System.out.println("Vector size: " + vector.size()); // usually 2000, safe
+
+        // ArrayList threads (unsafe)
+        t1 = new Thread(taskArrayList);
+        t2 = new Thread(taskArrayList);
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+        System.out.println("ArrayList size: " + arrayList.size()); // may be < 2000, race condition
+    }
+}
+//Vector handles thread safety automatically.
+//ArrayList requires external synchronization 
+//(e.g., Collections.synchronizedList) for safe concurrent access.
 ---
 
 ## Summary

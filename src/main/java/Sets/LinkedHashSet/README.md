@@ -153,9 +153,61 @@ The duplicate `"Apple"` is ignored, and the insertion order is preserved.
 ## Practice Ideas
 
 * Remove duplicates from a list while preserving order
+
+import java.util.*;
+
+public class RemoveDuplicatesExample {
+public static void main(String[] args) {
+List<String> items = Arrays.asList("apple", "banana", "apple", "orange", "banana");
+
+        // Use LinkedHashSet to remove duplicates while preserving order
+        LinkedHashSet<String> uniqueItems = new LinkedHashSet<>(items);
+
+        // Convert back to list if needed
+        List<String> result = new ArrayList<>(uniqueItems);
+
+        System.out.println(result); // Output: [apple, banana, orange]
+    }
+}
 * Store unique usernames in insertion order
+
+import java.util.*;
+
+public class UniqueUsernames {
+public static void main(String[] args) {
+LinkedHashSet<String> usernames = new LinkedHashSet<>();
+
+        usernames.add("alice");
+        usernames.add("bob");
+        usernames.add("charlie");
+        usernames.add("alice"); // duplicate, ignored
+
+        System.out.println(usernames); // Output: [alice, bob, charlie]
+    }
+}
 * Track unique visited pages
 
+import java.util.*;
+
+public class VisitedPages {
+public static void main(String[] args) {
+LinkedHashSet<String> visitedPages = new LinkedHashSet<>();
+
+        visitedPages.add("home.html");
+        visitedPages.add("about.html");
+        visitedPages.add("contact.html");
+        visitedPages.add("home.html"); // duplicate, ignored
+
+        System.out.println("Visited pages in order:");
+        for (String page : visitedPages) {
+            System.out.println(page);
+        }
+        // Output:
+        // home.html
+        // about.html
+        // contact.html
+    }
+}
 ---
 
 ## Summary

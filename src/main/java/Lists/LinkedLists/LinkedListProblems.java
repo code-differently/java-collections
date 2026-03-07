@@ -38,7 +38,7 @@ public class LinkedListProblems {
     public static void addToFront(LinkedList<Integer> list, int value) {
 
         // TODO: Implement this method
-
+        list.addFirst(value);
     }
 
     /*
@@ -52,7 +52,7 @@ public class LinkedListProblems {
     public static void addToEnd(LinkedList<Integer> list, int value) {
 
         // TODO: Implement this method
-
+        list.addLast(value);
     }
 
     /*
@@ -66,7 +66,9 @@ public class LinkedListProblems {
     public static void removeFirstElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
-
+        if (!list.isEmpty()) {      // always check to avoid NoSuchElementException
+            list.removeFirst();
+        }
     }
 
     /*
@@ -80,9 +82,10 @@ public class LinkedListProblems {
     public static void removeLastElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
-
+        if (!list.isEmpty()) {       // check to avoid NoSuchElementException
+            list.removeLast();
+        }
     }
-
     /*
     Problem 5
     Return the FIRST element in the LinkedList.
@@ -95,9 +98,11 @@ public class LinkedListProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        if (!list.isEmpty()) {
+            return list.getFirst();
+        }
+        throw new NoSuchElementException("The list is empty.");
     }
-
     /*
     Problem 6
     Return the LAST element in the LinkedList.
@@ -110,6 +115,5 @@ public class LinkedListProblems {
 
         // TODO: Implement this method
 
-        return 0;
-    }
+        return list.getLast();
 }

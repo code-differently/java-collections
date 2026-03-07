@@ -183,10 +183,83 @@ Output:
 ## 🧪 Practice Ideas
 
 * Count word frequency while preserving order
+
+import java.util.*;
+
+public class Practice1 {
+public static void main(String[] args) {
+List<String> words = Arrays.asList("apple","banana","apple","orange");
+LinkedHashMap<String, Integer> freqMap = new LinkedHashMap<>();
+
+        for (String word : words) {
+            freqMap.put(word, freqMap.getOrDefault(word, 0) + 1);
+        }
+
+        System.out.println(freqMap); // Output: {apple=2, banana=1, orange=1}
+    }
+}
+
 * Build a simple cache
+
+import java.util.*;
+
+public class Practice2 {
+public static void main(String[] args) {
+LinkedHashMap<Integer, String> cache = new LinkedHashMap<Integer, String>(3, 0.75f, false) {
+protected boolean removeEldestEntry(Map.Entry<Integer, String> eldest) {
+return size() > 3; // remove oldest entry when size > 3
+}
+};
+
+        cache.put(1, "A");
+        cache.put(2, "B");
+        cache.put(3, "C");
+        cache.put(4, "D"); // 1 will be removed
+
+        System.out.println(cache); // Output: {2=B, 3=C, 4=D}
+    }
+}
+
 * Remove duplicates from a list while preserving order
+
+import java.util.*;
+
+public class Practice3 {
+public static void main(String[] args) {
+List<Integer> list = Arrays.asList(1,2,3,2,1,4);
+LinkedHashMap<Integer, Boolean> uniqueMap = new LinkedHashMap<>();
+
+        for (Integer num : list) {
+            uniqueMap.put(num, true); // only keeps first occurrence
+        }
+
+        List<Integer> result = new ArrayList<>(uniqueMap.keySet());
+        System.out.println(result); // Output: [1, 2, 3, 4]
+    }
+}
+
 * Track user activity history
 
+import java.util.*;
+
+public class Practice4 {
+public static void main(String[] args) {
+LinkedHashMap<String, String> userActivity = new LinkedHashMap<>();
+
+        userActivity.put("user1", "Login");
+        userActivity.put("user2", "View Page");
+        userActivity.put("user1", "Upload File"); // updates value but preserves insertion order
+        userActivity.put("user3", "Logout");
+
+        for (Map.Entry<String, String> entry : userActivity.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+        // Output:
+        // user1 -> Upload File
+        // user2 -> View Page
+        // user3 -> Logout
+    }
+}
 ---
 
 ## 🏁 Summary

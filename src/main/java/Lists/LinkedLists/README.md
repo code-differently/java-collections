@@ -158,11 +158,71 @@ Avoid it when:
 ## Practice Ideas
 
 * Implement a queue using LinkedList
+// LinkedList naturally supports FIFO, so you can use offer() to enqueue and poll() to dequeue.
+LinkedList<String> queue = new LinkedList<>();
+
+// Enqueue
+queue.offer("Task1");
+queue.offer("Task2");
+
+// Dequeue
+System.out.println(queue.poll()); // Task1
+System.out.println(queue.poll()); // Task2
+
 * Implement a stack using LinkedList
+//LinkedList can also act as a stack (LIFO) using push() and pop().
+LinkedList<Integer> stack = new LinkedList<>();
+
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+System.out.println(stack.pop()); // 30
+System.out.println(stack.pop()); // 20
+
 * Remove duplicates manually
+
+LinkedList<Integer> list = new LinkedList<>(Arrays.asList(1,2,2,3,3,3,4));
+for (int i = 0; i < list.size(); i++) {
+for (int j = i + 1; j < list.size(); j++) {
+if (list.get(i).equals(list.get(j))) {
+list.remove(j);
+j--; // adjust index after removal
+}
+}
+}
+System.out.println(list); // [1, 2, 3, 4]
+
 * Insert element after every occurrence of X
+
+LinkedList<Integer> list = new LinkedList<>(Arrays.asList(1,2,3,2,4));
+int X = 2;
+int valueToInsert = 99;
+
+ListIterator<Integer> iter = list.listIterator();
+while (iter.hasNext()) {
+if (iter.next() == X) {
+iter.add(valueToInsert);
+}
+}
+System.out.println(list); // [1, 2, 99, 3, 2, 99, 4]
+
 * Simulate browser history navigation
 
+LinkedList<String> history = new LinkedList<>();
+history.add("google.com");
+history.add("stackoverflow.com");
+history.add("github.com");
+
+int currentIndex = history.size() - 1; // last visited page
+
+// Back
+if (currentIndex > 0) currentIndex--;
+System.out.println(history.get(currentIndex)); // stackoverflow.com
+
+// Forward
+if (currentIndex < history.size() - 1) currentIndex++;
+System.out.println(history.get(currentIndex)); // github.com
 ---
 
 ## Summary
