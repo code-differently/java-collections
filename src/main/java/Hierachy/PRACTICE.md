@@ -16,7 +16,7 @@ B. Iterable
 C. List  
 D. Queue
 
----
+Answer :B.
 
 ## Question 2
 
@@ -27,7 +27,7 @@ B. Collection
 C. Map  
 D. Deque
 
----
+Answer :B.
 
 ## Question 3
 
@@ -38,7 +38,7 @@ B. Set
 C. Queue  
 D. Map
 
----
+Answer :D.
 
 ## Question 4
 
@@ -49,7 +49,8 @@ B. List
 C. Queue  
 D. TreeSet
 
----
+Answer :B.
+
 
 ## Question 5
 
@@ -60,17 +61,18 @@ B. Set
 C. Queue  
 D. Map
 
----
+Answer :D.
+
 
 # True or False
 
 Write **True** or **False**.
 
-1. `ArrayList` implements the `List` interface.  
-2. `Set` allows duplicate elements.  
-3. `Map` stores elements using keys and values.  
-4. `Queue` typically follows FIFO behavior.  
-5. `Iterable` allows collections to be used in enhanced for-loops.
+1. `ArrayList` implements the `List` interface.  Answer : True
+2. `Set` allows duplicate elements.  Answer : False
+3. `Map` stores elements using keys and values.  Answer : True
+4. `Queue` typically follows FIFO behavior.  Answer : True
+5. `Iterable` allows collections to be used in enhanced for-loops. Answer : True
 
 ---
 
@@ -80,13 +82,13 @@ Write **True** or **False**.
 
 What is the difference between an **interface** and a **class** in the Java Collections Framework?
 
----
+Answer: Interface defines behaviors and class implements those behaviors
 
 ## Question 2
 
 Why is it recommended to declare variables using interfaces like `List` instead of concrete classes like `ArrayList`?
 
-Example:
+Answer: It provides better flexibilities, abstraction and better code design.
 
 ```java
 List<String> list = new ArrayList<>();
@@ -97,8 +99,9 @@ List<String> list = new ArrayList<>();
 ## Question 3
 
 Name three interfaces that extend `Collection`.
+Answer: Lists, Set, and Queue.
 
----
+
 
 # Code Reading Exercise
 
@@ -117,10 +120,9 @@ for (String fruit : fruits) {
 
 Questions:
 
-1. Which interface type is used for the variable?
-2. Which class is used as the implementation?
-3. Why can the enhanced for-loop be used here?
-
+1. Which interface type is used for the variable? Answer: List
+2. Which class is used as the implementation? Answer: ArrayList
+3. Why can the enhanced for-loop be used here? Answer:Lists extends Collections which extends iterable and the enhanced for loop can be used for on all collections.
 ---
 
 # Coding Exercise

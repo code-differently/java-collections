@@ -31,23 +31,30 @@ public class LinkedHashMapProblems {
     Output: {"Jordan"=90}
     */
     public static void addStudent(Map<String, Integer> map, String name, int grade) {
+        Map<String, Integer> studentGrades = new LinkedHashMap<>();
 
-        // TODO: Implement this method
+            // add the student name as the key and grade as the value
+            map.put(name, grade);
 
-    }
+        }
+
 
     /*
-    Problem 2
-    Update the grade of an existing student.
+   Problem 2
+   Update the grade of an existing student.
 
-    Example
-    Input: ("Taylor", 92)
-    Output: {"Taylor"=92}
-    */
+   Example
+   Input: ("Taylor", 92)
+   Output: {"Taylor"=92}
+   */
     public static void updateGrade(Map<String, Integer> map, String name, int newGrade) {
 
-        // TODO: Implement this method
+        // check if the student exists in the map
+        if (map.containsKey(name)) {
 
+            // update the grade
+            map.put(name, newGrade);
+        }
     }
 
     /*
@@ -60,8 +67,14 @@ public class LinkedHashMapProblems {
     */
     public static void removeStudent(Map<String, Integer> map, String name) {
 
-        // TODO: Implement this method
+        // check if student exists
+        if (map.containsKey(name)) {
 
+            // remove the student
+            map.remove(name);
+
+            System.out.println("Student removed from map");
+        }
     }
 
     /*
@@ -74,8 +87,14 @@ public class LinkedHashMapProblems {
     */
     public static String getFirstInserted(Map<String, Integer> map) {
 
-        // TODO: Implement this method
+        // loop through the keys
+        for (String name : map.keySet()) {
 
+            // return the first key encountered
+            return name;
+        }
+
+        // if map is empty
         return null;
     }
 
@@ -90,8 +109,22 @@ public class LinkedHashMapProblems {
     */
     public static Map<String, Integer> wordFrequency(List<String> words) {
 
-        // TODO: Implement this method
+        Map<String, Integer> frequencyMap = new LinkedHashMap<>();
 
-        return null;
+        // loop through the list
+        for (String word : words) {
+
+            // if word already exists increase count
+            if (frequencyMap.containsKey(word)) {
+                frequencyMap.put(word, frequencyMap.get(word) + 1);
+            }
+
+            // if word appears first time
+            else {
+                frequencyMap.put(word, 1);
+            }
+        }
+
+        return frequencyMap;
     }
 }
