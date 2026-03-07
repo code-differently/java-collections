@@ -96,7 +96,8 @@ public class HashSetProblems {
     public static Set<Integer> getUniqueValues(List<Integer> numbers) {
 
         // TODO: Implement this method
-
-        return null;
+        return new HashSet<>(numbers);
     }
+
+
 }
