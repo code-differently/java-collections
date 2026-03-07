@@ -79,9 +79,11 @@ public class HashSetProblems {
     public static int getUniqueCount(Set<String> set) {
 
         // TODO: Implement this method
+        return set.size();
 
-        return 0;
     }
+
+
 
     /*
     Problem 5
