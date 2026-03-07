@@ -31,6 +31,8 @@ public class ArrayDequeProblems {
     public static void addToFront(ArrayDeque<Integer> deque, int value) {
 
         // TODO: Implement this method
+        // Add value to the front of the deque
+        deque.addFirst(value);
 
     }
 
@@ -45,7 +47,8 @@ public class ArrayDequeProblems {
     public static void addToBack(ArrayDeque<Integer> deque, int value) {
 
         // TODO: Implement this method
-
+        // Add value to the end of the deque
+        deque.addLast(value);
     }
 
     /*
@@ -59,7 +62,8 @@ public class ArrayDequeProblems {
     public static void removeFront(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
-
+        // Remove the first element
+        deque.removeFirst();
     }
 
     /*
@@ -73,7 +77,8 @@ public class ArrayDequeProblems {
     public static void removeBack(ArrayDeque<Integer> deque) {
 
         // TODO: Implement this method
-
+        // Remove the last element
+        deque.removeLast();
     }
 
     /*
@@ -88,7 +93,8 @@ public class ArrayDequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        // Return the first element without removing it
+        return deque.peekFirst();
     }
 
     /*
@@ -103,6 +109,8 @@ public class ArrayDequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        // Return the last element without removing it
+        return deque.peekLast();
+
     }
 }
