@@ -1,5 +1,6 @@
 package Sets.HashSet;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -7,7 +8,39 @@ public class HashSetProblems {
     public static void main(String[] args) {
 
         // You can test your methods here
+        // ---------- Problem 1 Test ----------
+        System.out.println("Problem 1: addElement");
+        Set<String> fruits = new HashSet<>();
+        addElement(fruits, "apple");
+        System.out.println(fruits); // Expected: [apple]
 
+
+        // ---------- Problem 2 Test ----------
+        System.out.println("\nProblem 2: containsValue");
+        addElement(fruits, "banana");
+        System.out.println(containsValue(fruits, "banana")); // Expected: true
+        System.out.println(containsValue(fruits, "grape"));  // Expected: false
+
+
+        // ---------- Problem 3 Test ----------
+        System.out.println("\nProblem 3: removeValue");
+        removeValue(fruits, "apple");
+        System.out.println(fruits); // Expected: [banana]
+
+
+        // ---------- Problem 4 Test ----------
+        System.out.println("\nProblem 4: getUniqueCount");
+        addElement(fruits, "banana"); // duplicate attempt
+        addElement(fruits, "banana");
+        addElement(fruits, "orange");
+        System.out.println(getUniqueCount(fruits)); // Expected: 2
+
+
+        // ---------- Problem 5 Test ----------
+        System.out.println("\nProblem 5: getUniqueValues");
+        List<Integer> numbers = List.of(1, 2, 2, 3, 3, 3);
+        Set<Integer> uniqueNumbers = getUniqueValues(numbers);
+        System.out.println(uniqueNumbers); // Expected: [1, 2, 3]
     }
 
     /*
@@ -21,7 +54,7 @@ public class HashSetProblems {
     public static void addElement(Set<String> set, String value) {
 
         // TODO: Implement this method
-
+        set.add(value);
     }
 
     /*
@@ -35,7 +68,9 @@ public class HashSetProblems {
     public static boolean containsValue(Set<String> set, String value) {
 
         // TODO: Implement this method
-
+        if (set.contains(value)){
+            return true;
+        }
         return false;
     }
 
@@ -50,7 +85,7 @@ public class HashSetProblems {
     public static void removeValue(Set<String> set, String value) {
 
         // TODO: Implement this method
-
+        set.remove(value);
     }
 
     /*
@@ -65,7 +100,7 @@ public class HashSetProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return set.size();
     }
 
     /*
@@ -77,9 +112,11 @@ public class HashSetProblems {
     Output: {1,2,3}
     */
     public static Set<Integer> getUniqueValues(List<Integer> numbers) {
-
         // TODO: Implement this method
-
-        return null;
+        Set<Integer> set = new HashSet<>();
+        for (Integer number: numbers){
+            set.add(number);
+        }
+        return set;
     }
 }

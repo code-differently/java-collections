@@ -1,5 +1,6 @@
 package Lists.LinkedLists;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class LinkedListProblems {
@@ -38,7 +39,7 @@ public class LinkedListProblems {
     public static void addToFront(LinkedList<Integer> list, int value) {
 
         // TODO: Implement this method
-
+        list.addFirst(value);
     }
 
     /*
@@ -52,6 +53,7 @@ public class LinkedListProblems {
     public static void addToEnd(LinkedList<Integer> list, int value) {
 
         // TODO: Implement this method
+        list.addLast(value);
 
     }
 
@@ -66,6 +68,7 @@ public class LinkedListProblems {
     public static void removeFirstElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
+        list.removeFirst();
 
     }
 
@@ -80,7 +83,7 @@ public class LinkedListProblems {
     public static void removeLastElement(LinkedList<Integer> list) {
 
         // TODO: Implement this method
-
+        list.removeLast();
     }
 
     /*
@@ -95,7 +98,7 @@ public class LinkedListProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return list.getFirst();
     }
 
     /*
@@ -110,6 +113,6 @@ public class LinkedListProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        return list.getLast();
     }
 }

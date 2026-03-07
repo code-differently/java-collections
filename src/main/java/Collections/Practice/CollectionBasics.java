@@ -1,7 +1,10 @@
 package Collections.Practice;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 public class CollectionBasics {
     public static void main(String[] args) {
@@ -19,6 +22,7 @@ public class CollectionBasics {
         System.out.println("Count of even numbers: " + countEven(numbers));
         System.out.println("Largest number: " + findMax(numbers));
         System.out.println("Contains duplicates? " + hasDuplicates(numbers));
+        System.out.println("Numbers greater than 20: " + filterGreaterThanTwenty(numbers));
     }
 
 
@@ -33,6 +37,9 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // Add each number to total
+        for(Integer number: numbers){
+            total += number;
+        }
 
         return total;
     }
@@ -49,7 +56,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through the collection
         // If the number is even, increase count
-
+        for(Integer number: numbers){
+            if(number %2 == 0){
+                count++;
+            }
+        }
         return count;
     }
 
@@ -65,6 +76,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // Update max if current number is larger
+        for(Integer number: numbers){
+            if(max < number){
+                max = number;
+            }
+        }
 
         return max;
     }
@@ -76,14 +92,16 @@ public class CollectionBasics {
      Return false otherwise
     */
     public static boolean hasDuplicates(Collection<Integer> numbers) {
-
-        // TODO:
-        // Hint:
-        // Compare the size of a collection with the size of a Set
+        List<Integer> seen = new ArrayList<>();
+        for (Integer num : numbers) {
+            if (seen.contains(num)) {
+                return true;
+            }
+            seen.add(num);
+        }
 
         return false;
     }
-
 
     /*
      PROBLEM 5
@@ -96,7 +114,11 @@ public class CollectionBasics {
         // TODO:
         // Loop through numbers
         // If number equals target, increase count
-
+        for (Integer number: numbers){
+            if(number == target){
+                count++;
+            }
+        }
         return count;
     }
 
@@ -112,8 +134,12 @@ public class CollectionBasics {
 
         // TODO:
         // Loop through numbers
-        // Add numbers greater than 20 to result
-
+        // Add numbers greater than 20 to result\
+        for (Integer number:numbers){
+            if (number > 20) {
+                result.add(number);
+            }
+        }
         return result;
     }
 }

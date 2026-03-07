@@ -34,8 +34,11 @@ public class ArrayListProblems {
     public static int sum(List<Integer> nums) {
 
         // TODO: Implement this method
-
-        return 0;
+        int total = 0;
+        for (int num: nums){
+            total += num;
+        }
+        return total;
     }
 
     /*
@@ -47,10 +50,14 @@ public class ArrayListProblems {
     Output: 2
     */
     public static int countEvens(List<Integer> nums) {
-
         // TODO: Implement this method
-
-        return 0;
+        int counter = 0;
+        for (int num: nums){
+            if(num %2 == 0){
+                counter++;
+            }
+        }
+        return counter;
     }
 
     /*
@@ -65,10 +72,15 @@ public class ArrayListProblems {
     Output: false
     */
     public static boolean hasDuplicate(List<Integer> nums) {
-
         // TODO: Implement this method
-
-        return false;
+        List<Integer> seen = new ArrayList<>();     //creates a new  empty list
+        for (Integer num : nums) {                  //cycles through the list of numbers
+            if (seen.contains(num)) {               //if both lists contain the same number
+                return true;                        //returns true
+            }
+            seen.add(num);                          //otherwise add it to the new list
+        }
+        return false;                               //return false
     }
 
     /*
@@ -80,10 +92,14 @@ public class ArrayListProblems {
     Output: 7
     */
     public static int findMax(List<Integer> nums) {
-
         // TODO: Implement this method
-
-        return 0;
+        int max = nums.get(0);
+        for (Integer num : nums){
+            if (max < num){
+                max = num;
+            }
+        }
+        return max;
     }
 
     /*
@@ -97,9 +113,11 @@ public class ArrayListProblems {
     The original list should remain unchanged.
     */
     public static List<Integer> reverse(List<Integer> nums) {
-
         // TODO: Implement this method
-
-        return null;
+        List <Integer> reverseList = new ArrayList<>();
+        for (int i = nums.size()-1; i >= 0; i--) {
+            reverseList.add(nums.get(i));
+        }
+        return reverseList;
     }
 }
