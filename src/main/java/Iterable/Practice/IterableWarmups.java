@@ -49,9 +49,16 @@ public class IterableWarmups {
         // TODO:
         // Loop through numbers
         // Increment count if number is even
+        for (Integer num : numbers) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }
 
         return count;
     }
+
+
 
 
     /*
