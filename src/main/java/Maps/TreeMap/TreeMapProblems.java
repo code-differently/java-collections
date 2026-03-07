@@ -94,7 +94,8 @@ public class TreeMapProblems {
     public static Integer getNextRank(TreeMap<Integer, String> map, int rank) {
 
         // TODO: Implement this method
-
-        return null;
+        return map.higherKey(rank);
     }
+
+
 }
