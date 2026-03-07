@@ -17,6 +17,8 @@ B. `Collection` extends `List`
 C. `Collection` is the root interface for most collection types  
 D. `Collection` only stores key-value pairs  
 
+AW: C
+
 ---
 
 ## Question 2
@@ -37,6 +39,8 @@ B. 1
 C. 3
 D. 30
 
+AW: C
+
 ---
 
 ## Question 3
@@ -47,6 +51,8 @@ A. `search()`
 B. `exists()`
 C. `contains()`
 D. `check()`
+
+AW:C
 
 ---
 
@@ -70,6 +76,8 @@ B. `[Jordan]`
 C. `[Alex]`
 D. `[]`
 
+AW: B
+
 ---
 
 ## Question 5
@@ -80,6 +88,8 @@ A. `add()`
 B. `addAll()`
 C. `insertAll()`
 D. `merge()`
+
+AW:B
 
 ---
 
@@ -98,6 +108,8 @@ B. `false`
 C. `0`
 D. Compilation error
 
+AW:A
+
 ---
 
 ## Question 7
@@ -108,6 +120,8 @@ A. `removeAll()`
 B. `deleteAll()`
 C. `clear()`
 D. `reset()`
+
+AW:A
 
 ---
 
@@ -132,6 +146,8 @@ B. `15 10 5`
 C. `0 1 2`
 D. Compilation error
 
+AW:A
+
 ---
 
 ## Question 9
@@ -142,6 +158,8 @@ A. Elements can be added
 B. Elements can be removed
 C. Indexed access using `.get(index)`
 D. Elements can be iterated using a loop
+
+AW:C
 
 ---
 
@@ -157,6 +175,8 @@ A. It automatically sorts the collection
 B. It prevents duplicates
 C. It allows flexibility to change implementations later
 D. It forces the collection to be synchronized
+
+AW:C
 
 ```
 ```

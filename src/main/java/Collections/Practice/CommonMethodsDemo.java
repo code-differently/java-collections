@@ -125,37 +125,38 @@ public class CommonMethodsDemo {
         // TODO Exploration Section
         // ------------------------------
 
-        /*
-         TODO 1:
-         Create a new Collection called numbers
-         Add the following values:
-         10, 20, 30, 40, 50
-        */
+
+         //TODO 1:
+         Collection<Integer> numbers = new ArrayList<>();
+
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
 
 
-        /*
-         TODO 2:
-         Print the size of the numbers collection
-        */
+         //TODO 2:
+        System.out.println(numbers.size());
 
 
-        /*
-         TODO 3:
-         Check if the collection contains 30
-        */
+         //TODO 3:
+        System.out.println(numbers.contains(30));
 
 
-        /*
-         TODO 4:
-         Remove the number 20
-        */
 
 
-        /*
-         TODO 5:
-         Loop through the numbers collection
-         and print each value
-        */
+         //TODO 4:
+        numbers.remove(20);
+        System.out.println(numbers);
+
+
+
+        // TODO 5:
+
+        for(int num : numbers){
+            System.out.println(num);
+        }
 
 
         /*

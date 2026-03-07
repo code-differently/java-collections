@@ -2,7 +2,9 @@ package Lists.ArrayLists;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ArrayListProblems {
     public static void main(String[] args) {
@@ -35,7 +37,17 @@ public class ArrayListProblems {
 
         // TODO: Implement this method
 
-        return 0;
+        int total = 0;
+
+        // Loop through every number in the list
+        for (int num : nums) {
+
+            // Add the current number to the running total
+            total += num;
+        }
+
+        // Return the final sum
+        return total;
     }
 
     /*
@@ -49,8 +61,20 @@ public class ArrayListProblems {
     public static int countEvens(List<Integer> nums) {
 
         // TODO: Implement this method
+        int count = 0;
 
-        return 0;
+        // Loop through the list
+        for (int num : nums) {
+
+            // If the number is even
+            if (num % 2 == 0) {
+
+                // Increase the counter
+                count++;
+            }
+        }
+
+        return count;
     }
 
     /*
@@ -67,6 +91,18 @@ public class ArrayListProblems {
     public static boolean hasDuplicate(List<Integer> nums) {
 
         // TODO: Implement this method
+        Set<Integer> seen = new HashSet<>();
+
+        for (int num : nums) {
+
+            // If we already saw the number
+            if (seen.contains(num)) {
+                return true;
+            }
+
+            // Otherwise add it to the set
+            seen.add(num);
+        }
 
         return false;
     }
@@ -82,8 +118,18 @@ public class ArrayListProblems {
     public static int findMax(List<Integer> nums) {
 
         // TODO: Implement this method
+        int max = Integer.MIN_VALUE;
 
-        return 0;
+        // Loop through numbers
+        for (int num : nums) {
+
+            // If current number is bigger than max
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        return max;
     }
 
     /*
@@ -99,7 +145,14 @@ public class ArrayListProblems {
     public static List<Integer> reverse(List<Integer> nums) {
 
         // TODO: Implement this method
+        List<Integer> reversed = new ArrayList<>();
 
-        return null;
+        // Start from the end of the list
+        for (int i = nums.size() - 1; i >= 0; i--) {
+
+            reversed.add(nums.get(i));
+        }
+
+        return reversed;
     }
 }
