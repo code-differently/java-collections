@@ -81,8 +81,8 @@ it.remove();    // safely removes current element
 ## Time Complexity
 
 | Operation      | Complexity |
-| -------------- | ---------- |
-| Full traversal | O(n)       |
+| -------------- |-----------|
+| Full traversal | O(n)      |
 
 Where `n` = number of elements.
 

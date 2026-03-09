@@ -1,11 +1,24 @@
 package Queues.Deque;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class DequeProblems {
     public static void main(String[] args) {
 
-        // You can test your methods here
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.addFirst(90);
+
+        addFront(deque,100);
+        deque.addLast(1000);
+
+        addBack(deque,120);
+//        removeFront(deque);
+//        removeFront(deque);
+//        removeBack(deque);
+
+        System.out.println(peekFront(deque));
+        System.out.println(peekBack(deque));
 
     }
 
@@ -18,7 +31,7 @@ public class DequeProblems {
     Output: [5]
     */
     public static void addFront(Deque<Integer> deque, int value) {
-
+        deque.addFirst(value);
         // TODO: Implement this method
 
     }
@@ -33,6 +46,7 @@ public class DequeProblems {
     */
     public static void addBack(Deque<Integer> deque, int value) {
 
+        deque.addLast(value);
         // TODO: Implement this method
 
     }
@@ -47,9 +61,9 @@ public class DequeProblems {
     */
     public static Integer removeFront(Deque<Integer> deque) {
 
+        return deque.removeFirst();
         // TODO: Implement this method
 
-        return null;
     }
 
     /*
@@ -64,7 +78,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.removeLast();
     }
 
     /*
@@ -79,7 +93,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekFirst();
     }
 
     /*
@@ -94,7 +108,7 @@ public class DequeProblems {
 
         // TODO: Implement this method
 
-        return null;
+        return deque.peekFirst();
     }
 
 }

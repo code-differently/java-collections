@@ -1,14 +1,26 @@
 package CollectionsHackerrank;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class CollectionsHackerrankProblems {
-    public class CollectionsHackerrankPractice {
-
+    public static class CollectionsHackerrankPractice {
         public static void main(String[] args) {
 
+            List<Integer> list = new ArrayList<>();
+            list.add(1);
+            list.add(2);
+            list.add(2);
+            list.add(3);
+            list.add(3);
+            list.add(3);
+            list.add(33);
+            list.add(33);
+            list.add(33);
+
+            System.out.println(list);
+            System.out.println(removeDuplicates(list));
+            System.out.println(countFrequency(list));
+            System.out.println(firstUnique(list));
             // You can test your methods here
 
         }
@@ -22,10 +34,7 @@ public class CollectionsHackerrankProblems {
         Output: [1,2,3,4,5]
         */
         public static List<Integer> removeDuplicates(List<Integer> numbers) {
-
-            // TODO: Implement this method
-
-            return null;
+            return new ArrayList<>(new HashSet<>(numbers));
         }
 
         /*
@@ -37,10 +46,12 @@ public class CollectionsHackerrankProblems {
         Output: {1=1, 2=2, 3=3}
         */
         public static Map<Integer, Integer> countFrequency(List<Integer> numbers) {
+            Map<Integer, Integer> map = new HashMap<>();
 
-            // TODO: Implement this method
-
-            return null;
+            for( int i : numbers){
+                map.put(i,map.getOrDefault(i,0)+1);
+            }
+              return map;
         }
 
         /*
@@ -52,9 +63,14 @@ public class CollectionsHackerrankProblems {
         Output: 5
         */
         public static Integer firstUnique(List<Integer> numbers) {
-
-            // TODO: Implement this method
-
+            Map<Integer,Integer> map = new LinkedHashMap<>();
+            for(int i: numbers){
+             map.put(i,map.getOrDefault(numbers,0));
+            }
+            for (Map.Entry<Integer,Integer>entry: map.entrySet())
+                if(entry.getValue()==1){
+                    return entry.getKey();
+                }
             return null;
         }
 
@@ -69,8 +85,17 @@ public class CollectionsHackerrankProblems {
         Output: true
         */
         public static boolean twoSum(List<Integer> numbers, int target) {
+            Set<Integer> seen = new HashSet<>();
 
-            // TODO: Implement this method
+            for (Integer num : numbers) {
+                int complement = target - num;
+
+                if (seen.contains(complement)) {
+                    return true;
+                }
+
+                seen.add(num);
+            }
 
             return false;
         }
@@ -84,10 +109,9 @@ public class CollectionsHackerrankProblems {
         Output: 3
         */
         public static int countUniqueWords(List<String> words) {
+            Set<String> uniqueWords = new HashSet<>(words);
 
-            // TODO: Implement this method
-
-            return 0;
+            return uniqueWords.size();
         }
 
         /*
@@ -100,9 +124,19 @@ public class CollectionsHackerrankProblems {
         */
         public static Queue<Integer> reverseQueue(Queue<Integer> queue) {
 
-            // TODO: Implement this method
+            Stack<Integer> stack = new Stack<>();
 
-            return null;
+            // Move elements from queue to stack
+            while (!queue.isEmpty()) {
+                stack.push(queue.poll());
+            }
+
+            // Move elements back to queue (reversed order)
+            while (!stack.isEmpty()) {
+                queue.offer(stack.pop());
+            }
+
+            return queue;
         }
 
         /*
@@ -117,10 +151,27 @@ public class CollectionsHackerrankProblems {
         Output: false
         */
         public static boolean isBalanced(String expression) {
+//use a Stack.
+//A stack works well because we must match every opening ( with a closing ) in the correct order.
+            Stack<Character> stack = new Stack<>();
 
-            // TODO: Implement this method
+            for (char ch : expression.toCharArray()) {
 
-            return false;
+                if (ch == '(') {
+                    stack.push(ch); // store opening parenthesis
+                }
+
+                else if (ch == ')') {
+                    if (stack.isEmpty()) {
+                        return false; // no matching opening
+                    }
+                    stack.pop(); // match found
+                }
+            }
+
+            // if stack is empty, parentheses are balanced
+            return stack.isEmpty();
+
         }
 
         /*
@@ -132,10 +183,27 @@ public class CollectionsHackerrankProblems {
         Output: 3
         */
         public static Integer mostFrequent(List<Integer> numbers) {
+            int max = numbers.getFirst();
+            int maxKey  = numbers.getFirst();
+            Map<Integer, Integer> map = new HashMap<>();
 
-            // TODO: Implement this method
+            for (Integer number : numbers) {
+                if (map.containsKey(number)) {
+                    map.put(number, map.get(number) + 1);
+                }else{
+                    map.put(number, 1);
+                }
+            }
 
-            return null;
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if (entry.getValue() > max) {
+                    max = entry.getValue();
+                    maxKey = entry.getKey();
+                }
+
+
+            }
+            return maxKey;
         }
 
         /*
@@ -152,10 +220,18 @@ public class CollectionsHackerrankProblems {
         }
         */
         public static Map<Integer, List<String>> groupByLength(List<String> words) {
+            Map<Integer, List<String>> result = new HashMap<>();
+            for (String word : words) {
+                int length = word.length();
 
-            // TODO: Implement this method
+                if (!result.containsKey(length)) {
+                    result.put(length, new ArrayList<>());
+                }
 
-            return null;
+                result.get(length).add(word);
+            }
+
+            return result;
         }
 
         /*
@@ -169,10 +245,20 @@ public class CollectionsHackerrankProblems {
         Output: 9
         */
         public static int maxSlidingWindowSum(List<Integer> numbers, int k) {
-
-            // TODO: Implement this method
-
-            return 0;
+            if (numbers.size() < k){
+                return numbers.getFirst();
+            }
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < numbers.size()-k+1; i++) {
+                int maxTest = 0;
+                for(int j = i; j < i+k; j++){
+                    maxTest = numbers.get(j) + maxTest;
+                }
+                if (maxTest > max) {
+                    max = maxTest;
+                }
+            }
+            return max;
         }
     }
 }

@@ -16,6 +16,7 @@ B. Iterable
 C. List  
 D. Queue
 
+Answer: **B Iterable**
 ---
 
 ## Question 2
@@ -27,6 +28,7 @@ B. Collection
 C. Map  
 D. Deque
 
+Answer: **B Collection**
 ---
 
 ## Question 3
@@ -37,6 +39,8 @@ A. List
 B. Set  
 C. Queue  
 D. Map
+
+Answer: **D Map**
 
 ---
 
@@ -49,6 +53,7 @@ B. List
 C. Queue  
 D. TreeSet
 
+Answer: **B List**
 ---
 
 ## Question 5
@@ -60,17 +65,18 @@ B. Set
 C. Queue  
 D. Map
 
+Answer: **D Map**
 ---
 
 # True or False
 
 Write **True** or **False**.
 
-1. `ArrayList` implements the `List` interface.  
-2. `Set` allows duplicate elements.  
-3. `Map` stores elements using keys and values.  
-4. `Queue` typically follows FIFO behavior.  
-5. `Iterable` allows collections to be used in enhanced for-loops.
+1. `ArrayList` implements the `List` interface. TRUE
+2. `Set` allows duplicate elements. FALSE
+3. `Map` stores elements using keys and values. TRUE 
+4. `Queue` typically follows FIFO behavior.  TRUE
+5. `Iterable` allows collections to be used in enhanced for-loops. TRUE
 
 ---
 
@@ -80,12 +86,14 @@ Write **True** or **False**.
 
 What is the difference between an **interface** and a **class** in the Java Collections Framework?
 
+An interface defines behaviors(what can be done), and a class implements the behaviors and does the work.
 ---
 
 ## Question 2
 
 Why is it recommended to declare variables using interfaces like `List` instead of concrete classes like `ArrayList`?
 
+It proves better flexibility, code design, and Abstraction.
 Example:
 
 ```java
@@ -98,6 +106,7 @@ List<String> list = new ArrayList<>();
 
 Name three interfaces that extend `Collection`.
 
+List, Set, and Queue 
 ---
 
 # Code Reading Exercise
@@ -118,8 +127,11 @@ for (String fruit : fruits) {
 Questions:
 
 1. Which interface type is used for the variable?
+   **List**
 2. Which class is used as the implementation?
+   **ArrayList**
 3. Why can the enhanced for-loop be used here?
+   **List extends Collections which extends iterable, so the enhanced for-loop can be used on all collections.**
 
 ---
 
