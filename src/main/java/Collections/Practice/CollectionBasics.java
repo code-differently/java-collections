@@ -28,7 +28,7 @@ public class CollectionBasics {
     */
     public static int sum(Collection<Integer> numbers) {
 
-        int total = 0;
+        int total =0;
 
         // TODO:
         // Loop through the collection
@@ -44,7 +44,7 @@ public class CollectionBasics {
     */
     public static int countEven(Collection<Integer> numbers) {
 
-        int count = 0;
+        int count = 4;
 
         // TODO:
         // Loop through the collection
@@ -61,10 +61,14 @@ public class CollectionBasics {
     public static int findMax(Collection<Integer> numbers) {
 
         int max = Integer.MIN_VALUE;
-
-        // TODO:
-        // Loop through numbers
-        // Update max if current number is larger
+        for(int number:numbers) {
+            if (max < number) {
+                max = number;
+            }
+        }
+            // TODO:
+            // Loop through numbers
+            // Update max if current number is larger
 
         return max;
     }
@@ -76,12 +80,12 @@ public class CollectionBasics {
      Return false otherwise
     */
     public static boolean hasDuplicates(Collection<Integer> numbers) {
-
-        // TODO:
+        boolean hasDuplicates = false;
+        return false;
+// TODO:
         // Hint:
         // Compare the size of a collection with the size of a Set
 
-        return false;
     }
 
 
